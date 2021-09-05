@@ -1,0 +1,7 @@
+baseurl = "/"
+languageCode = "en-us"
+languageLang = "en"
+title = "Homepage"
+theme = 'PaperMod'
+
+
