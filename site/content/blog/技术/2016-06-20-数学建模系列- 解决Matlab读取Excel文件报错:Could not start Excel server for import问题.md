@@ -1,8 +1,8 @@
 
 ---
-title: 数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题
+title: "数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题"
 date: 2016-06-20 19:28:16 +0000 UTC
-description: 今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版
+description: "今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版"
 ---
 
 > 今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。

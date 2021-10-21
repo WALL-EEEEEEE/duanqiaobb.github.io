@@ -1,8 +1,8 @@
 
 ---
-title: Oracle数据库系列 - Oracle 表空间管理
+title: "Oracle数据库系列 - Oracle 表空间管理"
 date: 2016-06-17 20:11:42 +0000 UTC
-description: 创建表空间    CREATE [ TEMPORARY | UNDO ] TALBESPACE tablespace_name    [       DATAFILE | TEMPFILE 'file_name' SIZE size K | M [ REUSE ]       [          AUTOEXTEND OFF | ON          [NEXT number K |
+description: "创建表空间    CREATE [ TEMPORARY | UNDO ] TALBESPACE tablespace_name    [       DATAFILE | TEMPFILE 'file_name' SIZE size K | M [ REUSE ]       [          AUTOEXTEND OFF | ON          [NEXT number K |"
 ---
 
 **创建表空间**
