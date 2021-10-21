@@ -5,12 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Blogs | 断桥bian的博客</title>
+<title>Linux的运行级别初探 | 断桥bian的博客</title>
 <meta name="keywords" content="" />
-<meta name="description" content="Blogs - 断桥bian的博客">
+<meta name="description" content="Linux的运行级别初探Linux的运行级别分为6个运行级别,分别为:    0   停机  1   单用户(无网络连接,只开启少量的进程,准许非root用户登录)  2   多用户(无网络连接,只开启少量的进程)  3   多用户(启动网络连接) 一般默认以这个模式启动  4   用户自定义  5   多用户带图形界面  6   重启">
 <meta name="author" content="">
-<link rel="canonical" href="/blog/" />
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-09-linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%88%9D%E6%8E%A2/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,15 +21,16 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.88.1" />
-<link rel="alternate" type="application/rss+xml" href="/blog/index.xml">
-<meta property="og:title" content="Blogs" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/blog/" />
+<meta property="og:title" content="Linux的运行级别初探" />
+<meta property="og:description" content="Linux的运行级别初探Linux的运行级别分为6个运行级别,分别为:    0   停机  1   单用户(无网络连接,只开启少量的进程,准许非root用户登录)  2   多用户(无网络连接,只开启少量的进程)  3   多用户(启动网络连接) 一般默认以这个模式启动  4   用户自定义  5   多用户带图形界面  6   重启" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2016-06-09-linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%88%9D%E6%8E%A2/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-06-09T16:50:05&#43;00:00" />
+<meta property="article:modified_time" content="2016-06-09T16:50:05&#43;00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Blogs"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Linux的运行级别初探"/>
+<meta name="twitter:description" content="Linux的运行级别初探Linux的运行级别分为6个运行级别,分别为:    0   停机  1   单用户(无网络连接,只开启少量的进程,准许非root用户登录)  2   多用户(无网络连接,只开启少量的进程)  3   多用户(启动网络连接) 一般默认以这个模式启动  4   用户自定义  5   多用户带图形界面  6   重启"/>
 
 
 <script type="application/ld+json">
@@ -38,15 +41,44 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Blogs",
-      "item": "/blog/"
+      "name": "Linux的运行级别初探",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2016-06-09-linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%88%9D%E6%8E%A2/"
     }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linux的运行级别初探",
+  "name": "Linux的运行级别初探",
+  "description": "Linux的运行级别初探Linux的运行级别分为6个运行级别,分别为:    0   停机  1   单用户(无网络连接,只开启少量的进程,准许非root用户登录)  2   多用户(无网络连接,只开启少量的进程)  3   多用户(启动网络连接) 一般默认以这个模式启动  4   用户自定义  5   多用户带图形界面  6   重启",
+  "keywords": [
+    
+  ],
+  "articleBody": "####Linux的运行级别初探\n######Linux的运行级别分为6个运行级别,分别为:   0 停机 1 单用户(无网络连接,只开启少量的进程,准许非root用户登录) 2 多用户(无网络连接,只开启少量的进程) 3 多用户(启动网络连接) 一般默认以这个模式启动 4 用户自定义 5 多用户带图形界面 6 重启   ",
+  "wordCount" : "17",
+  "inLanguage": "en",
+  "datePublished": "2016-06-09T16:50:05Z",
+  "dateModified": "2016-06-09T16:50:05Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2016-06-09-linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%88%9D%E6%8E%A2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -126,45 +158,39 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>Blogs</h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">September 6, 2021</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E7%94%9F%E6%B4%BB/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Linux的运行级别初探
+    </h1>
+    <div class="post-description">
+      Linux的运行级别初探Linux的运行级别分为6个运行级别,分别为:    0   停机  1   单用户(无网络连接,只开启少量的进程,准许非root用户登录)  2   多用户(无网络连接,只开启少量的进程)  3   多用户(启动网络连接) 一般默认以这个模式启动  4   用户自定义  5   多用户带图形界面  6   重启
+    </div>
+    <div class="post-meta">June 9, 2016
+</div>
+  </header> 
+  <div class="post-content"><p>####Linux的运行级别初探</p>
+<h2 id="linux的运行级别分为6个运行级别分别为">######Linux的运行级别分为6个运行级别,分别为:<a hidden class="anchor" aria-hidden="true" href="#linux的运行级别分为6个运行级别分别为">#</a></h2>
+<blockquote>
+<ul>
+<li>0   停机</li>
+<li>1   单用户(无网络连接,只开启少量的进程,准许非root用户登录)</li>
+<li>2   多用户(无网络连接,只开启少量的进程)</li>
+<li>3   多用户(启动网络连接) <em>一般默认以这个模式启动</em></li>
+<li>4   用户自定义</li>
+<li>5   多用户带图形界面</li>
+<li>6   重启</li>
+</ul>
+</blockquote>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">September 6, 2021</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E9%9D%A2%E8%AF%95/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">October 7, 2019</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E6%8A%80%E6%9C%AF/"></a>
+  </div>
+
+  <footer class="post-footer">
+  </footer>
 </article>
     </main>
     

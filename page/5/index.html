@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Blogs | 断桥bian的博客</title>
-<meta name="keywords" content="" />
-<meta name="description" content="Blogs - 断桥bian的博客">
+<title>断桥bian的博客</title>
+
+<meta name="description" content="">
 <meta name="author" content="">
-<link rel="canonical" href="/blog/" />
+<link rel="canonical" href="/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -19,28 +19,26 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.88.1" />
-<link rel="alternate" type="application/rss+xml" href="/blog/index.xml">
-<meta property="og:title" content="Blogs" />
+<link rel="alternate" type="application/rss+xml" href="/index.xml">
+<meta property="og:title" content="断桥bian的博客" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/blog/" />
+<meta property="og:url" content="/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Blogs"/>
+<meta name="twitter:title" content="断桥bian的博客"/>
 <meta name="twitter:description" content=""/>
-
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Blogs",
-      "item": "/blog/"
-    }
+  "@type": "Organization",
+  "name": "断桥bian的博客",
+  "url": "/",
+  "description": "",
+  "thumbnailUrl": "/favicon.ico",
+  "sameAs": [
+      
   ]
 }
 </script>
@@ -127,45 +125,55 @@
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header">
-  <h1>Blogs</h1>
-</header>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>
+    <h2>WordPress系列-开场白
     </h2>
   </header>
   <section class="entry-content">
-    <p></p>
+    <p>####WordPress的浅显研究 最近在研究wordpress,于是开了这个系列文章，这些文章记录了我在学习wordpress过程 中的心得，以及踩过的坑。
+ </p>
   </section>
-  <footer class="entry-footer">September 6, 2021</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E7%94%9F%E6%B4%BB/"></a>
+  <footer class="entry-footer">June 12, 2016</footer>
+  <a class="entry-link" aria-label="post link to WordPress系列-开场白" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-12-wordpress%E7%B3%BB%E5%88%97-%E5%BC%80%E5%9C%BA%E7%99%BD/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>
+    <h2>Linux的运行级别初探
     </h2>
   </header>
   <section class="entry-content">
-    <p></p>
+    <p>####Linux的运行级别初探
+######Linux的运行级别分为6个运行级别,分别为:   0 停机 1 单用户(无网络连接,只开启少量的进程,准许非root用户登录) 2 多用户(无网络连接,只开启少量的进程) 3 多用户(启动网络连接) 一般默认以这个模式启动 4 用户自定义 5 多用户带图形界面 6 重启   </p>
   </section>
-  <footer class="entry-footer">September 6, 2021</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E9%9D%A2%E8%AF%95/"></a>
+  <footer class="entry-footer">June 9, 2016</footer>
+  <a class="entry-link" aria-label="post link to Linux的运行级别初探" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-09-linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%88%9D%E6%8E%A2/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>
+    <h2>vim&#43;clipboard＋vim-gui(gvim)源码编译
     </h2>
   </header>
   <section class="entry-content">
-    <p></p>
+    <p>昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包
+  首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:https://github.com/vim/vim.git(这是vim在github下托管的链接) 你只需要: cd yourdir/youdir/youdir git clone https://github.com/vim/vim.git 将源码下下来  然后进入你下载的源码目录,如果你没改目录名的话,应该是当前目录下的vim文件夹内(如下图)
+  然后安装编译vim-gui(gvim)需要的gui环境依赖头文件,可以是gtk2,gnome….等等.(我安装的是gtk2)
+ Fedora下用yum安装: sudo yum install gtk2-devel.x86_64 (这里看你的系统版本,如果是32位的,就装gtk2-devel.i686 这个包,我的系统是64位的,我这里是安装gtk-gui,如果你是安装其他gui的话,需要安装其他的包而不是这个包) ... 注意:不同的软件源的包名可能不一样,大家可以用**yum search&#43;关键字**搜一下，名称应该类似  接下来还要安装 libXt-devel.x86_64 libX11-devel.x86_64 这两个包都是X11图形界面的源码包`
+ sudo yum install libXt-devel.x86_64 &amp;&amp; sudo yum install libX11-devel.x86_64 ... &gt;libXt-devel.x86_64这个包是让我折腾一天的罪魁祸首,哭晕。。。,你也可以直接安装qt3-devel.x86_64这个包,它包含了libXt-devel.x86_64。  好了,现在你可以编译源码了,进入源码包
+ cd vim 或者cd vim/src ./configure　--with-features=huge | grep gui(这里我选择带特征最多的巨型版本,--with-features=normal(正常版本),--with-features=tiny(微型版本),默认是正常版本)  如果你显示这个的话，说明你的gui可以用，也就是能编译出vim-gui和clipboard否则不行（按理说clipboard这个特性应该不会依赖gui，但是我gui编译不出,clipboard特性也编译不出）,编译出来的朋友们可以私信我，是怎么回事,我也学习学习。 … 注意：vim编译的时候默认的gui配置选项为- -enable-gui=auto，这样系统会自动搜索是否支持编译成gvim，可以就编译,否则就忽略。当然你也可以指定特定的gui。 …
+ -enable-gui=gtk2 … 不过建议使用默认的   sudo make &amp;&amp; sudo make install (编译链接不多说了) 如果没出问题的话就可以使用了,如果有的出现问题,也就是有些包没装，装下依赖包就可以了。(yum search &amp; yum install )  现在可以看看我们编译后的成果了。 gvim 或　vim -g 看看gvim怎么样...</p>
   </section>
-  <footer class="entry-footer">October 7, 2019</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E6%8A%80%E6%9C%AF/"></a>
+  <footer class="entry-footer">January 1, 2016</footer>
+  <a class="entry-link" aria-label="post link to vim&#43;clipboard＋vim-gui(gvim)源码编译" href="/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim&#43;clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"></a>
 </article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="/page/4/">« Prev Page</a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

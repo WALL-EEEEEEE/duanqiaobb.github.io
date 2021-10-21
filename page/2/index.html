@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>断桥bian的博客</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/index.xml">
+<meta property="og:title" content="断桥bian的博客" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="断桥bian的博客"/>
+<meta name="twitter:description" content=""/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "断桥bian的博客",
+  "url": "/",
+  "description": "",
+  "thumbnailUrl": "/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>算法-纸牌游戏
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>纸牌游戏 时间限制：1秒 空间限制：32768K 牛牛和羊羊正在玩一个纸牌游戏。这个游戏一共有n张纸牌, 第i张纸牌上写着数字a_i。 牛牛和羊羊轮流抽牌, 牛牛先抽, 每次抽牌他们可以从纸牌堆中任意选择一张抽出, 直到纸牌被抽完。 他们的得分等于他们抽到的纸牌数字总和。 现在假设牛牛和羊羊都采用最优策略, 请你计算出游戏结束后牛牛得分减去羊羊得分等于多少。 输入描述: 输入包括两行。 第一行包括一个正整数n(1 &lt;= n &lt;= 10^5),表示纸牌的数量。 第二行包括n个正整数ai(1 &lt;= a_i &lt;= 10^9),表示每张纸牌上的数字。 输出描述: 输出一个整数, 表示游戏结束后牛牛得分减去羊羊得分等于多少。 输入例子1: 3 2 7 4 输出例子1: 5  思路  1. 首先我们可以将他们抽取纸牌的顺序抽象成一个数列，由于两个采取的都是最优的策略， 所以这个数列是一个从大到小排序的有n个元素的数列. 2. 而我们需要求的是牛牛的得分减去羊羊的得分，于是我们可以把上面的数列中代表羊羊的分 数的数倒置为负数，这样我们实际要求的就是这个数列的前n项和。 比如: 2 7 4 -&gt;(排序) 7 4 2 -&gt; (倒置) -&gt; 7 -4 2 -&gt; (求前n项和) 7 &#43; (-4) &#43; 2 = 5  Note: 由于效率的考虑，排序算法需要用快速排序，才能AC
+  算法复杂度   算法的平均复杂度：O(n) = logn &#43; n &#43; n-1 = n ；算法的最坏情况下的复杂度：O(n) = n^2&#43; n &#43; n-1 = n^2。...</p>
+  </section>
+  <footer class="entry-footer">November 25, 2018</footer>
+  <a class="entry-link" aria-label="post link to 算法-纸牌游戏" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BA%B8%E7%89%8C%E6%B8%B8%E6%88%8F/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>算法-翻转数列
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>翻转数列 小Q定义了一种数列称为翻转数列: 给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为&#39;-&#39;;。 例如n = 8, m = 2, 数列就是: -1, -2, &#43;3, &#43;4, -5, -6, &#43;7, &#43;8. 而n = 4, m = 1, 数列就是: -1, &#43;2, -3, &#43; 4. 小Q现在希望你能帮他算算前n项和为多少。 输入描述: 输入包括两个整数n和m(2 &lt;= n &lt;= 109, 1 &lt;= m), 并且满足n能被2m整除。 输出描述: 输出一个整数, 表示前n项和。 输入例子1: 8 2 输出例子1: 8  思路  1. n能被2m整除，我们可以得出, n 为2m的整数倍， 2. 根据数列的规律，2m个元素的和为m^2 所以我们可以把n个元素划分为多个2m元素组成的块，x = n/(2*m), 那么前n项的和可以看作这些块的总和：S_n = x*m^2 = n/(2*m)*m^2 = n/2 * m  算法复杂度   算法的平均复杂度: O(n) = 1; 最坏情况下的复杂度为：O(n) = 1。...</p>
+  </section>
+  <footer class="entry-footer">November 25, 2018</footer>
+  <a class="entry-link" aria-label="post link to 算法-翻转数列" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BF%BB%E8%BD%AC%E6%95%B0%E5%88%97/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>算法-查找数组中的前M大的数
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>查找数组中的前M大的数  思路  根据快速排序的Partition的思想，假定数组长度为n, 选定一个pivot,总能将数组分为 [0,k-1]和[k,n], 其中[0,k-1]&lt;pivot,[k&#43;1,n] &gt; pivot。如果 k = m, 那么算法结束。如果k &gt; m, 对[k&#43;1,n]继续进行切分, 每次切分k都会减少一部分, 直到k = m, 如果k &lt; m, 对[0,k-1]继续切分出m-k个大的数， 每次切分k都会 增加一部分，直到k = m。  算法复杂度   平均算法复杂度为：O(n) = n，最坏情况的复杂度为：O(n) = n。
+cpp实现 int Partition(int arr[], int start, int end) { int pivot = arr[start]; int highvac = end; int lowvac = start; int direct = true; //true for right,false for left. start from left  while(lowvac &lt; highvac) { if(direct == true) { if(arr[highvac] &lt;pivot) { arr[lowvac] = arr[highvac]; lowvac&#43;&#43;; direct = false; } else { highvac--; } } else { if(arr[lowvac] &gt; pivot) { arr[highvac] = arr[lowvac]; highvac--; direct = true; } else { lowvac&#43;&#43;; } } } arr[highvac] = pivot; return highvac; } int* findXMaxValue(int arr[], int xmax, int start, int end) { int p = 0; static int* maxs = new int[xmax]; int cmax = end - start &#43;1; int len = end; if (xmax &gt;= len&#43;1) { return arr; } while(cmax !...</p>
+  </section>
+  <footer class="entry-footer">November 25, 2018</footer>
+  <a class="entry-link" aria-label="post link to 算法-查找数组中的前M大的数" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E6%9F%A5%E6%89%BE%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%89%8Dm%E5%A4%A7%E7%9A%84%E6%95%B0/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>算法-分块/索引查找
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>分块/索引查找  思路  前提： 1.块间有序 2.块内可以无序 3.索引中保存块的起始地址，和块内的最大值或者最小值 首先对索引进行折半查找，然后对块内进行顺序查找。  算法复杂度   假设一个n长度的数组分为m块，每块的长度为： n/m, 那么算法的平均复杂度：O(n) = logm&#43;n/m, 算法最坏情况下的复杂度： O(n) = logm &#43; n/m。
+cpp实现 struct block { int bindex; int blen; int bmax; int* belements; }; int Partition(int arr[], int start, int end) { int pivot = arr[start]; int highvac = end; int lowvac = start; int direct = true; //true for right,false for left. start from left  while(lowvac &lt; highvac) { if(direct == true) { if(arr[highvac] &lt;pivot) { arr[lowvac] = arr[highvac]; lowvac&#43;&#43;; direct = false; } else { highvac--; } } else { if(arr[lowvac] &gt; pivot) { arr[highvac] = arr[lowvac]; highvac--; direct = true; } else { lowvac&#43;&#43;; } } } arr[highvac] = pivot; return highvac; } int findXMaxValue(int arr[], int xmax, int start, int end) { int p = 0; int cmax = end - start &#43;1; int len = end; if (xmax &gt;= len&#43;1) { return p; } while(cmax !...</p>
+  </section>
+  <footer class="entry-footer">November 25, 2018</footer>
+  <a class="entry-link" aria-label="post link to 算法-分块/索引查找" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E5%88%86%E5%9D%97-%E7%B4%A2%E5%BC%95%E6%9F%A5%E6%89%BE/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>算法-二分/折半查找
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>二分/折半查找  思路  前提： 数组必须是已经排好序的有序数组。 假设数组为升序排列，把数组一分为二，取中间点mid做比较，如果比mid大, 那么继续在[mid&#43;1,last]中查找，反之 在[first,mid-1]中查找，对子数组继续进行上述操作,直到找到。  算法复杂度   平均算法复杂度为： O(n) = logn；最坏情况的算法复杂度为： O(n) = logn;
+cpp实现 int binaryOrderSearch(int dest_arr[], int search, int array_size) { //assume dest_arr is ascend sorted.  int alen = array_size; int amid = alen/2; int left = 0; int right = alen-1; while(right-left &gt; 0) { amid = (left&#43; right) /2; if (dest_arr[amid] &lt; search) { left = amid&#43;1; } else if (dest_arr[amid] &gt; search) { right = amid-1; } else { return amid; } } return -1; } </p>
+  </section>
+  <footer class="entry-footer">November 25, 2018</footer>
+  <a class="entry-link" aria-label="post link to 算法-二分/折半查找" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86-%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>算法-顺序搜索
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>顺序查找  思路  从数组的开头到结尾,顺序挨个比较查找。  算法复杂度   平均算法复杂度为：O(n)= n; 最坏情况的算法复杂度为：O(n) = n;
+cpp实现 int orderSearch(int dest_arr[],int dest) { int arr_len = sizeof(dest_arr)/sizeof(*dest_arr); for(int i = 0; i &lt;= arr_len; i&#43;&#43;) { if (dest_arr[i] == dest) { return i; } } return -1; } </p>
+  </section>
+  <footer class="entry-footer">November 25, 2018</footer>
+  <a class="entry-link" aria-label="post link to 算法-顺序搜索" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E9%A1%BA%E5%BA%8F%E6%90%9C%E7%B4%A2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>算法-  快速排序
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>快速排序  思路  选定一个pivot, 移动元素使得pivot左右两边的元素，一边大于pivot, 一边小于pivot, 然后 分别对左右两边递归进行同样的操作，最后得到一个有序排列。  复杂度   快速排序的最坏时间复杂度为: O(n) = n^2，但平均复杂度为： O(n) = nlogn
+cpp实现    template &lt;class Type&gt; void Swap(Type *a, Type *b) { Type tmp = *a; *a = *b; *b = tmp; } template &lt;class Type&gt; int Partition(Type arr[], int p , int r) { int i = p, j = r; Type x = arr[p]; while(true) { while(arr[j]&gt; x &amp;&amp; i &lt; j) { j--; } while(arr[i]&lt;= x &amp;&amp; i &lt; j ) { i&#43;&#43;; } if (i == j) break; Swap(&amp;arr[i],&amp;arr[j]); } Swap(&amp;arr[p], &amp;arr[j]); return j; } template&lt;class Type&gt; void QuickSort(Type arr[], int p, int r) { if (p &lt; r) { int q = Partition(arr,p,r); QuickSort(arr,p,q-1); QuickSort(arr,q&#43;1,r); } }   void quicksort(int a[],int left, int right) { int i,j,t,temp; if (left &gt; right) return; temp = a[left]; i = left; j = right; while(i !...</p>
+  </section>
+  <footer class="entry-footer">November 25, 2018</footer>
+  <a class="entry-link" aria-label="post link to 算法-  快速排序" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Mime-一个随机模拟useragent库
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Mime  Mime 是一个随机模拟 useragent 的库。 它可以用来作为反反爬的工具，用来躲过一些 通过 useragent 的反爬手段。
+需求  &gt;= php7.1 https://www.useragentstring.com   Mime 的 useragent 数据来源于 https://www.useragentstring.com
+ 安装 git clone https://github.com/duanqiaobb/Mime.git 使用 1. 随机useragent 生成随机useragent
+&lt;?php include(&#34;Mime/src/autoload.php&#34;); use Mime\UserAgent\UserAgent; $ua = new UserAgent(); var_dump($ua-&gt;random()); 2. 浏览器useragent 生成随机浏览器useragent
+&lt;?php include(&#34;Mime/src/autoload.php&#34;); use Mime\UserAgent\UserAgent; $ua = new UserAgent(); var_dump($ua-&gt;browser()); 3. PC端浏览器useragent 生成随机PC端浏览器useragent
+&lt;?php include(&#34;Mime/src/autoload.php&#34;); use Mime\UserAgent\UserAgent; $ua = new UserAgent(); var_dump($ua-&gt;pc()); 4. 手机端浏览器useragent 生成随机手机端浏览器useragent
+&lt;?php include(&#34;Mime/src/autoload.php&#34;); use Mime\UserAgent\UserAgent; $ua = new UserAgent(); var_dump($ua-&gt;mobile()); 缓存  为了避免每次都需要从 https://www....</p>
+  </section>
+  <footer class="entry-footer">May 16, 2018</footer>
+  <a class="entry-link" aria-label="post link to Mime-一个随机模拟useragent库" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-16-mime-%E4%B8%80%E4%B8%AA%E9%9A%8F%E6%9C%BA%E6%A8%A1%E6%8B%9Fuseragent%E5%BA%93/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>自制爬虫框架－Pider框架快速开始
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>快速使用  项目的基本结构 运行  爬虫 数据处理 示例   基本用法 响应处理 多进程    快速使用 项目的基本结构 //项目根目录 |-- Config //配置文件 |-- LICENSE |-- README.md |-- composer.json |-- composer.lock |-- examples //示例 |-- install.sh //安装脚本 |-- pider -&gt; src/bin/pider //爬虫管理命令工具 |-- piderd -&gt; src/bin/piderd //爬虫分布式管理工具 |-- src //源码 运行 ######爬虫
+./pider spidername.php(你创建的爬虫实例) 数据处理 ./pider --digest digestname.php(你创建的数据处理实例) 示例  创建实例  mkdir spiders //创建爬虫文件夹，里面放置你写的爬虫实例 mkdir digests //创建数据处理文件夹，里面放置你写的数据处理实例 touch spiders/TestSpider.php touch digests/TestDigest....</p>
+  </section>
+  <footer class="entry-footer">May 6, 2018</footer>
+  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架快速开始" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-06-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>自制爬虫框架－Pider框架安装
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p> 安装  需求 安装    安装 需求  PHP &gt;= 7.1 pcntl(可选，多进程需要)  安装 git clone https://github.com/duanqiaobb/pider.git git submodule update --init --recursive //安装composer,如果出现问题，请参考 [composer官方文档](https://getcomposer.org/download/) 进行安装 php -r &#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34; php -r &#34;if (hash_file(&#39;SHA384&#39;, &#39;composer-setup.php&#39;) === &#39;544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34; php composer-setup.php php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34; //安装 cd pider chmod u&#43;x install.sh ./install.sh </p>
+  </section>
+  <footer class="entry-footer">May 4, 2018</footer>
+  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架安装" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="/">« Prev Page</a>
+    <a class="next" href="/page/3/">Next Page »</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

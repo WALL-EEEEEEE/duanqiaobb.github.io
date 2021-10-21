@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>软件工程系列- 详细设计 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="目录概述过程设计工具过程设计中程序复杂度的度量概述详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。  结构化程序设计定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这个程序是结构化的。结构化程序设计的3种基本结构: 顺序、选择、循环。过程设计工具  程序流程图定义: 程序流程图又">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-22-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="软件工程系列- 详细设计" />
+<meta property="og:description" content="目录概述过程设计工具过程设计中程序复杂度的度量概述详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。  结构化程序设计定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这个程序是结构化的。结构化程序设计的3种基本结构: 顺序、选择、循环。过程设计工具  程序流程图定义: 程序流程图又" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2016-06-22-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-06-22T16:27:19&#43;00:00" />
+<meta property="article:modified_time" content="2016-06-22T16:27:19&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="软件工程系列- 详细设计"/>
+<meta name="twitter:description" content="目录概述过程设计工具过程设计中程序复杂度的度量概述详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。  结构化程序设计定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这个程序是结构化的。结构化程序设计的3种基本结构: 顺序、选择、循环。过程设计工具  程序流程图定义: 程序流程图又"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "软件工程系列- 详细设计",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2016-06-22-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "软件工程系列- 详细设计",
+  "name": "软件工程系列- 详细设计",
+  "description": "目录概述过程设计工具过程设计中程序复杂度的度量概述详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。  结构化程序设计定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这个程序是结构化的。结构化程序设计的3种基本结构: 顺序、选择、循环。过程设计工具  程序流程图定义: 程序流程图又",
+  "keywords": [
+    
+  ],
+  "articleBody": "目录\n 概述 过程设计工具 过程设计中程序复杂度的度量   概述 详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。   结构化程序设计\n 定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这 个程序是结构化的。 结构化程序设计的3种基本结构: 顺序、选择、循环。  过程设计工具  程序流程图\n 定义: 程序流程图又称为程序框图，它是使用最广泛的描述过程设计的方法。   盒图\n 定义：盒图又称为N-S图，是一种严格遵循结构程序设计精神的图形工具。   PAD图\n 定义: PAD图又名问题分析图, Problem analysis diagram, PAD图使用二维树形结构的图来表示程序的控制流。   判定表\n 定义: 判定表能够简洁而无歧义的描述复杂的条件组合与应做的动作的对应关系。   判定树\n 定义：判定树是判定表的变种，它也能清晰的表示复杂的条件组合与应做的动作之间的对应关系，同时判定树比 判定表的形式简单，让人很容易看出其含义。   过程设计语言(PDL)\n 定义: 过程设计语言，Process Design Language, 又称为伪码。它具有严格的关键字外部语法，用于定义控制结构和数据 结构。  过程设计中程序复杂度的度量  流图\n 定义： 流图实际上是程序流程图的简化版，它仅仅描绘程序的控制流程，完全不表现对数据的具体操作以及分支和循环 的具体条件。 流图包含3个元素：结点，区域，控制流。其中结点又分为普通结点，和判定结点。  计算环形复杂度的方法：\n环形复杂度，这里用$V(G)$表示;\n$$ V(G) = E - N + 2 = P + 1 = 流图中的区域数 (E\\Rightarrow流图中的边数，N\\Rightarrow流图中的结点数, P\\Rightarrow 流图中的判定结点数) $$\n在程序过程设计中，模块规模 V(G) $\\leq$ 10 为宜。\n",
+  "wordCount" : "69",
+  "inLanguage": "en",
+  "datePublished": "2016-06-22T16:27:19Z",
+  "dateModified": "2016-06-22T16:27:19Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2016-06-22-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      软件工程系列- 详细设计
+    </h1>
+    <div class="post-description">
+      目录概述过程设计工具过程设计中程序复杂度的度量概述详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。  结构化程序设计定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这个程序是结构化的。结构化程序设计的3种基本结构: 顺序、选择、循环。过程设计工具  程序流程图定义: 程序流程图又
+    </div>
+    <div class="post-meta">June 22, 2016
+</div>
+  </header> 
+  <div class="post-content"><p><strong>目录</strong></p>
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a></li>
+<li><a href="#%E8%BF%87%E7%A8%8B%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7">过程设计工具</a></li>
+<li><a href="#%E8%BF%87%E7%A8%8B%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%A8%8B%E5%BA%8F%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%9A%84%E5%BA%A6%E9%87%8F">过程设计中程序复杂度的度量</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="font-color338dd-size3-stylefont-stylebold概述font"><!-- raw HTML omitted -->概述<!-- raw HTML omitted --><a hidden class="anchor" aria-hidden="true" href="#font-color338dd-size3-stylefont-stylebold概述font">#</a></h1>
+<pre><code>详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。
+</code></pre>
+<blockquote>
+<p>结构化程序设计</p>
+</blockquote>
+<pre><code>定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这
+个程序是结构化的。
+
+结构化程序设计的3种基本结构: 顺序、选择、循环。
+</code></pre>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="font-color338dd-size3-stylefont-stylebold过程设计工具font"><!-- raw HTML omitted -->过程设计工具<!-- raw HTML omitted --><a hidden class="anchor" aria-hidden="true" href="#font-color338dd-size3-stylefont-stylebold过程设计工具font">#</a></h1>
+<blockquote>
+<p>程序流程图</p>
+</blockquote>
+<pre><code>定义: 程序流程图又称为程序框图，它是使用最广泛的描述过程设计的方法。
+</code></pre>
+<blockquote>
+<p>盒图</p>
+</blockquote>
+<pre><code>定义：盒图又称为N-S图，是一种严格遵循结构程序设计精神的图形工具。
+</code></pre>
+<blockquote>
+<p>PAD图</p>
+</blockquote>
+<pre><code>定义: PAD图又名问题分析图, Problem analysis diagram, PAD图使用二维树形结构的图来表示程序的控制流。
+</code></pre>
+<blockquote>
+<p>判定表</p>
+</blockquote>
+<pre><code>定义: 判定表能够简洁而无歧义的描述复杂的条件组合与应做的动作的对应关系。
+</code></pre>
+<blockquote>
+<p>判定树</p>
+</blockquote>
+<pre><code>定义：判定树是判定表的变种，它也能清晰的表示复杂的条件组合与应做的动作之间的对应关系，同时判定树比
+判定表的形式简单，让人很容易看出其含义。
+</code></pre>
+<blockquote>
+<p>过程设计语言(PDL)</p>
+</blockquote>
+<pre><code>定义: 过程设计语言，Process Design Language, 又称为伪码。它具有严格的关键字外部语法，用于定义控制结构和数据
+结构。
+</code></pre>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="font-color338dd-size3-stylefont-stylebold过程设计中程序复杂度的度量font"><!-- raw HTML omitted -->过程设计中程序复杂度的度量<!-- raw HTML omitted --><a hidden class="anchor" aria-hidden="true" href="#font-color338dd-size3-stylefont-stylebold过程设计中程序复杂度的度量font">#</a></h1>
+<blockquote>
+<p>流图</p>
+</blockquote>
+<pre><code>定义： 流图实际上是程序流程图的简化版，它仅仅描绘程序的控制流程，完全不表现对数据的具体操作以及分支和循环
+的具体条件。
+
+流图包含3个元素：结点，区域，控制流。其中结点又分为普通结点，和判定结点。 
+</code></pre>
+<p><strong>计算环形复杂度的方法：</strong></p>
+<p>环形复杂度，这里用$V(G)$表示;</p>
+<p>$$
+V(G) = E - N + 2 = P + 1 = 流图中的区域数 (E\Rightarrow流图中的边数，N\Rightarrow流图中的结点数,
+P\Rightarrow 流图中的判定结点数)
+$$</p>
+<p>在程序过程设计中，模块规模 V(G) $\leq$ 10 为宜。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

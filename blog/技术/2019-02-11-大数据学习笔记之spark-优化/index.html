@@ -5,12 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Blogs | 断桥bian的博客</title>
+<title>大数据学习笔记之Spark-优化 | 断桥bian的博客</title>
 <meta name="keywords" content="" />
-<meta name="description" content="Blogs - 断桥bian的博客">
+<meta name="description" content="Spark优化函数传递在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)解决方法：将函数中的必要字段转换成局部变量，然后进行传递。引用《Spark快速大数据分析》...">
 <meta name="author" content="">
-<link rel="canonical" href="/blog/" />
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-%E4%BC%98%E5%8C%96/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,15 +21,16 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.88.1" />
-<link rel="alternate" type="application/rss+xml" href="/blog/index.xml">
-<meta property="og:title" content="Blogs" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/blog/" />
+<meta property="og:title" content="大数据学习笔记之Spark-优化" />
+<meta property="og:description" content="Spark优化函数传递在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)解决方法：将函数中的必要字段转换成局部变量，然后进行传递。引用《Spark快速大数据分析》..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-%E4%BC%98%E5%8C%96/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-02-11T15:54:38&#43;00:00" />
+<meta property="article:modified_time" content="2019-02-11T15:54:38&#43;00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Blogs"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="大数据学习笔记之Spark-优化"/>
+<meta name="twitter:description" content="Spark优化函数传递在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)解决方法：将函数中的必要字段转换成局部变量，然后进行传递。引用《Spark快速大数据分析》..."/>
 
 
 <script type="application/ld+json">
@@ -38,15 +41,44 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "Blogs",
-      "item": "/blog/"
+      "name": "大数据学习笔记之Spark-优化",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-%E4%BC%98%E5%8C%96/"
     }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "大数据学习笔记之Spark-优化",
+  "name": "大数据学习笔记之Spark-优化",
+  "description": "Spark优化函数传递在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)解决方法：将函数中的必要字段转换成局部变量，然后进行传递。引用《Spark快速大数据分析》...",
+  "keywords": [
+    
+  ],
+  "articleBody": "Spark优化 函数传递  在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)   解决方法：  将函数中的必要字段转换成局部变量，然后进行传递。 引用  《Spark快速大数据分析》  ",
+  "wordCount" : "7",
+  "inLanguage": "en",
+  "datePublished": "2019-02-11T15:54:38Z",
+  "dateModified": "2019-02-11T15:54:38Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-%E4%BC%98%E5%8C%96/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -126,45 +158,39 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>Blogs</h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">September 6, 2021</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E7%94%9F%E6%B4%BB/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      大数据学习笔记之Spark-优化
+    </h1>
+    <div class="post-description">
+      Spark优化函数传递在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)解决方法：将函数中的必要字段转换成局部变量，然后进行传递。引用《Spark快速大数据分析》...
+    </div>
+    <div class="post-meta">February 11, 2019
+</div>
+  </header> 
+  <div class="post-content"><h3 id="spark优化">Spark优化<a hidden class="anchor" aria-hidden="true" href="#spark优化">#</a></h3>
+<h4 id="函数传递">函数传递<a hidden class="anchor" aria-hidden="true" href="#函数传递">#</a></h4>
+<ol>
+<li>在<code>spark</code>中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在<code>python</code>中)</li>
+</ol>
+<ul>
+<li>解决方法：</li>
+</ul>
+<pre tabindex="0"><code>将函数中的必要字段转换成局部变量，然后进行传递。
+</code></pre><h4 id="引用">引用<a hidden class="anchor" aria-hidden="true" href="#引用">#</a></h4>
+<ul>
+<li>《Spark快速大数据分析》</li>
+</ul>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">September 6, 2021</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E9%9D%A2%E8%AF%95/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">October 7, 2019</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E6%8A%80%E6%9C%AF/"></a>
+  </div>
+
+  <footer class="post-footer">
+  </footer>
 </article>
     </main>
     

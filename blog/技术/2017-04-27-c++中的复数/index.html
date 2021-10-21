@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>C&#43;&#43;中的复数 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="C&#43;&#43;中的复数   C&#43;&#43;中的复数操作在C语言基础上引进了面向对象的特性，在 C&#43;&#43; 头文件在 complex 中定义了一个 complex 类用来表示复数。同时为了兼容 C 的 complex 类型，也提供了一个 complex.h 的头文件。 不同的是，在 complex.h 头文件中， complex 关键字被废弃，只能使用 _Complex 和 __complex__ 来使用 C风格的复数形">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c&#43;&#43;%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="C&#43;&#43;中的复数" />
+<meta property="og:description" content="C&#43;&#43;中的复数   C&#43;&#43;中的复数操作在C语言基础上引进了面向对象的特性，在 C&#43;&#43; 头文件在 complex 中定义了一个 complex 类用来表示复数。同时为了兼容 C 的 complex 类型，也提供了一个 complex.h 的头文件。 不同的是，在 complex.h 头文件中， complex 关键字被废弃，只能使用 _Complex 和 __complex__ 来使用 C风格的复数形" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c&#43;&#43;%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-04-27T19:30:33&#43;00:00" />
+<meta property="article:modified_time" content="2017-04-27T19:30:33&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C&#43;&#43;中的复数"/>
+<meta name="twitter:description" content="C&#43;&#43;中的复数   C&#43;&#43;中的复数操作在C语言基础上引进了面向对象的特性，在 C&#43;&#43; 头文件在 complex 中定义了一个 complex 类用来表示复数。同时为了兼容 C 的 complex 类型，也提供了一个 complex.h 的头文件。 不同的是，在 complex.h 头文件中， complex 关键字被废弃，只能使用 _Complex 和 __complex__ 来使用 C风格的复数形"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "C++中的复数",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c++%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C++中的复数",
+  "name": "C\u002b\u002b中的复数",
+  "description": "C++中的复数   C++中的复数操作在C语言基础上引进了面向对象的特性，在 C++ 头文件在 complex 中定义了一个 complex 类用来表示复数。同时为了兼容 C 的 complex 类型，也提供了一个 complex.h 的头文件。 不同的是，在 complex.h 头文件中， complex 关键字被废弃，只能使用 _Complex 和 __complex__ 来使用 C风格的复数形",
+  "keywords": [
+    
+  ],
+  "articleBody": "C++中的复数  C++中的复数操作在C语言基础上引进了面向对象的特性，在 C++ 头文件在 complex 中定义了一个 complex 类用来表示复数。同时为了兼容 C 的 complex 类型，也提供了一个 complex.h 的头文件。 不同的是，在 complex.h 头文件中， complex 关键字被废弃，只能使用 _Complex 和 __complex__ 来使用 C风格的复数形式。\n 复数的定义   在C++中可以使用两种方式定义一个复数，一个使用C风格 _Complex 和 __complex__ ，一个是使用 complex 类。\n#include  #include  #include  using namespace std; int main(int argc, char *argv[]) { o complexdouble mycomplex(2.000,2); _Complex double mycomplex2 = 2.000 + 3I; __complex__ double mycomplex3 = 2.000 + 4I; cout  mycomplex  endl; cout  \"(\"  creal(mycomplex2)  \",\"  cimag(mycomplex2)  \")\"  endl; cout  \"(\"  creal(mycomplex3)  \",\"  cimag(mycomplex3)  \")\"  endl; return 0; }  复数的基本操作函数   在C++中既可以使用 C 风格的相关函数处理 C 风格的复数形式。   函数 功能     creal 获取复数的实部   cimag 获取复数的虚部   conj 获取复数的共轭   carg 获取,复平面上穿过原点和复数在复平面表示的点,的直线和实数轴之间的夹角   cproj 返回复数在黎曼球面上的投影       方法 功能     real 获取复数的实部   imag 获取复数的虚部   abs 获取复数的绝对值   arg 获取,复平面上穿过原点和复数在复平面表示的点,的直线和实数轴之间的夹角   norm 获取复数的范数   conj 获取复数的共轭   polar 获取极坐标对应的复数   proj 返回复数在黎曼球面上的投影    using namespace std;\nint main(int argc, char *argv[]) { complexmycomplex(2.000,2); _Complex double mycomplex2 = 2.000 + 3I;\ndouble real_mycomplex = mycomplex.real(); double imag_mycomplex = mycomplex.imag(); double abs_mycomplex = abs(mycomplex); double norm_mycomplex = norm(mycomplex);\ndouble real_mycomplex2 = creal(mycomplex2); double imag_mycomplex2 = cimag(mycomplex2); double abs_mycomplex2 = cabs(mycomplex2);\ncout « “real part of mycomplex: \" « real_mycomplex « endl; cout « “image part of mycomplex: \" « imag_mycomplex « endl; cout « “abs of mycomplex: \" « abs_mycomplex « endl; cout « “norm of mycomplex: \" « norm_mycomplex « endl;\ncout « “real part of mycomplex2: \" « real_mycomplex2 « endl; cout « “image part of mycomplex2: \" « imag_mycomplex2 « endl; cout « “abs of mycomplex2: \" « abs_mycomplex2 « endl; return 0; }\n real part of mycomplex: 2 image part of mycomplex: 2 abs of mycomplex: 2.82843 norm of mycomplex: 8 real part of mycomplex2: 2 image part of mycomplex2: 3 abs of mycomplex2: 3.60555 - 复数的数值操作 ```C++ #include  #include  #include  using namespace std; int main(int argc, char *argv[]) { complex mycomplex(2.000,2); complex mycomplex3(3.000,4); _Complex double mycomplex2 = 2.000 + 3I; _Complex double mycomplex4 = 2.000 + 5I; _Complex double plus = mycomplex2 + mycomplex4; complex plus2 = mycomplex+mycomplex3; cout (4,8) (5,6)  ",
+  "wordCount" : "358",
+  "inLanguage": "en",
+  "datePublished": "2017-04-27T19:30:33Z",
+  "dateModified": "2017-04-27T19:30:33Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c++%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      C&#43;&#43;中的复数
+    </h1>
+    <div class="post-description">
+      C&#43;&#43;中的复数   C&#43;&#43;中的复数操作在C语言基础上引进了面向对象的特性，在 C&#43;&#43; 头文件在 complex 中定义了一个 complex 类用来表示复数。同时为了兼容 C 的 complex 类型，也提供了一个 complex.h 的头文件。 不同的是，在 complex.h 头文件中， complex 关键字被废弃，只能使用 _Complex 和 __complex__ 来使用 C风格的复数形
+    </div>
+    <div class="post-meta">April 27, 2017
+</div>
+  </header> 
+  <div class="post-content"><h2 id="c中的复数">C++中的复数<a hidden class="anchor" aria-hidden="true" href="#c中的复数">#</a></h2>
+<p>   C++中的复数操作在C语言基础上引进了面向对象的特性，在 <code>C++</code> 头文件在 <code>complex</code> 中定义了一个 <code>complex</code> 类用来表示复数。同时为了兼容 <code>C</code> 的 <code>complex</code> 类型，也提供了一个 <code>complex.h</code> 的头文件。 不同的是，在 <code>complex.h</code> 头文件中， <code>complex</code> 关键字被废弃，只能使用 <code>_Complex</code> 和 <code>__complex__</code> 来使用 C风格的复数形式。</p>
+<ul>
+<li>复数的定义</li>
+</ul>
+<p>   在C++中可以使用两种方式定义一个复数，一个使用C风格 <code>_Complex</code> 和 <code>__complex__</code> ，一个是使用 <code>complex</code> 类。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;complex&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;complex.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+  <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+  {
+o    complex<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> mycomplex(<span style="color:#ae81ff">2.000</span>,<span style="color:#ae81ff">2</span>);
+    _Complex <span style="color:#66d9ef">double</span>  mycomplex2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.000</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>I;
+    __complex__ <span style="color:#66d9ef">double</span> mycomplex3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.000</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">4</span>I;
+
+    cout <span style="color:#f92672">&lt;&lt;</span> mycomplex <span style="color:#f92672">&lt;&lt;</span> endl;
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;(&#34;</span> <span style="color:#f92672">&lt;&lt;</span> creal(mycomplex2) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">&lt;&lt;</span> cimag(mycomplex2) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;)&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;(&#34;</span> <span style="color:#f92672">&lt;&lt;</span> creal(mycomplex3) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">&lt;&lt;</span> cimag(mycomplex3) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;)&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  }
+</code></pre></div><ul>
+<li>复数的基本操作函数</li>
+</ul>
+<p>   在C++中既可以使用 <code>C</code> 风格的相关函数处理 <code>C</code> 风格的复数形式。<!-- raw HTML omitted --></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>creal</td>
+<td>获取复数的实部</td>
+</tr>
+<tr>
+<td>cimag</td>
+<td>获取复数的虚部</td>
+</tr>
+<tr>
+<td>conj</td>
+<td>获取复数的共轭</td>
+</tr>
+<tr>
+<td>carg</td>
+<td>获取,复平面上穿过原点和复数在复平面表示的点,的直线和实数轴之间的夹角</td>
+</tr>
+<tr>
+<td>cproj</td>
+<td>返回复数在黎曼球面上的投影</td>
+</tr>
+</tbody>
+</table>
+<!-- raw HTML omitted -->
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>real</td>
+<td>获取复数的实部</td>
+</tr>
+<tr>
+<td>imag</td>
+<td>获取复数的虚部</td>
+</tr>
+<tr>
+<td>abs</td>
+<td>获取复数的绝对值</td>
+</tr>
+<tr>
+<td>arg</td>
+<td>获取,复平面上穿过原点和复数在复平面表示的点,的直线和实数轴之间的夹角</td>
+</tr>
+<tr>
+<td>norm</td>
+<td>获取复数的范数</td>
+</tr>
+<tr>
+<td>conj</td>
+<td>获取复数的共轭</td>
+</tr>
+<tr>
+<td>polar</td>
+<td>获取极坐标对应的复数</td>
+</tr>
+<tr>
+<td>proj</td>
+<td>返回复数在黎曼球面上的投影</td>
+</tr>
+</tbody>
+</table>
+<!-- raw HTML omitted -->
+<p>using namespace std;</p>
+<p>int main(int argc, char *argv[])
+{
+complex<!-- raw HTML omitted --> mycomplex(2.000,2);
+_Complex double  mycomplex2 = 2.000 + 3I;</p>
+<p>double real_mycomplex = mycomplex.real();
+double imag_mycomplex = mycomplex.imag();
+double abs_mycomplex = abs(mycomplex);
+double norm_mycomplex = norm(mycomplex);</p>
+<p>double real_mycomplex2 =  creal(mycomplex2);
+double imag_mycomplex2 = cimag(mycomplex2);
+double abs_mycomplex2 =  cabs(mycomplex2);</p>
+<p>cout &laquo; &ldquo;real part of mycomplex: &quot; &laquo; real_mycomplex &laquo; endl;
+cout &laquo; &ldquo;image part of mycomplex: &quot; &laquo; imag_mycomplex &laquo; endl;
+cout &laquo; &ldquo;abs of mycomplex: &quot; &laquo; abs_mycomplex &laquo; endl;
+cout &laquo; &ldquo;norm of mycomplex: &quot; &laquo; norm_mycomplex &laquo; endl;</p>
+<p>cout &laquo; &ldquo;real part of mycomplex2: &quot; &laquo; real_mycomplex2 &laquo; endl;
+cout &laquo; &ldquo;image part of mycomplex2: &quot; &laquo; imag_mycomplex2 &laquo; endl;
+cout &laquo; &ldquo;abs of mycomplex2: &quot; &laquo; abs_mycomplex2 &laquo; endl;
+return 0;
+}</p>
+<pre tabindex="0"><code>
+    real part of mycomplex: 2
+    image part of mycomplex: 2
+    abs of mycomplex: 2.82843
+    norm of mycomplex: 8
+    real part of mycomplex2: 2
+    image part of mycomplex2: 3
+    abs of mycomplex2: 3.60555
+
+-   复数的数值操作
+
+```C++
+#include &lt;iostream&gt;
+#include &lt;complex.h&gt;
+#include &lt;complex&gt;
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  complex&lt;double&gt; mycomplex(2.000,2);
+  complex&lt;double&gt; mycomplex3(3.000,4);
+  _Complex double  mycomplex2 = 2.000 + 3I;
+  _Complex double  mycomplex4 = 2.000 + 5I;
+
+  _Complex double plus = mycomplex2 + mycomplex4;
+  complex&lt;double&gt; plus2 = mycomplex+mycomplex3;
+
+  cout &lt;&lt; &quot;(&quot; &lt;&lt; creal(plus) &lt;&lt; &quot;,&quot; &lt;&lt; cimag(plus) &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+  cout &lt;&lt; plus2 &lt;&lt; endl;
+  return 0;
+}
+</code></pre><pre><code>(4,8)
+(5,6)
+</code></pre>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

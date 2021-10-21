@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E8%A7%A3%E5%86%B3matlab%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99could-not-start-excel-server-for-import%E9%97%AE%E9%A2%98/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题" />
+<meta property="og:description" content="今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E8%A7%A3%E5%86%B3matlab%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99could-not-start-excel-server-for-import%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-06-20T19:28:16&#43;00:00" />
+<meta property="article:modified_time" content="2016-06-20T19:28:16&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题"/>
+<meta name="twitter:description" content="今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E8%A7%A3%E5%86%B3matlab%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99could-not-start-excel-server-for-import%E9%97%AE%E9%A2%98/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题",
+  "name": "数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题",
+  "description": "今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版",
+  "keywords": [
+    
+  ],
+  "articleBody": " 今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。\n 情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版本,而Excel则是2016版本，两者不兼容。解决办法很粗暴: 就是讲Excel-2016版本卸载，然后重新装office-2007版本，然后程序就运行畅通无阻了。情况二： Excel软件设置问题MathLab是通过调用Windows下的Dom Server来进行Excel文件读取的，所以确定Excel软件的是允许和其他软件进行数据交换的。解决方法: 打开excel-excel选项-高级-最下面的常规- “忽略使用动态数据交换（DDE）的其他应用程序”。 查看是否勾选这个选项，如果勾选这个选项，就把他取消勾选。情况二： Excel软件权限问题有时候可能是因为执行Excel需要特殊的权限才导致出错。解决方法:\n找到Excel软件的快捷方式，右键点击属性-选择兼容性-取消勾选\"以管理员的身份运行该软件\"\n",
+  "wordCount" : "18",
+  "inLanguage": "en",
+  "datePublished": "2016-06-20T19:28:16Z",
+  "dateModified": "2016-06-20T19:28:16Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E8%A7%A3%E5%86%B3matlab%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99could-not-start-excel-server-for-import%E9%97%AE%E9%A2%98/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题
+    </h1>
+    <div class="post-description">
+      今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版
+    </div>
+    <div class="post-meta">June 20, 2016
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p>今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。</p>
+</blockquote>
+<p><!-- raw HTML omitted --><strong>情况一： 软件版本兼容问题</strong><!-- raw HTML omitted --></p>
+<p>首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版本,而Excel则是2016版本，两者不兼容。<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><strong>解决办法很粗暴:</strong>  就是讲Excel-2016版本卸载，然后重新装office-2007版本，然后程序就运行畅通无阻了。<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><strong>情况二： Excel软件设置问题</strong><!-- raw HTML omitted --></p>
+<p>MathLab是通过调用Windows下的Dom Server来进行Excel文件读取的，所以确定Excel软件的是允许和其他软件进行数据交换的。<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><strong>解决方法:</strong> 打开excel-&gt;excel选项-&gt;高级-&gt;最下面的常规-&gt; &ldquo;忽略使用动态数据交换（DDE）的其他应用程序&rdquo;。 查看是否勾选这个选项，如果勾选这个选项，就把他取消勾选。<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><strong>情况二： Excel软件权限问题</strong><!-- raw HTML omitted --></p>
+<p>有时候可能是因为执行Excel需要特殊的权限才导致出错。<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><strong>解决方法:</strong></p>
+<p>找到Excel软件的快捷方式，右键点击属性-&gt;选择兼容性-&gt;取消勾选&quot;以管理员的身份运行该软件&quot;</p>
+<!-- raw HTML omitted -->
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

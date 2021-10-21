@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Makefile快速入门 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。 Makefile的基本语法结构   make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="Makefile快速入门" />
+<meta property="og:description" content="Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。 Makefile的基本语法结构   make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-04-23T13:59:34&#43;00:00" />
+<meta property="article:modified_time" content="2017-04-23T13:59:34&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Makefile快速入门"/>
+<meta name="twitter:description" content="Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。 Makefile的基本语法结构   make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Makefile快速入门",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Makefile快速入门",
+  "name": "Makefile快速入门",
+  "description": "Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。 Makefile的基本语法结构   make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则",
+  "keywords": [
+    
+  ],
+  "articleBody": " Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。\n make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则的语法大概是这样的:\ntarget(规则生成的目标文件或者make执行的规则命令名) … : prerequisitse(规则的输入文件，或源文件) … recipe(make执行的规则命令) … …  recipe（规则命令）必须有一个制表符(TAB)。并且如果一旦任何一个源文件变化了，规则命令都会重新执行，否则不会。 make 检测文件的是否修改是通过文件的上次修改时间来确定的\nIDIR=../include CC=gcc CFLAGS=-I$(IDIR) ODIR=obj LDIR=../lib LIBS=-Im _DEPS=hellomake.h DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) _OBJ=hellomake.o hellofunc.o OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ)) $(ODIR)/%.o:%.c $(DEPS) $(CC) -c -o $@ $$(CFLAGS) hellomake: $(OBJ) $(CC) -o $@ $^ ${CFLAGS} $(LIBS) .PHONY: clean clean: rm -f $(ODIR)/*.o *~core $(INCDIR)/*~ 文件结构\n├── include │ └ hellomake.h ├── lib └── src ├── hellofunc.c ├── hellomake ├── hellomake.c ├── makefile └── obj ├── hellofunc.o └── hellomake.o  这个makefile文件会做如下工作\n 将 src 目录下的 hellofunc.c 和 hellomake.c 的源文件编译到 obj 目录下,分别生成 hellofunc.o 和 hellmake.o 目标文件 利用 obj 目录下的 hellofunc.o 和 hellomake.o 的目标文件和 include 目录下的 hellomake.h 文件，以及 math 库链接在 src 目录下生成 hellomake 可执行程序   等价于运行以下程序\ngcc -c -o obj/hellofunc.o hellofunc.c -I ./include gcc -c -o obj/hellomake.o hellomake.c -I ./include gcc -o hellomake hellomake.o hellofunc.o -I ./include -Im  makefile 中的规则分为模式规则和标准规则。标准规则是make已经定义好的规则，比如 all 、 install , 我们下面会介绍，标准规则可以不提供源文件。 比如:\nclean: rm -f $(ODIR)/*.o *~core $(INCDIR)/*~  模式规则，通常包含通配符。模式规则里面必须包含源文件。 比如:\n$(ODIR)/%.o:%.c $(DEPS) $(CC) -c -o $@ $$(CFLAGS) hellomake: $(OBJ) $(CC) -o $@ $^ ${CFLAGS} $(LIBS)  makefile 中定义了许多标准规则，我们可以直接在 makefile 中使用。\n all   all 会编译整个程序，同 make all 命令。在 makefile 中一个构建是由多个规则节点构成。 all 是一个伪规则，它本质上并不做任何工作。它只表示，它会依赖文件或子规则来 完成整个程序的构建工作。我们既可以为 all 指定子规则，也可以忽略。下面两个例子说明这两种用法的区别。\nall: execuatble1 execuatlbe2  上面的规则表示， all 的整个构建任务是生成 executable1 和 executable2 两个可执行程序。也可整个构建任务是依赖 executable1 和 executable2 另个文件的。\n对 executable1.cpp 和 executable2.cpp 分别采用如下规则:\n$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $  这里 all 并没有指定子规则生成 executable1 和 executable2 文件。那么 make 将会调用默认的规则来生成这两个文件。\n**我们也可以指定相应的子规则来生成相应的依赖文件。\nall: execuatble1 execuatlbe2 executable1: executable1.cpp $(CC) $(CFLAGS) $(LDFLAGS) -o ./bin/$@ $executable2: executable2.cpp $(CC) $(CFLAGS) $(LDFLAGS) -o ./bin/$@ $ 这里我们指定了相应子规则来生成相应的可执行文件。\n一般 make 只会执行生成一个可执行文件，然后就会停止， 我们通常可以将 all 作为第一个规则，用它来为多个源文件分别生成多个可执行文件。\nInterviewProblems: InterviewProblems.cpp $(CC) $(LDFLAGS) -o $(BINDIR)$@ $^ InterviewProblems_claimed_correct: InterviewProblems_claimed_correct.cpp $(CC) $(LDFLAGS) -o $(BINDIR)$@ $^  这里, make 只会生成 InterviewProblems 后就停止。\nCC=g++ BINDIR=./bin/ LDFLAGS=-std=c++11 OBJ=InterviewProblems.cpp InterviewProblems_claimed_correct.cpp EXECUTABLE=InterviewProbles InterviewProblems_claimed_correct all: InterviewProblems InterviewProblems_claimed_correct InterviewProblems: InterviewProblems.cpp $(CC) $(LDFLAGS) -o $(BINDIR)$@ $^ InterviewProblems_claimed_correct: InterviewProblems_claimed_correct.cpp $(CC) $(LDFLAGS) -o $(BINDIR)$@ $^ 文件目录结构\n├── bin │ ├── InterviewProblems │ └── InterviewProblems_claimed_correct ├── InterviewProblems_claimed_correct.cpp ├── InterviewProblems.cpp ├── makefile  该 makefile 分别将 InterviewProblems.cpp 和 InterviewProbles_claimed_correct.cpp 编译成 bin 目录下的 InterviewProblems 和 InterviewProblems_claimed_correct 可执行文件。\n",
+  "wordCount" : "321",
+  "inLanguage": "en",
+  "datePublished": "2017-04-23T13:59:34Z",
+  "dateModified": "2017-04-23T13:59:34Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Makefile快速入门
+    </h1>
+    <div class="post-description">
+      Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。 Makefile的基本语法结构   make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则
+    </div>
+    <div class="post-meta">April 23, 2017
+</div>
+  </header> 
+  <div class="post-content"><p>   Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。</p>
+<!-- raw HTML omitted -->
+<p>   make主要是通过默认的 <code>Makefile</code> 或 <code>makefile</code> 的配置文件(下文统一称 <code>makefile</code> )中的规则来构建项目的。 <code>makefile</code> 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则的语法大概是这样的:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#a6e22e">target(规则生成的目标文件或者make执行的规则命令名) … </span><span style="color:#f92672">:</span> prerequisitse(规则的输入文件，或源文件) …
+	recipe<span style="color:#f92672">(</span>make执行的规则命令<span style="color:#f92672">)</span>
+	…
+	…
+</code></pre></div><p>   recipe（规则命令）必须有一个制表符(TAB)。并且如果一旦任何一个源文件变化了，规则命令都会重新执行，否则不会。 <code>make</code> 检测文件的是否修改是通过文件的上次修改时间来确定的</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile">IDIR<span style="color:#f92672">=</span>../include  
+CC<span style="color:#f92672">=</span>gcc     
+CFLAGS<span style="color:#f92672">=</span>-I<span style="color:#66d9ef">$(</span>IDIR<span style="color:#66d9ef">)</span> 
+ODIR<span style="color:#f92672">=</span>obj 
+LDIR<span style="color:#f92672">=</span>../lib
+LIBS<span style="color:#f92672">=</span>-Im
+_DEPS<span style="color:#f92672">=</span>hellomake.h
+DEPS <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>patsubst %,<span style="color:#66d9ef">$(</span>IDIR<span style="color:#66d9ef">)</span>/%,<span style="color:#66d9ef">$(</span>_DEPS<span style="color:#66d9ef">))</span>
+
+_OBJ<span style="color:#f92672">=</span>hellomake.o hellofunc.o
+OBJ<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>patsubst %,<span style="color:#66d9ef">$(</span>ODIR<span style="color:#66d9ef">)</span>/%,<span style="color:#66d9ef">$(</span>_OBJ<span style="color:#66d9ef">))</span>
+
+<span style="color:#a6e22e">$(ODIR)/%.o</span><span style="color:#f92672">:</span>%.c <span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">)</span>
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> -c -o $@ $&lt; <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span>
+
+<span style="color:#a6e22e">hellomake</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">$(</span>OBJ<span style="color:#66d9ef">)</span>
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> -o $@ $^ <span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span> <span style="color:#66d9ef">$(</span>LIBS<span style="color:#66d9ef">)</span>
+
+
+<span style="color:#a6e22e">.PHONY</span><span style="color:#f92672">:</span> clean
+
+
+<span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
+	rm -f <span style="color:#66d9ef">$(</span>ODIR<span style="color:#66d9ef">)</span>/*.o *~core <span style="color:#66d9ef">$(</span>INCDIR<span style="color:#66d9ef">)</span>/*~
+</code></pre></div><p><code>文件结构</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">├── include
+│   └ hellomake.h
+├── lib
+└── src
+    ├── hellofunc.c
+    ├── hellomake
+    ├── hellomake.c
+    ├── makefile
+    └── obj
+	├── hellofunc.o
+	└── hellomake.o
+</code></pre></div><p>   这个makefile文件会做如下工作</p>
+<ol>
+<li>将 <code>src</code> 目录下的 <code>hellofunc.c</code> 和 <code>hellomake.c</code> 的源文件编译到 <code>obj</code> 目录下,分别生成 <code>hellofunc.o</code> 和 <code>hellmake.o</code> 目标文件</li>
+<li>利用 <code>obj</code> 目录下的 <code>hellofunc.o</code> 和 <code>hellomake.o</code> 的目标文件和 <code>include</code> 目录下的 <code>hellomake.h</code> 文件，以及 <code>math</code> 库链接在 <code>src</code> 目录下生成 <code>hellomake</code> 可执行程序</li>
+</ol>
+<p>   等价于运行以下程序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gcc -c -o obj/hellofunc.o  hellofunc.c -I ./include
+gcc -c -o obj/hellomake.o  hellomake.c -I ./include
+gcc -o hellomake hellomake.o hellofunc.o  -I ./include -Im
+</code></pre></div><!-- raw HTML omitted -->
+<p>   <code>makefile</code> 中的规则分为模式规则和标准规则。标准规则是make已经定义好的规则，比如 <code>all</code> 、 <code>install</code> , 我们下面会介绍，标准规则可以不提供源文件。 比如:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
+	rm -f <span style="color:#66d9ef">$(</span>ODIR<span style="color:#66d9ef">)</span>/*.o *~core <span style="color:#66d9ef">$(</span>INCDIR<span style="color:#66d9ef">)</span>/*~
+</code></pre></div><p>   模式规则，通常包含通配符。模式规则里面必须包含源文件。 比如:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">$(ODIR)/%.o</span><span style="color:#f92672">:</span>%.c <span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">)</span>
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> -c -o $@ $&lt; <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span>
+
+<span style="color:#a6e22e">hellomake</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">$(</span>OBJ<span style="color:#66d9ef">)</span>
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> -o $@ $^ <span style="color:#e6db74">${</span>CFLAGS<span style="color:#e6db74">}</span> <span style="color:#66d9ef">$(</span>LIBS<span style="color:#66d9ef">)</span>
+</code></pre></div><!-- raw HTML omitted -->
+<p>   <code>makefile</code> 中定义了许多标准规则，我们可以直接在 <code>makefile</code> 中使用。</p>
+<ul>
+<li><strong>all</strong></li>
+</ul>
+<p>   <code>all</code> 会编译整个程序，同 <code>make all</code> 命令。在 <code>makefile</code> 中一个构建是由多个规则节点构成。 <code>all</code> 是一个伪规则，它本质上并不做任何工作。它只表示，它会依赖文件或子规则来 完成整个程序的构建工作。我们既可以为 <code>all</code> 指定子规则，也可以忽略。下面两个例子说明这两种用法的区别。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span> execuatble1 execuatlbe2
+</code></pre></div><p>   上面的规则表示， <code>all</code> 的整个构建任务是生成 <code>executable1</code> 和 <code>executable2</code> 两个可执行程序。也可整个构建任务是依赖 <code>executable1</code> 和 <code>executable2</code> 另个文件的。</p>
+<p><strong><strong>对 <code>executable1.cpp</code> 和 <code>executable2.cpp</code> 分别采用如下规则:</strong></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span> <span style="color:#960050;background-color:#1e0010">-o</span> <span style="color:#66d9ef">$@</span> <span style="color:#66d9ef">$&lt;</span>
+</code></pre></div><p>   这里 <code>all</code> 并没有指定子规则生成 <code>executable1</code> 和 <code>executable2</code> 文件。那么 <code>make</code> 将会调用默认的规则来生成这两个文件。</p>
+<p>**我们也可以指定相应的子规则来生成相应的依赖文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span> execuatble1 execuatlbe2
+<span style="color:#a6e22e">executable1</span><span style="color:#f92672">:</span> executable1.cpp
+   <span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span> -o  ./bin/$@  $&lt;
+<span style="color:#a6e22e">executable2</span><span style="color:#f92672">:</span> executable2.cpp
+   <span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span> -o  ./bin/$@  $&lt;
+</code></pre></div><p>   这里我们指定了相应子规则来生成相应的可执行文件。</p>
+<p>一般 <code>make</code> 只会执行生成一个可执行文件，然后就会停止， 我们通常可以将 <code>all</code> 作为第一个规则，用它来为多个源文件分别生成多个可执行文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make"><span style="color:#a6e22e">InterviewProblems</span><span style="color:#f92672">:</span> InterviewProblems.cpp
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span> -o <span style="color:#66d9ef">$(</span>BINDIR<span style="color:#66d9ef">)</span>$@  $^
+<span style="color:#a6e22e">InterviewProblems_claimed_correct</span><span style="color:#f92672">:</span> InterviewProblems_claimed_correct.cpp
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span> -o <span style="color:#66d9ef">$(</span>BINDIR<span style="color:#66d9ef">)</span>$@  $^
+</code></pre></div><p>   这里, <code>make</code> 只会生成 <code>InterviewProblems</code> 后就停止。</p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-make" data-lang="make">CC<span style="color:#f92672">=</span>g++
+BINDIR<span style="color:#f92672">=</span>./bin/
+LDFLAGS<span style="color:#f92672">=</span>-std<span style="color:#f92672">=</span>c++11
+OBJ<span style="color:#f92672">=</span>InterviewProblems.cpp InterviewProblems_claimed_correct.cpp
+EXECUTABLE<span style="color:#f92672">=</span>InterviewProbles InterviewProblems_claimed_correct
+
+
+<span style="color:#a6e22e">all</span><span style="color:#f92672">:</span>  InterviewProblems  InterviewProblems_claimed_correct
+
+<span style="color:#a6e22e">InterviewProblems</span><span style="color:#f92672">:</span> InterviewProblems.cpp
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span> -o <span style="color:#66d9ef">$(</span>BINDIR<span style="color:#66d9ef">)</span>$@  $^
+<span style="color:#a6e22e">InterviewProblems_claimed_correct</span><span style="color:#f92672">:</span> InterviewProblems_claimed_correct.cpp
+	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span> -o <span style="color:#66d9ef">$(</span>BINDIR<span style="color:#66d9ef">)</span>$@  $^
+</code></pre></div><p><code>文件目录结构</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">├── bin
+│   ├── InterviewProblems
+│   └── InterviewProblems_claimed_correct
+├── InterviewProblems_claimed_correct.cpp
+├── InterviewProblems.cpp
+├── makefile
+</code></pre></div><p>   该 <code>makefile</code> 分别将 <code>InterviewProblems.cpp</code> 和 <code>InterviewProbles_claimed_correct.cpp</code> 编译成 <code>bin</code> 目录下的 <code>InterviewProblems</code> 和 <code>InterviewProblems_claimed_correct</code> 可执行文件。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

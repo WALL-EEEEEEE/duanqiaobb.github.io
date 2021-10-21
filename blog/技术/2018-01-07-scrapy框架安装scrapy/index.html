@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Scrapy框架——安装Scrapy | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Scrapy框架—— 安装Scrapy 需求配置安装sqlite依赖库编译python3.6编译Twisted安装Scrapy测试Scrapy是否成功安装Scrapy框架—— 安装Scrapy   Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。本文针在python3.6的环境下来安装scra">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="Scrapy框架——安装Scrapy" />
+<meta property="og:description" content="Scrapy框架—— 安装Scrapy 需求配置安装sqlite依赖库编译python3.6编译Twisted安装Scrapy测试Scrapy是否成功安装Scrapy框架—— 安装Scrapy   Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。本文针在python3.6的环境下来安装scra" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-01-07T19:44:00&#43;00:00" />
+<meta property="article:modified_time" content="2018-01-07T19:44:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scrapy框架——安装Scrapy"/>
+<meta name="twitter:description" content="Scrapy框架—— 安装Scrapy 需求配置安装sqlite依赖库编译python3.6编译Twisted安装Scrapy测试Scrapy是否成功安装Scrapy框架—— 安装Scrapy   Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。本文针在python3.6的环境下来安装scra"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Scrapy框架——安装Scrapy",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Scrapy框架——安装Scrapy",
+  "name": "Scrapy框架——安装Scrapy",
+  "description": "Scrapy框架—— 安装Scrapy 需求配置安装sqlite依赖库编译python3.6编译Twisted安装Scrapy测试Scrapy是否成功安装Scrapy框架—— 安装Scrapy   Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。本文针在python3.6的环境下来安装scra",
+  "keywords": [
+    
+  ],
+  "articleBody": " Scrapy框架—— 安装Scrapy  需求配置  安装sqlite依赖库 编译python3.6 编译Twisted   安装Scrapy 测试Scrapy是否成功安装    Scrapy框架—— 安装Scrapy  Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。\n本文针在python3.6的环境下来安装scrapy 需求配置  sqlite依赖库(centos下为sqlite-devel包)   scrapy 框架的正常运行，你的 python3.6 版本需要编译支持 sqlite ,\n  python3.6\n  Twisted\n   scrapy 的异步功能实现,需要 Twisted 的支持。 目前 scrapy 的最新版本需要 Twisted13.0 版本, 而 pip3.6 ， 所以我们需要从源码编译。\n安装sqlite依赖库  如果你的 python3.6 已经编译支持了 sqlite ,可以跳过这个步骤。\n  下载sqlite库\nyum install sqlite-devel   编译python3.6   下载python3.6源码\ncd /tmp curl -O Python-3.6.4.tgz https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz   编译python3.6\ntar xvvf Python-3.6.4 cd Python-3.6.4 ./configure make \u0026\u0026 make install   编译Twisted   下载Twisted源码\ncd /tmp git clone https://github.com/twisted/twisted.git   编译Twisted\ncd twisted/ python3.6 setup.py install   安装Scrapy pip3 install scrapy 测试Scrapy是否正常工作  这里我们简单的抓一下京东首页的分类列表来测试一下 scrapy 是否正常工作。\nscrapy genspider example www.jd.com //该命令会在当前目录下生成一个example.py文件 //example.py import scrapy class ExampleSpider(scrapy.Spider): name = 'example' allowed_domains = ['www.jd.com'] start_urls = ['http://www.jd.com/'] def parse(self, response): category = response.xpath('//div[contains(@class,\"navitems\")]/ul/li/a/text()').extract(); for cate in category: yield {'cate': cate} pass scrapy runspider example.py -L INFO -o category.json //该命令会运行example.py爬虫脚本，然后将抓取结果保存到category.json中 //category.json [ {\"cate\": \"\\u79d2\\u6740\"}, {\"cate\": \"\\u4f18\\u60e0\\u5238\"}, {\"cate\": \"PLUS\\u4f1a\\u5458\"}, {\"cate\": \"\\u95ea\\u8d2d\"}, {\"cate\": \"\\u62cd\\u5356\"}, {\"cate\": \"\\u4eac\\u4e1c\\u670d\\u9970\"}, {\"cate\": \"\\u4eac\\u4e1c\\u8d85\\u5e02\"}, {\"cate\": \"\\u751f\\u9c9c\"}, {\"cate\": \"\\u5168\\u7403\\u8d2d\"}, {\"cate\": \"\\u4eac\\u4e1c\\u91d1\\u878d\"} ] ",
+  "wordCount" : "151",
+  "inLanguage": "en",
+  "datePublished": "2018-01-07T19:44:00Z",
+  "dateModified": "2018-01-07T19:44:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Scrapy框架——安装Scrapy
+    </h1>
+    <div class="post-description">
+      Scrapy框架—— 安装Scrapy 需求配置安装sqlite依赖库编译python3.6编译Twisted安装Scrapy测试Scrapy是否成功安装Scrapy框架—— 安装Scrapy   Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。本文针在python3.6的环境下来安装scra
+    </div>
+    <div class="post-meta">January 7, 2018
+</div>
+  </header> 
+  <div class="post-content"><ul>
+<li><a href="#org88ed2e6">Scrapy框架—— 安装Scrapy</a>
+<ul>
+<li><a href="#orge4da8aa">需求配置</a>
+<ul>
+<li><a href="#org1cb4355">安装sqlite依赖库</a></li>
+<li><a href="#org7a7d15b">编译python3.6</a></li>
+<li><a href="#orgc043478">编译Twisted</a></li>
+</ul>
+</li>
+<li><a href="#org8d9c314">安装Scrapy</a></li>
+<li><a href="#org845b7e6">测试Scrapy是否成功安装</a></li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h1 id="scrapy框架-安装scrapy">Scrapy框架—— 安装Scrapy<a hidden class="anchor" aria-hidden="true" href="#scrapy框架-安装scrapy">#</a></h1>
+<p>   <code>Scrapy</code> 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">本文针在python3.6的环境下来安装scrapy
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="需求配置">需求配置<a hidden class="anchor" aria-hidden="true" href="#需求配置">#</a></h2>
+<ul>
+<li>sqlite依赖库(centos下为sqlite-devel包)</li>
+</ul>
+<p>   <code>scrapy</code> 框架的正常运行，你的 <code>python3.6</code> 版本需要编译支持 <code>sqlite</code> ,</p>
+<ul>
+<li>
+<p>python3.6</p>
+</li>
+<li>
+<p>Twisted</p>
+</li>
+</ul>
+<p>   <code>scrapy</code> 的异步功能实现,需要 <code>Twisted</code> 的支持。 目前 <code>scrapy</code> 的最新版本需要 <code>Twisted&gt;13.0</code> 版本, 而 <code>pip3.6</code> ， 所以我们需要从源码编译。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="安装sqlite依赖库">安装sqlite依赖库<a hidden class="anchor" aria-hidden="true" href="#安装sqlite依赖库">#</a></h3>
+<p>   如果你的 <code>python3.6</code> 已经编译支持了 <code>sqlite</code> ,可以跳过这个步骤。</p>
+<ol>
+<li>
+<p>下载sqlite库</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install sqlite-devel
+</code></pre></div></li>
+</ol>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="编译python36">编译python3.6<a hidden class="anchor" aria-hidden="true" href="#编译python36">#</a></h3>
+<ol>
+<li>
+<p>下载python3.6源码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /tmp
+curl -O Python-3.6.4.tgz  https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz
+</code></pre></div></li>
+<li>
+<p>编译python3.6</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tar xvvf Python-3.6.4
+cd  Python-3.6.4
+./configure
+make <span style="color:#f92672">&amp;&amp;</span> make install
+</code></pre></div></li>
+</ol>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="编译twisted">编译Twisted<a hidden class="anchor" aria-hidden="true" href="#编译twisted">#</a></h3>
+<ol>
+<li>
+<p>下载Twisted源码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /tmp
+git clone https://github.com/twisted/twisted.git
+</code></pre></div></li>
+<li>
+<p>编译Twisted</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd twisted/
+python3.6 setup.py install
+</code></pre></div></li>
+</ol>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="安装scrapy">安装Scrapy<a hidden class="anchor" aria-hidden="true" href="#安装scrapy">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip3 install scrapy
+</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="测试scrapy是否正常工作">测试Scrapy是否正常工作<a hidden class="anchor" aria-hidden="true" href="#测试scrapy是否正常工作">#</a></h2>
+<p>   这里我们简单的抓一下京东首页的分类列表来测试一下 <code>scrapy</code> 是否正常工作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">scrapy genspider example www.jd.com //该命令会在当前目录下生成一个example.py文件
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">//</span>example<span style="color:#f92672">.</span>py
+<span style="color:#f92672">import</span> scrapy
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExampleSpider</span>(scrapy<span style="color:#f92672">.</span>Spider):
+    name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;example&#39;</span>
+    allowed_domains <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;www.jd.com&#39;</span>]
+    start_urls <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;http://www.jd.com/&#39;</span>]
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse</span>(self, response):
+	category <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>xpath(<span style="color:#e6db74">&#39;//div[contains(@class,&#34;navitems&#34;)]/ul/li/a/text()&#39;</span>)<span style="color:#f92672">.</span>extract();
+	<span style="color:#66d9ef">for</span> cate <span style="color:#f92672">in</span> category:
+	    <span style="color:#66d9ef">yield</span> {<span style="color:#e6db74">&#39;cate&#39;</span>: cate}
+	<span style="color:#66d9ef">pass</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">scrapy runspider example.py -L INFO -o category.json 
+//该命令会运行example.py爬虫脚本，然后将抓取结果保存到category.json中
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">//category.json</span>
+[
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u79d2\u6740&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u4f18\u60e0\u5238&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;PLUS\u4f1a\u5458&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u95ea\u8d2d&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u62cd\u5356&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u4eac\u4e1c\u670d\u9970&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u4eac\u4e1c\u8d85\u5e02&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u751f\u9c9c&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u5168\u7403\u8d2d&#34;</span>},
+{<span style="color:#f92672">&#34;cate&#34;</span>: <span style="color:#e6db74">&#34;\u4eac\u4e1c\u91d1\u878d&#34;</span>}
+]
+</code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

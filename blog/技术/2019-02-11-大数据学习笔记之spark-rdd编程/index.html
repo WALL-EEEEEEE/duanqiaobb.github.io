@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>大数据学习笔记之Spark-RDD编程 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="RDD编程Spark中的核心数据操作：创建RDD转换已有的RDD调用RDD操作进行求值Note:RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。RDD创建创建RDD主要有两种方法：读取外部数据集JavaRDD&amp;amp;amp;lt;String&amp;amp;amp;gt; lines = sc.textFile(&amp;amp;quot;your file path&amp;amp;quot;)在驱动">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-rdd%E7%BC%96%E7%A8%8B/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="大数据学习笔记之Spark-RDD编程" />
+<meta property="og:description" content="RDD编程Spark中的核心数据操作：创建RDD转换已有的RDD调用RDD操作进行求值Note:RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。RDD创建创建RDD主要有两种方法：读取外部数据集JavaRDD&amp;amp;amp;lt;String&amp;amp;amp;gt; lines = sc.textFile(&amp;amp;quot;your file path&amp;amp;quot;)在驱动" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-rdd%E7%BC%96%E7%A8%8B/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-02-11T15:47:54&#43;00:00" />
+<meta property="article:modified_time" content="2019-02-11T15:47:54&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="大数据学习笔记之Spark-RDD编程"/>
+<meta name="twitter:description" content="RDD编程Spark中的核心数据操作：创建RDD转换已有的RDD调用RDD操作进行求值Note:RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。RDD创建创建RDD主要有两种方法：读取外部数据集JavaRDD&amp;amp;amp;lt;String&amp;amp;amp;gt; lines = sc.textFile(&amp;amp;quot;your file path&amp;amp;quot;)在驱动"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "大数据学习笔记之Spark-RDD编程",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-rdd%E7%BC%96%E7%A8%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "大数据学习笔记之Spark-RDD编程",
+  "name": "大数据学习笔记之Spark-RDD编程",
+  "description": "RDD编程Spark中的核心数据操作：创建RDD转换已有的RDD调用RDD操作进行求值Note:RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。RDD创建创建RDD主要有两种方法：读取外部数据集JavaRDD\u0026amp;amp;lt;String\u0026amp;amp;gt; lines = sc.textFile(\u0026amp;quot;your file path\u0026amp;quot;)在驱动",
+  "keywords": [
+    
+  ],
+  "articleBody": "RDD编程 Spark中的核心数据操作：\n 创建RDD 转换已有的RDD 调用RDD操作进行求值  Note:\n RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。\n RDD创建 创建RDD主要有两种方法：\n 读取外部数据集  JavaRDDString lines = sc.textFile(\"your file path\")  在驱动程序中对一个集合进行并行化  JavaRDDString lines = sc.parralelize(Arrays.asList(\"pandas\",\"i like pandas\")); RDD的操作 RDD的操作可以分为两种操作：1. 转换操作，2. 行动操作。\n 转换操作 RDD的转换操作是在RDD的依赖操作链上新增一个操作，但是并不对RDD进行实际计算，而是直接返回一个新的RDD。（这个像函数式编程里面的惰性计算，能有效的提高性能。）。  Note:\n  Spark里面主要通过谱系图（lineage graph）来记录RDD的操作依赖链关系。通 过这种方式，Spark可以实现按需计算转换操作，也可在持久化的RDD丢失部分数据的情况时恢复所丢失的数据。\n 常用的转换操作有：\nfilter() //过滤数据集 map() //依次对数据集中每个数据进行操作 flatmap() //将函数应用于RDD的每个元素，将返回的迭代器的所有内容构成新的RDD,通常用来切分单词 distinct() //去重 sample() //采样 union() //求并集 intersection() //求交集 substract() //求子集 cartesian() //求笛卡尔子集 示例：\n//filter JavaRDDString errorsRDD = inputRDD.filter( new FunctionString, Boolean() { public Boolean call(String x) { return x.contains(\"error\"); } } );  行动操作   RDD的行动操作会对数据集进行实际计算，它会根据RDD的依赖操作链进行优化，然后根据优化后的依赖操作链上的转换操作依次对数据进行转换操作，最后计算出结果返回到驱动器程序或者写入外部存储系统中。\n常用的行动操作有：\ncount() //返回结果总数 take(num) //返回一部分结果 collect() //返回所有结果 reduce() //聚合 aggregate() //累加 示例： 1.求和\nInteger sum = rdd.reduce(new Function2Integer, Integer, Integer() { public Integer call(Integer x, Integer y) { return x+y; } }); 2.计算平均值\nclass AvgCount implements Serializable { public AvgCount(int total, int num) { this.total = total; this.num = num; } public int total; public int num; public double avg() { return total / (double) num; } }; Function2AvgCount, Integer, AvgCount addAndCount = new Function2AvgCount,Integer, AvgCount() { public AvgCount call(AvgCount a, Integer x) { a.total +=x; a.num += 1; return a; } }; Function2AvgCount, AvgCount, AvgCount combine = new Function2AvgCount,AvgCount,AvgCount() { public AvgCount call(AvgCount a, AvgCount b) { a.total += b.total; a.num += b.num; return a; } } AvgCount initial = new AvgCount(0,0); AvgCount result = rdd.aggreate(initial, addAndCount, combine); Note:\n 除非我们对RDD的中间结果进行了持久化操作，每当我们调用一个新的行动操作时，整个RDD都会从头计算。\n  函数传递 在Spark中很多操作都需要依赖用户传递的函数。用Java传递用户函数，主要实现Spark中的org.apache.api.java.function中任一函数接口的对象来进行传递的。该包中主要提供了三个接口。     函数名 实现方法 用途     Function R call(T) 接收一个输入值并返回一个输出值，用于类似map()和filter等操作中   Function2 R call(T1,T2) 接收两个输入值并返回一个输出值，用于类似aggregate()和fold()等操作中   FlatMapFunction Iterablecall(T) 接收一个输入值并返回任意个输出，用于类似flatMap()这样的操作中    具体的实现主要有三种方法：\n 匿名内部类  RDDString errors = lines.filter(new FunctionString,Boolean() { public Boolean call(String x) { return x.contains(\"error\"); } }); 具名类  class ContainsError implements FunctionString, Boolean() { public Boolean call(String x) { return x.contains(\"error\"); } } RDDString errors = lines.filter(new ContainsError()); 3.lambda表达式\nRDDString errors = lines.filter(s - s.contains(\"error\"));  示例  1.计算平方值\nJavaRDDInteger rdd = sc.parrallelize(Arrays.asList(1,2,3,4)); JavaRDDInteger result = rdd.map(new FunctionInteger, Integer() { public Integer call(Integer x) { return x*x; } }); System.out.println(StringUtils.join(result.collect(),\",\")); 将行数据切分为单词  JavaRDDString lines = sc.parallelize(Arrays.asList(\"hello world\", \"hi\")); JavaRDDString words = llines.flatMap(new FlatMapFunctionString, String() { public IterableString call(String line) { return Arrays.asList(line.split(\" \"))); } }); words.first(); 集合操作  RDD也支持一些集合操作，但是并不是严格意义上的集合操作，它并不符合集合的唯一性。因为有些操作RDD并不会对结果集合进行去重，需要手动进行distinct()操作进行去重。\n   操作名 作用 是否进行数据混洗(去重)     distinct 去重 是   union 求并集 否   intersection 求交集 是   substract 求差集 是   cartesian 求笛卡尔集     Note:\n distinct(),intersection()和substract()都需要进行数据混洗进行去重，开销会比较大。\n 不同RDD类型之间转换  鉴于有些函数只能用于特定类型，比如 mean() 和 variance() 只能用于数值，而 join() 只能用于键值对类型。Spark中除了提供通用的RDD，还提供了些特殊RDD，比如：DoubleRDD(java中的JavaDoubleRDD)和PairRDD(java中的JavaPairRDD)。在java中使用spark和scala不同的是，spark不会像在scala中一样对RDD进行隐性转换，我们需要在代码显性转换RDD的类型。\n示例: 将上面的计算平均值改写成为一个JavaDoubleRDD版本的计算每个元素的平方值的示例。\n//将一个mapRDD类型转换为一个DoubleRDD类型  JavaDoubleRDD result = rdd.mapToDouble(new DoubleFunctionInteger() { public double call(Integer x) { return (double) x*x; } }); System.out.println(result.mean()); 其他相关类型之间的转换：\n   方法 用途     flatMapToDouble 将flatMap类型转换成DoubleRDD   mapToDouble 将一个map类型转换成DoubleRDD   flatMapToPair 将flatMap类型转换成PairRDD   mapToPair 将map类型转换成PairRDD    引用  《Spark快速大数据分析》  ",
+  "wordCount" : "376",
+  "inLanguage": "en",
+  "datePublished": "2019-02-11T15:47:54Z",
+  "dateModified": "2019-02-11T15:47:54Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-rdd%E7%BC%96%E7%A8%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      大数据学习笔记之Spark-RDD编程
+    </h1>
+    <div class="post-description">
+      RDD编程Spark中的核心数据操作：创建RDD转换已有的RDD调用RDD操作进行求值Note:RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。RDD创建创建RDD主要有两种方法：读取外部数据集JavaRDD&amp;amp;amp;lt;String&amp;amp;amp;gt; lines = sc.textFile(&amp;amp;quot;your file path&amp;amp;quot;)在驱动
+    </div>
+    <div class="post-meta">February 11, 2019
+</div>
+  </header> 
+  <div class="post-content"><h3 id="rdd编程">RDD编程<a hidden class="anchor" aria-hidden="true" href="#rdd编程">#</a></h3>
+<p>Spark中的核心数据操作：</p>
+<ol>
+<li>创建RDD</li>
+<li>转换已有的RDD</li>
+<li>调用RDD操作进行求值</li>
+</ol>
+<p><strong>Note:</strong></p>
+<blockquote>
+<p>RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。</p>
+</blockquote>
+<h5 id="rdd创建">RDD创建<a hidden class="anchor" aria-hidden="true" href="#rdd创建">#</a></h5>
+<p>创建RDD主要有两种方法：</p>
+<ul>
+<li>读取外部数据集</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">JavaRDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">textFile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;your file path&#34;</span><span style="color:#f92672">)</span>
+</code></pre></div><ul>
+<li>在驱动程序中对一个集合进行并行化</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">JavaRDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">parralelize</span><span style="color:#f92672">(</span>Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;pandas&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;i like pandas&#34;</span><span style="color:#f92672">));</span>
+</code></pre></div><h5 id="rdd的操作">RDD的操作<a hidden class="anchor" aria-hidden="true" href="#rdd的操作">#</a></h5>
+<p>RDD的操作可以分为两种操作：1. 转换操作，2. 行动操作。</p>
+<ul>
+<li>转换操作
+        RDD的转换操作是在RDD的依赖操作链上新增一个操作，但是并不对RDD进行实际计算，而是直接返回一个新的RDD。（这个像函数式编程里面的惰性计算，能有效的提高性能。）。</li>
+</ul>
+<p><strong>Note:</strong></p>
+<blockquote>
+<p>        Spark里面主要通过谱系图（lineage graph）来记录RDD的操作依赖链关系。通
+过这种方式，Spark可以实现按需计算转换操作，也可在持久化的RDD丢失部分数据的情况时恢复所丢失的数据。</p>
+</blockquote>
+<p><strong>常用的转换操作有：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">filter<span style="color:#f92672">()</span> <span style="color:#75715e">//过滤数据集
+</span><span style="color:#75715e"></span>map<span style="color:#f92672">()</span>   <span style="color:#75715e">//依次对数据集中每个数据进行操作
+</span><span style="color:#75715e"></span>flatmap<span style="color:#f92672">()</span> <span style="color:#75715e">//将函数应用于RDD的每个元素，将返回的迭代器的所有内容构成新的RDD,通常用来切分单词
+</span><span style="color:#75715e"></span>distinct<span style="color:#f92672">()</span> <span style="color:#75715e">//去重
+</span><span style="color:#75715e"></span>sample<span style="color:#f92672">()</span>   <span style="color:#75715e">//采样
+</span><span style="color:#75715e"></span>union<span style="color:#f92672">()</span>    <span style="color:#75715e">//求并集
+</span><span style="color:#75715e"></span>intersection<span style="color:#f92672">()</span> <span style="color:#75715e">//求交集
+</span><span style="color:#75715e"></span>substract<span style="color:#f92672">()</span>  <span style="color:#75715e">//求子集
+</span><span style="color:#75715e"></span>cartesian<span style="color:#f92672">()</span>  <span style="color:#75715e">//求笛卡尔子集
+</span></code></pre></div><p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//filter
+</span><span style="color:#75715e"></span>JavaRDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errorsRDD <span style="color:#f92672">=</span> inputRDD<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>
+    <span style="color:#66d9ef">new</span> Function<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Boolean<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> Boolean <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>String x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;error&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">);</span>
+</code></pre></div><ul>
+<li>行动操作</li>
+</ul>
+<p>        RDD的行动操作会对数据集进行实际计算，它会根据RDD的依赖操作链进行优化，然后根据优化后的依赖操作链上的转换操作依次对数据进行转换操作，最后计算出结果返回到驱动器程序或者写入外部存储系统中。</p>
+<p><strong>常用的行动操作有：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">count<span style="color:#f92672">()</span>     <span style="color:#75715e">//返回结果总数
+</span><span style="color:#75715e"></span>take<span style="color:#f92672">(</span>num<span style="color:#f92672">)</span>   <span style="color:#75715e">//返回一部分结果
+</span><span style="color:#75715e"></span>collect<span style="color:#f92672">()</span>   <span style="color:#75715e">//返回所有结果
+</span><span style="color:#75715e"></span>reduce<span style="color:#f92672">()</span>    <span style="color:#75715e">//聚合
+</span><span style="color:#75715e"></span>aggregate<span style="color:#f92672">()</span> <span style="color:#75715e">//累加
+</span></code></pre></div><p><strong>示例：</strong>
+1.求和</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Integer sum <span style="color:#f92672">=</span> rdd<span style="color:#f92672">.</span><span style="color:#a6e22e">reduce</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Function2<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> Integer <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>Integer x<span style="color:#f92672">,</span> Integer y<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> x<span style="color:#f92672">+</span>y<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+</code></pre></div><p>2.计算平均值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AvgCount</span> <span style="color:#66d9ef">implements</span> Serializable <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AvgCount</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> total<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> num<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> total<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">num</span>   <span style="color:#f92672">=</span> num<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> total<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> num<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">avg</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> total <span style="color:#f92672">/</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">double</span><span style="color:#f92672">)</span> num<span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
+<span style="color:#f92672">};</span>
+Function2<span style="color:#f92672">&lt;</span>AvgCount<span style="color:#f92672">,</span> Integer<span style="color:#f92672">,</span> AvgCount<span style="color:#f92672">&gt;</span> addAndCount <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function2<span style="color:#f92672">&lt;</span>AvgCount<span style="color:#f92672">,</span>Integer<span style="color:#f92672">,</span> AvgCount<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> AvgCount <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>AvgCount a<span style="color:#f92672">,</span> Integer x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        a<span style="color:#f92672">.</span><span style="color:#a6e22e">total</span> <span style="color:#f92672">+=</span>x<span style="color:#f92672">;</span>
+        a<span style="color:#f92672">.</span><span style="color:#a6e22e">num</span>   <span style="color:#f92672">+=</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> a<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">};</span>
+Function2<span style="color:#f92672">&lt;</span>AvgCount<span style="color:#f92672">,</span> AvgCount<span style="color:#f92672">,</span> AvgCount<span style="color:#f92672">&gt;</span> combine <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function2<span style="color:#f92672">&lt;</span>AvgCount<span style="color:#f92672">,</span>AvgCount<span style="color:#f92672">,</span>AvgCount<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> AvgCount <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>AvgCount a<span style="color:#f92672">,</span> AvgCount b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        a<span style="color:#f92672">.</span><span style="color:#a6e22e">total</span> <span style="color:#f92672">+=</span> b<span style="color:#f92672">.</span><span style="color:#a6e22e">total</span><span style="color:#f92672">;</span>
+        a<span style="color:#f92672">.</span><span style="color:#a6e22e">num</span> <span style="color:#f92672">+=</span> b<span style="color:#f92672">.</span><span style="color:#a6e22e">num</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> a<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+AvgCount initial <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AvgCount<span style="color:#f92672">(</span>0<span style="color:#f92672">,</span>0<span style="color:#f92672">);</span>
+AvgCount result  <span style="color:#f92672">=</span> rdd<span style="color:#f92672">.</span><span style="color:#a6e22e">aggreate</span><span style="color:#f92672">(</span>initial<span style="color:#f92672">,</span> addAndCount<span style="color:#f92672">,</span> combine<span style="color:#f92672">);</span>
+</code></pre></div><p><strong>Note:</strong></p>
+<blockquote>
+<p>除非我们对RDD的中间结果进行了持久化操作，每当我们调用一个新的行动操作时，整个RDD都会从头计算。</p>
+</blockquote>
+<ul>
+<li>函数传递
+        在<code>Spark</code>中很多操作都需要依赖用户传递的函数。用<code>Java</code>传递用户函数，主要实现<code>Spark</code>中的<code>org.apache.api.java.function</code>中任一函数接口的对象来进行传递的。该包中主要提供了三个接口。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">实现方法</th>
+<th style="text-align:center">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Function&lt;T,R&gt;</td>
+<td style="text-align:center">R call(T)</td>
+<td style="text-align:center">接收一个输入值并返回一个输出值，用于类似map()和filter等操作中</td>
+</tr>
+<tr>
+<td style="text-align:center">Function2&lt;T1,T2,R&gt;</td>
+<td style="text-align:center">R call(T1,T2)</td>
+<td style="text-align:center">接收两个输入值并返回一个输出值，用于类似aggregate()和fold()等操作中</td>
+</tr>
+<tr>
+<td style="text-align:center">FlatMapFunction&lt;T,R&gt;</td>
+<td style="text-align:center">Iterable<!-- raw HTML omitted --> call(T)</td>
+<td style="text-align:center">接收一个输入值并返回任意个输出，用于类似flatMap()这样的操作中</td>
+</tr>
+</tbody>
+</table>
+<p>具体的实现主要有三种方法：</p>
+<ol>
+<li>匿名内部类</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">RDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> lines<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Function<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>Boolean<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> Boolean <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>String x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;error&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+</code></pre></div><ol start="2">
+<li>具名类</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ContainsError</span> <span style="color:#66d9ef">implements</span> Function<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Boolean<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> Boolean <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>String x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;error&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+RDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> lines<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ContainsError<span style="color:#f92672">());</span>
+</code></pre></div><p>3.lambda表达式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">RDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> errors <span style="color:#f92672">=</span> lines<span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>s <span style="color:#f92672">-&gt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;error&#34;</span><span style="color:#f92672">));</span>
+</code></pre></div><ul>
+<li>示例</li>
+</ul>
+<p>1.计算平方值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">JavaRDD<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> rdd <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">parrallelize</span><span style="color:#f92672">(</span>Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">,</span>4<span style="color:#f92672">));</span>
+JavaRDD<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> rdd<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Function<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> Integer <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>Integer x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>x<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>StringUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">join</span><span style="color:#f92672">(</span>result<span style="color:#f92672">.</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(),</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">));</span>
+
+</code></pre></div><ol start="2">
+<li>将行数据切分为单词</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">JavaRDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">parallelize</span><span style="color:#f92672">(</span>Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello world&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;hi&#34;</span><span style="color:#f92672">));</span>
+JavaRDD<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> words <span style="color:#f92672">=</span> llines<span style="color:#f92672">.</span><span style="color:#a6e22e">flatMap</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> FlatMapFunction<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> Iterable<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>String line<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>line<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">)));</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+words<span style="color:#f92672">.</span><span style="color:#a6e22e">first</span><span style="color:#f92672">();</span>
+</code></pre></div><h5 id="集合操作">集合操作<a hidden class="anchor" aria-hidden="true" href="#集合操作">#</a></h5>
+<p>        RDD也支持一些集合操作，但是并不是严格意义上的集合操作，它并不符合集合的唯一性。因为有些操作RDD并不会对结果集合进行去重，需要手动进行<code>distinct()</code>操作进行去重。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作名</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">是否进行数据混洗(去重)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">distinct</td>
+<td style="text-align:center">去重</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">union</td>
+<td style="text-align:center">求并集</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">intersection</td>
+<td style="text-align:center">求交集</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">substract</td>
+<td style="text-align:center">求差集</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">cartesian</td>
+<td style="text-align:center">求笛卡尔集</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong></p>
+<blockquote>
+<p><code>distinct()</code>,<code>intersection()</code>和<code>substract()</code>都需要进行数据混洗进行去重，开销会比较大。</p>
+</blockquote>
+<h5 id="不同rdd类型之间转换">不同RDD类型之间转换<a hidden class="anchor" aria-hidden="true" href="#不同rdd类型之间转换">#</a></h5>
+<p>        鉴于有些函数只能用于特定类型，比如 <code>mean()</code> 和 <code>variance()</code> 只能用于数值，而 <code>join()</code> 只能用于键值对类型。Spark中除了提供通用的RDD，还提供了些特殊RDD，比如：<code>DoubleRDD</code>(java中的<code>JavaDoubleRDD</code>)和<code>PairRDD</code>(java中的<code>JavaPairRDD</code>)。在<code>java</code>中使用<code>spark</code>和<code>scala</code>不同的是，<code>spark</code>不会像在<code>scala</code>中一样对<code>RDD</code>进行隐性转换，我们需要在代码显性转换<code>RDD</code>的类型。</p>
+<p><strong>示例:</strong>
+将上面的计算平均值改写成为一个<code>JavaDoubleRDD</code>版本的计算每个元素的平方值的示例。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">   <span style="color:#75715e">//将一个mapRDD类型转换为一个DoubleRDD类型
+</span><span style="color:#75715e"></span>   JavaDoubleRDD result <span style="color:#f92672">=</span> rdd<span style="color:#f92672">.</span><span style="color:#a6e22e">mapToDouble</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> DoubleFunction<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">call</span><span style="color:#f92672">(</span>Integer x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">double</span><span style="color:#f92672">)</span> x<span style="color:#f92672">*</span>x<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+   <span style="color:#f92672">});</span>
+   System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">.</span><span style="color:#a6e22e">mean</span><span style="color:#f92672">());</span>
+</code></pre></div><p><strong>其他相关类型之间的转换：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">flatMapToDouble</td>
+<td style="text-align:center">将flatMap类型转换成DoubleRDD</td>
+</tr>
+<tr>
+<td style="text-align:center">mapToDouble</td>
+<td style="text-align:center">将一个map类型转换成DoubleRDD</td>
+</tr>
+<tr>
+<td style="text-align:center">flatMapToPair</td>
+<td style="text-align:center">将flatMap类型转换成PairRDD</td>
+</tr>
+<tr>
+<td style="text-align:center">mapToPair</td>
+<td style="text-align:center">将map类型转换成PairRDD</td>
+</tr>
+</tbody>
+</table>
+<h5 id="引用">引用<a hidden class="anchor" aria-hidden="true" href="#引用">#</a></h5>
+<ul>
+<li>《Spark快速大数据分析》</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
