@@ -136,196 +136,84 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>Oracle数据库系列-Oracle数据库开场篇
+    <h2>自制爬虫框架－Pider框架快速开始
     </h2>
   </header>
   <section class="entry-content">
-    <p>Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。
-   这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果有什么不对的地方，欢迎大家在评论区进行评论指出。
- Oracle账户的解锁
- Oracle数据库自带了许多账户，但是默认情况下Oracle数据库只对其中5个账户进行了解锁，这5个账户分别为SYS、SYSTEM、DBSNMP、SYSMAN、MGMT_VIEW，而其他用户都是默认的锁定状态。Oracle数据库的账号管理和其他关系型数据库，例如mysql,sqlserver不一样,像mysql,sqlserver数据库有专门的数据库用户管理命令对数据库用户进行管理，而Oracle数据则是直接通过sql语句通过对数据库表的操作进行对用户管理。
- 查看用户的账号的状态
-SELECT username, account_status from db_users; 其中OPEN表示账户为解锁状态，EXPIRED表示账户为过期状态(需要设置口令才能解除此状态);LOCKED 表示账户为锁定状态。  为scott账户进行解锁
-SQL&gt; ALTER USER scott ACCOUNT UNLOCK; SQL&gt; ALTER USER scott IDENTIFIED BY tiger; SQL&gt; SELECT username ,account_status FROM dba_users WHERE username = &#39;SCOTT&#39;; 注意: 在使用数据字典dba_users时,需要注意其字段的值是区分大小的，所以指定username的时候需要指定为&#39;SCOTT&#39;,而不是&#39;scott&#39;;  </p>
+    <p>快速使用  项目的基本结构 运行  爬虫 数据处理 示例   基本用法 响应处理 多进程    快速使用 项目的基本结构 //项目根目录 |-- Config //配置文件 |-- LICENSE |-- README.md |-- composer.json |-- composer.lock |-- examples //示例 |-- install.sh //安装脚本 |-- pider -&gt; src/bin/pider //爬虫管理命令工具 |-- piderd -&gt; src/bin/piderd //爬虫分布式管理工具 |-- src //源码 运行 ######爬虫
+./pider spidername.php(你创建的爬虫实例) 数据处理 ./pider --digest digestname.php(你创建的数据处理实例) 示例  创建实例  mkdir spiders //创建爬虫文件夹，里面放置你写的爬虫实例 mkdir digests //创建数据处理文件夹，里面放置你写的数据处理实例 touch spiders/TestSpider.php touch digests/TestDigest....</p>
   </section>
-  <footer class="entry-footer">June 16, 2016</footer>
-  <a class="entry-link" aria-label="post link to Oracle数据库系列-Oracle数据库开场篇" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/"></a>
+  <footer class="entry-footer">May 6, 2018</footer>
+  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架快速开始" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-06-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>软件工程系列 -软件开发形式化说明技术
+    <h2>自制爬虫框架－Pider框架安装
     </h2>
   </header>
   <section class="entry-content">
-    <p>###形式化说明技术 形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的 矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。
- 有穷状态机
- 有穷状态机包括下述的5个部分:
-  状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为: 当前状态[菜单]&#43;事件[所选择的项]=&gt;下个状态  有穷状态集的扩充：
-  在上述的5个部分中加入第6个组件-谓词集P，其中每个谓词都是系统全局状态Y的函 数，转换函数T从一个（J-F)*K*P到J的一个函数。  转换规则:
-  当前状态[菜单] &#43; 事件[所选择的项]&#43;谓词=&gt;下个状态
- Petri网
- Petri网包含4种元素:一组位置P、一组转换T、输入函数I以及输出函数O。  Petri网的扩充:
- 添加权标M,Petri网C=(P,T,I,O,M),Petri网中的标记是在Petri网中的权标(token)的,分配。权标在Petri网中的应用，通常当每个输入位置 所拥有的权标数大于等于从该 位置到转换的线数时，就允许转换。  Petri网扩充2:
- 添加禁止线，禁止线是用一个小圆圈而不是用箭头标记的输入线。通常，当每个输入线至少有一个权标，而禁止线上没有权标的时候,相应 的转换才是允许的。  Z语言
-Z语言是运用数学中的集合论、函数、数理逻辑等方面的形式化得规格说明语言。Z语言包含的4个元素: 给定的集合、数据类型及常数 状态定义 初始状态 操作   Z语言的优点：
-   Z语言写的规格说明的错误容易发现
-  能够精确性高，减少了说明的模糊性、不一致性、和遗漏。
-  实践说明Z语言能够缩小开发过程中所需要的总时间
-  形式化方法的优势:
-  形式化方法可以用数学方法验证正确性
-  形式化方法能有效的消除二义性
-  形式化方法的劣势:...</p>
+    <p> 安装  需求 安装    安装 需求  PHP &gt;= 7.1 pcntl(可选，多进程需要)  安装 git clone https://github.com/duanqiaobb/pider.git git submodule update --init --recursive //安装composer,如果出现问题，请参考 [composer官方文档](https://getcomposer.org/download/) 进行安装 php -r &#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34; php -r &#34;if (hash_file(&#39;SHA384&#39;, &#39;composer-setup.php&#39;) === &#39;544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34; php composer-setup.php php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34; //安装 cd pider chmod u&#43;x install.sh ./install.sh </p>
   </section>
-  <footer class="entry-footer">June 16, 2016</footer>
-  <a class="entry-link" aria-label="post link to 软件工程系列 -软件开发形式化说明技术" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/"></a>
+  <footer class="entry-footer">May 4, 2018</footer>
+  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架安装" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>软件工程系列-软件开发的需求分析
+    <h2>自制爬虫框架－Pider框架介绍
     </h2>
   </header>
   <section class="entry-content">
-    <p>**软件工程系列- 软件开发的需求分析 **  软件开发过程中需求分析是获得用户的真实需求的一个重要阶段，这一阶段，软件开发人员通过和用户的沟通，从中获取软件怎样完成它的工作的详细信息，了解目标软件系统的完整、准确、清晰、具体的要求。
-   软件需求分析中的与客户沟通获取需求的方法
-  访谈 向被调查人分发调查表 情景分析技术   软件需求分析中的工具
-  层次方框图 Warnier图 数据流图(功能模型) 实体联系图 状态转换图 数据字典 主要的处理算法 IPO图 简易的应用规格说明技术 快速建立软件模型   简易的应用规格说明技术
-  优点: 用户和开发者不分彼此，齐心协力，密切合作；即使讨论并求精，有能导出的规格说明的具体步骤。    快速建立软件模型 快速建立软件模型方法就是快速建立起来一个旨在演示目标系统主要功能的可运行的程序。
-优点: 能够准确，有效的分析出用户的需求。 缺点：必须要有适当的软件工具支持快速原型系统的建立   工具和方法:
- 第四代技术 可重用的软件构件 形式化规格说明和原型环境   实体-联系图(数据模型)
-实体联系图就是用现实生活的对象，对象属性，对象之间的联系，建立起对非开发人员友好的数据模型。
-  数据模型的3个基本要素:
-  数据对象 数据对象的属性 数据对象之间的关系(一对一，一对多，多对多)   优点；
-  便于参与的非技术人员的理解 反应了用户的现实数据环境，与软件系统的具体实现方法隔离   状态转换图(行为模型):...</p>
+    <p>介绍  动机 特性    介绍  Pider 框架的目的是用PHP创建一个优雅的，可靠的，有用的爬虫框架。
+动机  毫无疑问， PHP 是一个很好的web编程语言。社区里面，各种web开发框架 也层出不穷，但是爬虫和数据处理框架却寥寥无几，而好用的几乎没有。我相信不仅仅只是可以在web领域大 放光彩，也可以在可以在数据处理和爬虫方面有所作为，就好像Python。所以，我萌发了写一个爬虫和数据 处理方面的框架。从理想上来说，它能够覆盖数据抓取，数据清洗，数据分析，和数据可视化各个方面。
+特性  目前只是将 Pider 将具备的特性罗列出来，可能有些特性目前还没有实现， 但是会陆续实现和完善。
+ 模板化 (未实现)   Pider 将允许通过定制化模板来编写爬虫，并管理爬虫的生命周期。
+ 命令行 (简单实现)   Pider 将提供丰富的命令行交互接口。
+ 多进程 (已实现)   Pider 有时候，需要爬虫需要进行大数量内容爬取，这个时候，单进程太慢而无法 而无法满足需求，多进程能够充分运用多核 CPU , 大大提高爬取效率和降低爬取时间。 Pider 将支持多进程抓取， 允许 多个进程并行对页面抓取和数据处理。
+ 分组 (未实现)   有时候, 我们需要抓取多个页面, 然后对抓取的页面进行解析, 然后对进行解析的数据处理, 当然, 两个操作可以放在一起处理, 但是当两种操作其中一个很繁琐的时候， 这个很容易造成代码冗长，代码复用率低， Pider 的 Group 特性允许组合多个爬虫，爬虫和数据处理，以及多个数据处理操作。让爬虫和数据管理程序更加容易管理。...</p>
   </section>
-  <footer class="entry-footer">June 15, 2016</footer>
-  <a class="entry-link" aria-label="post link to 软件工程系列-软件开发的需求分析" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/"></a>
+  <footer class="entry-footer">May 4, 2018</footer>
+  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架介绍" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>软件工程系列- 软件开发的可行性研究
+    <h2>自制爬虫框架－Pider框架简介
     </h2>
   </header>
   <section class="entry-content">
-    <p>####软件工程系列 - 软件开发的可行性分析 软件开发过程中的可行性是指，软件开发过程中，在各种软件开发环境下，用最小的代价在尽可能短的时间内确认问题是否能够解决。
-   软件可行性一般可以从这几个方面进行分析：
-  技术可行性(现有的技术是否能够实现) 经济可行性(经济效益是否能超过它的开发成本) 操作可行性(操作方式能否在组织中行得通) 社会可行性(法律，社会效益中能否可行)   软件可行性的分析过程遵循以下一些步骤：
-  1. 复查系统规模和目标 2. 研究目前正在使用的系统 3. 导出新系统的高层逻辑模型 4. 进一步定义问题 5. 导出和评价供选择的解法 6. 推荐行动方针 7. 草拟开发计划 8. 书写文档提交审查   软件可行性分析工具:
- 系统流程图   系统流程图是概括地描绘物理系统的传统工具。它用图形符号以黑盒子形式描绘组成系统的每个部件。
-  数据流图(DFD)   数据流图描绘信息流和数据从输入到移动的过程中所经受的变换。数据流图只描述系统的基本逻辑功能而不考虑其中的具体实现。数据流图有4个成分：源点(终点)、处理、 数据存储、数据流。
- 画数据流图的技巧:
- 数据流程图的处理尽量细化，如果一个处理能够转换成一系列的批处理，最好 分解成小的分层处理，同时一定要保持分层处理的信息连续性和分解前的数据流相同。 如果在对某个数据流起名字遇到了困难，尝试重新分解。 如果发现必须用两个动词才能描述整个处理的功能，最好将这个处理分解成两个处理。 如果功能级别的数据流图用来描绘系统的处理超过9个的时候，应该采用画分图的方法，有助于理解  </p>
-  </section>
-  <footer class="entry-footer">June 15, 2016</footer>
-  <a class="entry-link" aria-label="post link to 软件工程系列- 软件开发的可行性研究" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>软件工程系列- 软件开发模型
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>软件工程系列- 软件开发模型  软件开发模型(Software Development Model)是指软件开发全部过程、活动和任务的结构框架。软件开发包括需求、设计、编码和测试等阶段，有时也包括维护阶段。 软件开发模型能清晰、直观地表达软件开发全过程，明确规定了要完成的主要活动和任务，用来作为软件项目工作的基础。对于不同的软件系统，可以采用不同的开发方法、使用不同的程序设计语言以及各种不同技能的人员参与工作、运用不同的管理方法和手段等，以及允许采用不同的软件工具和不同的软件工程环境。(摘自百度百科)
-   常见的几个软件开发模型
-  瀑布模型(面向过程模型) 快速原型模型 增量模型 螺旋模型 喷泉模型(面向对象模型) Rational统一过程(Rational Unified Process,RUP) 敏捷过程和极限编程(代表Scrum) 微软过程   瀑布模型
-  快速原型模型
-  增量模型
-  螺旋模型
-  喷泉模型
-  Rational统一过程模型 Rational统一过程(Rational Unified Process,RUP)，RUP具有过功能性和广泛的适用性
-  敏捷过程和极限编程
+    <p> 简介  Pider是什么？ 当前版本和状态 文档    简介 Pider是什么？  Pider是一个优雅，强大，模板化的爬虫框架。Pider想要 在数据采集方面给PHP社区提供更加方便，快捷的工具和框架。
+当前版本和状态  1.0 (开发中)  文档  详细的使用用法，请参考文档。
+ 如果你对本项目感兴趣, 或者觉得对你有用，可以在给项目一个star或者watch,　项目地址：https://github.com/duanqiaobb/pider
  </p>
   </section>
-  <footer class="entry-footer">June 15, 2016</footer>
-  <a class="entry-link" aria-label="post link to 软件工程系列- 软件开发模型" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/"></a>
+  <footer class="entry-footer">May 4, 2018</footer>
+  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架简介" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>软件工程系列-介绍, 软件工程的那些事
+    <h2>Scrapy框架——安装Scrapy
     </h2>
   </header>
   <section class="entry-content">
-    <p>######软件工程系列- 关于软件工程的那些事 软件工程是将现有的工程系统的概念、原理、技术 、和方法应用到软件开发领域，以达到使软件开发过程系统，规范，可度量。简单来说，软件工程就是贯穿软件开发过程中的方法论。
- 软件工程的基本原理
- 软件生命周期分阶段严格管理 阶段评审 严格的产品控制 采用更先进的现代程序设计技术 结果应能清楚地审查 少而精的开发人员 采用新的软件技术进行不断改进  软件工程的方法学
- 结构化程序设计 面向对象程序设计   上文说的软件工程的要素之一 采用新的软件技术进行不断的该进， 从这里就可以体现出来，软件工程方法学分别：结构化方法学(传统方法学)，面向对象方法学，分别对应以前比较普遍使用的结构化程序设计，以及现在流行的面向对象程序设计。
- 软件生命周期
- 软件定义 软件开发 软件维护   软件定义
- 这一阶段要完成，问题的定义，可行性研究，需求分析。
- 软件开发
- 这一阶段的工分为：软件的总体设计，详细设计，编码和单元测试，综合测试。
- 软件维护
- 这一阶段主要是对软件运行状态进行维护以及增加和改进功能。</p>
+    <p>Scrapy框架—— 安装Scrapy  需求配置  安装sqlite依赖库 编译python3.6 编译Twisted   安装Scrapy 测试Scrapy是否成功安装    Scrapy框架—— 安装Scrapy  Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。
+本文针在python3.6的环境下来安装scrapy 需求配置  sqlite依赖库(centos下为sqlite-devel包)   scrapy 框架的正常运行，你的 python3.6 版本需要编译支持 sqlite ,
+  python3.6
+  Twisted
+   scrapy 的异步功能实现,需要 Twisted 的支持。 目前 scrapy 的最新版本需要 Twisted&gt;13.0 版本, 而 pip3.6 ， 所以我们需要从源码编译。
+安装sqlite依赖库  如果你的 python3.6 已经编译支持了 sqlite ,可以跳过这个步骤。
+  下载sqlite库
+yum install sqlite-devel   编译python3....</p>
   </section>
-  <footer class="entry-footer">June 13, 2016</footer>
-  <a class="entry-link" aria-label="post link to 软件工程系列-介绍, 软件工程的那些事" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-13-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>WordPress 系列- WordPress 部署期间遇到的问题和坑
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>####WordPress 系列- WordPress 部署期间遇到的问题和坑 这篇文章记录了我在研究WordPress中的遇到过的小问题，因为问题比较小，解决方法可能也就一句话，我就用一篇文章来记录他们。
-    ######WordPress文章链接形式设置为伪静态形式，造成链接失效
-在WordPress中链接的默认形式为日期&#43;文章标题的形式，比如你的一篇文章标题为:Hello WordPress那么WordPress会自动帮你生成这种形式的链接:http://youhostname/year/month/day/Hello WordPress这种链接形式是采用的伪静态，看网上有博文说，wordpress的伪静态是通过Apache的rewrite来实现的，博主也给出了解决方案，但是我在我的wordpress文件夹里并没有发现有.htaccess文件，可能因为这个文件的缺失，才导致伪静态失效的吧。
-   **解决方法：**在wordpress的管理后台，选择永久链接选项，选择原文链接形式或者数字链接形式皆可以。(原文链接形式-http://youhostname/?p=123,数字链接形式-http://youhostname/archives/123)</p>
-  </section>
-  <footer class="entry-footer">June 12, 2016</footer>
-  <a class="entry-link" aria-label="post link to WordPress 系列- WordPress 部署期间遇到的问题和坑" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-12-wordpress-%E7%B3%BB%E5%88%97-wordpress-%E9%83%A8%E7%BD%B2%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E5%9D%91/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>WordPress系列-开场白
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>####WordPress的浅显研究 最近在研究wordpress,于是开了这个系列文章，这些文章记录了我在学习wordpress过程 中的心得，以及踩过的坑。
- </p>
-  </section>
-  <footer class="entry-footer">June 12, 2016</footer>
-  <a class="entry-link" aria-label="post link to WordPress系列-开场白" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-12-wordpress%E7%B3%BB%E5%88%97-%E5%BC%80%E5%9C%BA%E7%99%BD/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Linux的运行级别初探
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>####Linux的运行级别初探
-######Linux的运行级别分为6个运行级别,分别为:   0 停机 1 单用户(无网络连接,只开启少量的进程,准许非root用户登录) 2 多用户(无网络连接,只开启少量的进程) 3 多用户(启动网络连接) 一般默认以这个模式启动 4 用户自定义 5 多用户带图形界面 6 重启   </p>
-  </section>
-  <footer class="entry-footer">June 9, 2016</footer>
-  <a class="entry-link" aria-label="post link to Linux的运行级别初探" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-09-linux%E7%9A%84%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%88%9D%E6%8E%A2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>vim&#43;clipboard＋vim-gui(gvim)源码编译
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包
-  首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:https://github.com/vim/vim.git(这是vim在github下托管的链接) 你只需要: cd yourdir/youdir/youdir git clone https://github.com/vim/vim.git 将源码下下来  然后进入你下载的源码目录,如果你没改目录名的话,应该是当前目录下的vim文件夹内(如下图)
-  然后安装编译vim-gui(gvim)需要的gui环境依赖头文件,可以是gtk2,gnome….等等.(我安装的是gtk2)
- Fedora下用yum安装: sudo yum install gtk2-devel.x86_64 (这里看你的系统版本,如果是32位的,就装gtk2-devel.i686 这个包,我的系统是64位的,我这里是安装gtk-gui,如果你是安装其他gui的话,需要安装其他的包而不是这个包) ... 注意:不同的软件源的包名可能不一样,大家可以用**yum search&#43;关键字**搜一下，名称应该类似  接下来还要安装 libXt-devel.x86_64 libX11-devel.x86_64 这两个包都是X11图形界面的源码包`
- sudo yum install libXt-devel.x86_64 &amp;&amp; sudo yum install libX11-devel.x86_64 ... &gt;libXt-devel.x86_64这个包是让我折腾一天的罪魁祸首,哭晕。。。,你也可以直接安装qt3-devel.x86_64这个包,它包含了libXt-devel.x86_64。  好了,现在你可以编译源码了,进入源码包
- cd vim 或者cd vim/src ./configure　--with-features=huge | grep gui(这里我选择带特征最多的巨型版本,--with-features=normal(正常版本),--with-features=tiny(微型版本),默认是正常版本)  如果你显示这个的话，说明你的gui可以用，也就是能编译出vim-gui和clipboard否则不行（按理说clipboard这个特性应该不会依赖gui，但是我gui编译不出,clipboard特性也编译不出）,编译出来的朋友们可以私信我，是怎么回事,我也学习学习。 … 注意：vim编译的时候默认的gui配置选项为- -enable-gui=auto，这样系统会自动搜索是否支持编译成gvim，可以就编译,否则就忽略。当然你也可以指定特定的gui。 …
- -enable-gui=gtk2 … 不过建议使用默认的   sudo make &amp;&amp; sudo make install (编译链接不多说了) 如果没出问题的话就可以使用了,如果有的出现问题,也就是有些包没装，装下依赖包就可以了。(yum search &amp; yum install )  现在可以看看我们编译后的成果了。 gvim 或　vim -g 看看gvim怎么样...</p>
-  </section>
-  <footer class="entry-footer">January 1, 2016</footer>
-  <a class="entry-link" aria-label="post link to vim&#43;clipboard＋vim-gui(gvim)源码编译" href="/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim&#43;clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"></a>
+  <footer class="entry-footer">January 7, 2018</footer>
+  <a class="entry-link" aria-label="post link to Scrapy框架——安装Scrapy" href="/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="/blog/%E6%8A%80%E6%9C%AF/page/3/">« Prev Page</a>
+    <a class="next" href="/blog/%E6%8A%80%E6%9C%AF/page/5/">Next Page »</a>
   </nav>
 </footer>
     </main>

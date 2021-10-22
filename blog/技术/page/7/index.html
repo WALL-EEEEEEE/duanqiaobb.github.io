@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>断桥bian的博客</title>
-
-<meta name="description" content="">
+<meta name="keywords" content="" />
+<meta name="description" content=" - 断桥bian的博客">
 <meta name="author" content="">
-<link rel="canonical" href="/" />
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -19,26 +19,34 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.88.1" />
-<link rel="alternate" type="application/rss+xml" href="/index.xml">
-<meta property="og:title" content="断桥bian的博客" />
+<link rel="alternate" type="application/rss+xml" href="/blog/%E6%8A%80%E6%9C%AF/index.xml">
+<meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="断桥bian的博客"/>
+<meta name="twitter:title" content=""/>
 <meta name="twitter:description" content=""/>
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "断桥bian的博客",
-  "url": "/",
-  "description": "",
-  "thumbnailUrl": "/favicon.ico",
-  "sameAs": [
-      
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/"
+    }
   ]
 }
 </script>
@@ -125,49 +133,6 @@
     </nav>
 </header>
 <main class="main"> 
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>数学建模系列-数学建模那些事
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>数学建模的概念:  所谓的数学建模就是使用数学框架解决实际应用问题,数学建模在解决问题的同时能够培养
-  1. 数学思维能力， 2. 分析问题本质的能力， 3. 团队合作的能力， 4. 资料检索的能力， 5. 编程能力， 6. 论文写作的能力。  数学建模中的典型方法 蒙特卡罗算法 数据拟合、参数估计、插值等数据处理算法(常用matlab实现); 线性规划、整数规划、多元规划、二次规划(用lingo、lingodo、matlab即可实现); 图论算法(包括最短路、网络流、二分图); 动态规划、回溯搜索、分治算法、分支界定 最优化理论的三个经典算法(模拟退火算法、神经网络算法、遗传算法); 网格算法和穷举法 连续数据离散化 数值分析算法 图像处理算法(常用matlab实现)  数学建模中的工具选取 好的工具能够提高工作和解决问题的效率，数据建模并不是让你用手算，而是有许多的工具帮助我们完成计算。所以选取适当的工具很重要。 数学建模中常用的工具有: Matlab、Mathmatic、lingo 、sass、spass 等。 有些工具在解决特定的问题时会比较方便，所以个人认为我们 可以根据解决的问题的类型而选择特定的工具来提高我们的效率。
-  Matlab是全能的，也是比较常用的工具之一，用它可以解决几乎所有的数学建模问题，但是matlab学习成本比较高，学起来稍微有些难。(Mathmatic相同) Lingo在解决线性问题上面比较擅长，操作简单，傻瓜式编程，学习成本比较低。建议遇到线性问题首先考虑用Lingo。  </p>
-  </section>
-  <footer class="entry-footer">June 20, 2016</footer>
-  <a class="entry-link" aria-label="post link to 数学建模系列-数学建模那些事" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E9%82%A3%E4%BA%9B%E4%BA%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Oracle数据库系列 - Oracle 表空间管理
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>创建表空间
- CREATE [ TEMPORARY | UNDO ] TALBESPACE tablespace_name [ DATAFILE | TEMPFILE &#39;file_name&#39; SIZE size K | M [ REUSE ] [ AUTOEXTEND OFF | ON [NEXT number K | M MAXSIZE UNLIMITED | number K | M ] ] [, ...] ] [ MININUM EXTENT number K | M] [ BLOCKSIZE number K ] [ ONLINE | OFFLINE ] [ LOGGING | NOLOGGING ] [ FORCE LOGGING ] [ DEFAULT STORAGE storage ] [ COMPRESS | NOCOMPRESS ] [ PERMANENT | TEMPORARY ] [ EXTENT MANAGEMENT DICTIONARY | LOCAL [ AUTOALLOCATE | UNIFORM SIZE number K | M] ] [ SEGMENT SPACE MANAGERMENT AUTO | MUNUAL]  创建一个永久性表空间myspace,数据文件大小为20MB,自动增长,每次增长为5MB,最大可为100MB...</p>
-  </section>
-  <footer class="entry-footer">June 17, 2016</footer>
-  <a class="entry-link" aria-label="post link to Oracle数据库系列 - Oracle 表空间管理" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle-%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Oracle 数据库系列 - SQL Plus SQL操作命令
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>###Oracle数据库系列- SQL Plus SQL操作命令 Oracle数据库的连接方式有很多中，你可以采用PL/SQL，Oracle SQL Developer 这样的工具进行数据库连接。 但是如果你更倾向于命令行的话，也可以用sqlplus(Oracle数据库自带的命令行工具)进行数据库SQL操作, sql plus 本身就十分强大，几乎可以完成数据库操作的所有功能。
-  连接数据库
-  执行 “开始” –&gt; “程序” –&gt;&#34; Oracle - OracleDb11_home1&#34; –&gt; “SQL Plus 命令”, 输入用户名和密码进行登录
-  在命令行中执行sqlplus命令进行连接
-   语法: sqlplus [user_name [ /password] [ @connect_identifier ] ] [AS { SYSOPER | SYSDBA | SYSASM } / NOLOG ]; //以scott用户登录orcl数据库 sqlplus scott/tiger @orcl;  CONNECT连接数据库   语法:CONN[ECT] [{user_name [/password] [ @connect_identifier ] } AS　{SYSOPER | SYSDBA | SYSOPERASM } ] ] //以scott用户登录orcl数据库; CONNECT scott/tiger @orcl;     退出数据库...</p>
-  </section>
-  <footer class="entry-footer">June 17, 2016</footer>
-  <a class="entry-link" aria-label="post link to Oracle 数据库系列 - SQL Plus SQL操作命令" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-sql-plus-sql%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"></a>
-</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -277,47 +242,10 @@ Z语言是运用数学中的集合论、函数、数理逻辑等方面的形式�
   <footer class="entry-footer">June 15, 2016</footer>
   <a class="entry-link" aria-label="post link to 软件工程系列- 软件开发模型" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>软件工程系列-介绍, 软件工程的那些事
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>######软件工程系列- 关于软件工程的那些事 软件工程是将现有的工程系统的概念、原理、技术 、和方法应用到软件开发领域，以达到使软件开发过程系统，规范，可度量。简单来说，软件工程就是贯穿软件开发过程中的方法论。
- 软件工程的基本原理
- 软件生命周期分阶段严格管理 阶段评审 严格的产品控制 采用更先进的现代程序设计技术 结果应能清楚地审查 少而精的开发人员 采用新的软件技术进行不断改进  软件工程的方法学
- 结构化程序设计 面向对象程序设计   上文说的软件工程的要素之一 采用新的软件技术进行不断的该进， 从这里就可以体现出来，软件工程方法学分别：结构化方法学(传统方法学)，面向对象方法学，分别对应以前比较普遍使用的结构化程序设计，以及现在流行的面向对象程序设计。
- 软件生命周期
- 软件定义 软件开发 软件维护   软件定义
- 这一阶段要完成，问题的定义，可行性研究，需求分析。
- 软件开发
- 这一阶段的工分为：软件的总体设计，详细设计，编码和单元测试，综合测试。
- 软件维护
- 这一阶段主要是对软件运行状态进行维护以及增加和改进功能。</p>
-  </section>
-  <footer class="entry-footer">June 13, 2016</footer>
-  <a class="entry-link" aria-label="post link to 软件工程系列-介绍, 软件工程的那些事" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-13-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>WordPress 系列- WordPress 部署期间遇到的问题和坑
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>####WordPress 系列- WordPress 部署期间遇到的问题和坑 这篇文章记录了我在研究WordPress中的遇到过的小问题，因为问题比较小，解决方法可能也就一句话，我就用一篇文章来记录他们。
-    ######WordPress文章链接形式设置为伪静态形式，造成链接失效
-在WordPress中链接的默认形式为日期&#43;文章标题的形式，比如你的一篇文章标题为:Hello WordPress那么WordPress会自动帮你生成这种形式的链接:http://youhostname/year/month/day/Hello WordPress这种链接形式是采用的伪静态，看网上有博文说，wordpress的伪静态是通过Apache的rewrite来实现的，博主也给出了解决方案，但是我在我的wordpress文件夹里并没有发现有.htaccess文件，可能因为这个文件的缺失，才导致伪静态失效的吧。
-   **解决方法：**在wordpress的管理后台，选择永久链接选项，选择原文链接形式或者数字链接形式皆可以。(原文链接形式-http://youhostname/?p=123,数字链接形式-http://youhostname/archives/123)</p>
-  </section>
-  <footer class="entry-footer">June 12, 2016</footer>
-  <a class="entry-link" aria-label="post link to WordPress 系列- WordPress 部署期间遇到的问题和坑" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-12-wordpress-%E7%B3%BB%E5%88%97-wordpress-%E9%83%A8%E7%BD%B2%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E5%9D%91/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="/page/3/">« Prev Page</a>
-    <a class="next" href="/page/5/">Next Page »</a>
+    <a class="prev" href="/blog/%E6%8A%80%E6%9C%AF/page/6/">« Prev Page</a>
+    <a class="next" href="/blog/%E6%8A%80%E6%9C%AF/page/8/">Next Page »</a>
   </nav>
 </footer>
     </main>

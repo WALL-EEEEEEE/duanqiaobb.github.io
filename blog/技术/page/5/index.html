@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>断桥bian的博客</title>
-
-<meta name="description" content="">
+<meta name="keywords" content="" />
+<meta name="description" content=" - 断桥bian的博客">
 <meta name="author" content="">
-<link rel="canonical" href="/" />
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -19,26 +19,34 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.88.1" />
-<link rel="alternate" type="application/rss+xml" href="/index.xml">
-<meta property="og:title" content="断桥bian的博客" />
+<link rel="alternate" type="application/rss+xml" href="/blog/%E6%8A%80%E6%9C%AF/index.xml">
+<meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="断桥bian的博客"/>
+<meta name="twitter:title" content=""/>
 <meta name="twitter:description" content=""/>
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "断桥bian的博客",
-  "url": "/",
-  "description": "",
-  "thumbnailUrl": "/favicon.ico",
-  "sameAs": [
-      
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/"
+    }
   ]
 }
 </script>
@@ -128,58 +136,6 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>自制爬虫框架－Pider框架介绍
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>介绍  动机 特性    介绍  Pider 框架的目的是用PHP创建一个优雅的，可靠的，有用的爬虫框架。
-动机  毫无疑问， PHP 是一个很好的web编程语言。社区里面，各种web开发框架 也层出不穷，但是爬虫和数据处理框架却寥寥无几，而好用的几乎没有。我相信不仅仅只是可以在web领域大 放光彩，也可以在可以在数据处理和爬虫方面有所作为，就好像Python。所以，我萌发了写一个爬虫和数据 处理方面的框架。从理想上来说，它能够覆盖数据抓取，数据清洗，数据分析，和数据可视化各个方面。
-特性  目前只是将 Pider 将具备的特性罗列出来，可能有些特性目前还没有实现， 但是会陆续实现和完善。
- 模板化 (未实现)   Pider 将允许通过定制化模板来编写爬虫，并管理爬虫的生命周期。
- 命令行 (简单实现)   Pider 将提供丰富的命令行交互接口。
- 多进程 (已实现)   Pider 有时候，需要爬虫需要进行大数量内容爬取，这个时候，单进程太慢而无法 而无法满足需求，多进程能够充分运用多核 CPU , 大大提高爬取效率和降低爬取时间。 Pider 将支持多进程抓取， 允许 多个进程并行对页面抓取和数据处理。
- 分组 (未实现)   有时候, 我们需要抓取多个页面, 然后对抓取的页面进行解析, 然后对进行解析的数据处理, 当然, 两个操作可以放在一起处理, 但是当两种操作其中一个很繁琐的时候， 这个很容易造成代码冗长，代码复用率低， Pider 的 Group 特性允许组合多个爬虫，爬虫和数据处理，以及多个数据处理操作。让爬虫和数据管理程序更加容易管理。...</p>
-  </section>
-  <footer class="entry-footer">May 4, 2018</footer>
-  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架介绍" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>自制爬虫框架－Pider框架简介
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p> 简介  Pider是什么？ 当前版本和状态 文档    简介 Pider是什么？  Pider是一个优雅，强大，模板化的爬虫框架。Pider想要 在数据采集方面给PHP社区提供更加方便，快捷的工具和框架。
-当前版本和状态  1.0 (开发中)  文档  详细的使用用法，请参考文档。
- 如果你对本项目感兴趣, 或者觉得对你有用，可以在给项目一个star或者watch,　项目地址：https://github.com/duanqiaobb/pider
- </p>
-  </section>
-  <footer class="entry-footer">May 4, 2018</footer>
-  <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架简介" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Scrapy框架——安装Scrapy
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>Scrapy框架—— 安装Scrapy  需求配置  安装sqlite依赖库 编译python3.6 编译Twisted   安装Scrapy 测试Scrapy是否成功安装    Scrapy框架—— 安装Scrapy  Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。
-本文针在python3.6的环境下来安装scrapy 需求配置  sqlite依赖库(centos下为sqlite-devel包)   scrapy 框架的正常运行，你的 python3.6 版本需要编译支持 sqlite ,
-  python3.6
-  Twisted
-   scrapy 的异步功能实现,需要 Twisted 的支持。 目前 scrapy 的最新版本需要 Twisted&gt;13.0 版本, 而 pip3.6 ， 所以我们需要从源码编译。
-安装sqlite依赖库  如果你的 python3.6 已经编译支持了 sqlite ,可以跳过这个步骤。
-  下载sqlite库
-yum install sqlite-devel   编译python3....</p>
-  </section>
-  <footer class="entry-footer">January 7, 2018</footer>
-  <a class="entry-link" aria-label="post link to Scrapy框架——安装Scrapy" href="/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
     <h2>或许我们其实并不懂歪果仁
     </h2>
   </header>
@@ -253,45 +209,10 @@ IDIR=../include CC=gcc CFLAGS=-I$(IDIR) ODIR=obj LDIR=../lib LIBS=-Im _DEPS=hell
   <footer class="entry-footer">April 23, 2017</footer>
   <a class="entry-link" aria-label="post link to Makefile快速入门" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>软件工程系列- 详细设计
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>目录
- 概述 过程设计工具 过程设计中程序复杂度的度量   概述 详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。   结构化程序设计
- 定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这 个程序是结构化的。 结构化程序设计的3种基本结构: 顺序、选择、循环。  过程设计工具  程序流程图
- 定义: 程序流程图又称为程序框图，它是使用最广泛的描述过程设计的方法。   盒图
- 定义：盒图又称为N-S图，是一种严格遵循结构程序设计精神的图形工具。   PAD图
- 定义: PAD图又名问题分析图, Problem analysis diagram, PAD图使用二维树形结构的图来表示程序的控制流。   判定表
- 定义: 判定表能够简洁而无歧义的描述复杂的条件组合与应做的动作的对应关系。   判定树
- 定义：判定树是判定表的变种，它也能清晰的表示复杂的条件组合与应做的动作之间的对应关系，同时判定树比 判定表的形式简单，让人很容易看出其含义。   过程设计语言(PDL)
- 定义: 过程设计语言，Process Design Language, 又称为伪码。它具有严格的关键字外部语法，用于定义控制结构和数据 结构。  过程设计中程序复杂度的度量  流图
- 定义： 流图实际上是程序流程图的简化版，它仅仅描绘程序的控制流程，完全不表现对数据的具体操作以及分支和循环 的具体条件。 流图包含3个元素：结点，区域，控制流。其中结点又分为普通结点，和判定结点。  计算环形复杂度的方法：...</p>
-  </section>
-  <footer class="entry-footer">June 22, 2016</footer>
-  <a class="entry-link" aria-label="post link to 软件工程系列- 详细设计" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-22-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。
- 情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版本,而Excel则是2016版本，两者不兼容。解决办法很粗暴: 就是讲Excel-2016版本卸载，然后重新装office-2007版本，然后程序就运行畅通无阻了。情况二： Excel软件设置问题MathLab是通过调用Windows下的Dom Server来进行Excel文件读取的，所以确定Excel软件的是允许和其他软件进行数据交换的。解决方法: 打开excel-&gt;excel选项-&gt;高级-&gt;最下面的常规-&gt; “忽略使用动态数据交换（DDE）的其他应用程序”。 查看是否勾选这个选项，如果勾选这个选项，就把他取消勾选。情况二： Excel软件权限问题有时候可能是因为执行Excel需要特殊的权限才导致出错。解决方法:
-找到Excel软件的快捷方式，右键点击属性-&gt;选择兼容性-&gt;取消勾选&#34;以管理员的身份运行该软件&#34;</p>
-  </section>
-  <footer class="entry-footer">June 20, 2016</footer>
-  <a class="entry-link" aria-label="post link to 数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E8%A7%A3%E5%86%B3matlab%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99could-not-start-excel-server-for-import%E9%97%AE%E9%A2%98/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="/page/2/">« Prev Page</a>
-    <a class="next" href="/page/4/">Next Page »</a>
+    <a class="prev" href="/blog/%E6%8A%80%E6%9C%AF/page/4/">« Prev Page</a>
+    <a class="next" href="/blog/%E6%8A%80%E6%9C%AF/page/6/">Next Page »</a>
   </nav>
 </footer>
     </main>
