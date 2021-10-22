@@ -16,6 +16,9 @@ enableEmoji: true
 params:
     defaultTheme: auto
     disableThemeToggle: true
+    ShowReadingTime: true
+    ShowBreadCrumbs: true
+    ShowToc: true
     profileMode:
         enabled: true
         title: "断桥bian" # optional default will be site title
@@ -27,6 +30,8 @@ params:
         buttons:
             - name: "博客" 
               url: "/blog"
+            - name: "关于" 
+              url: "/resume"
             - name: Github
               url: "https://github.com/duanqiaobb"
 
