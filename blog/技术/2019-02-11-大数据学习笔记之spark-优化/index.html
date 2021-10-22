@@ -138,16 +138,37 @@
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="/">Home</a></div>
     <h1 class="post-title">
       大数据学习笔记之Spark-优化
     </h1>
     <div class="post-description">
       Spark优化函数传递在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)解决方法：将函数中的必要字段转换成局部变量，然后进行传递。引用《Spark快速大数据分析》...
     </div>
-    <div class="post-meta">February 11, 2019
+    <div class="post-meta">February 11, 2019&nbsp;·&nbsp;1 min
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#spark%e4%bc%98%e5%8c%96" aria-label="Spark优化">Spark优化</a><ul>
+                        
+                <li>
+                    <a href="#%e5%87%bd%e6%95%b0%e4%bc%a0%e9%80%92" aria-label="函数传递">函数传递</a></li>
+                <li>
+                    <a href="#%e5%bc%95%e7%94%a8" aria-label="引用">引用</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h3 id="spark优化">Spark优化<a hidden class="anchor" aria-hidden="true" href="#spark优化">#</a></h3>
 <h4 id="函数传递">函数传递<a hidden class="anchor" aria-hidden="true" href="#函数传递">#</a></h4>
 <ol>

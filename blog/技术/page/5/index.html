@@ -109,7 +109,7 @@
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header">
+<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
   <h1>技术博客</h1>
   <div class="post-description">
     分享一些技术文章，以及技术问题
@@ -126,7 +126,7 @@
 Have they run out of provinces yet?
 If they haven’t, we’ve reason to fret. Long ago, there was just Cantonese. (Long ago, we were easy to please.) But then food from Szechuan came our way, Making Cantonese strictly passé. Szechuanese was the song that we sung, Though the ma po could burn through your tongue. Then when Shanghainese got in the loop We slurped dumplings whose insides were soup. Then Hunan, the birth province of Mao, Came along with its own style of chow....</p>
   </section>
-  <footer class="entry-footer">September 9, 2017</footer>
+  <footer class="entry-footer">September 9, 2017&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to 或许我们其实并不懂歪果仁" href="/blog/%E6%8A%80%E6%9C%AF/2017-09-09-%E6%88%96%E8%AE%B8%E6%88%91%E4%BB%AC%E5%85%B6%E5%AE%9E%E5%B9%B6%E4%B8%8D%E6%87%82%E6%AD%AA%E6%9E%9C%E4%BB%81/"></a>
 </article>
 
@@ -142,7 +142,7 @@ If they haven’t, we’ve reason to fret. Long ago, there was just Cantonese. (
  可能这个问题跟系统环境有关，首先，我先贴一下我的环境
    编辑器: GNU Emacs 25.2.1 (x8664-pc-linux-gnu, GTK&#43; Version 3.20.9) of 2017-02-25 系统: Linux version 4.4.39-gentoo (root@johans) (gcc version 4.9.4 (Gentoo 4.9.4 p1.0, pie-0.6.4) ) #1 SMP Wed Mar 8 09:21:39 CST 2017   digraph idp_modules{ rankdir = TB; fontname = &#34;Microsoft YaHei&#34;; fontsize = 12; node [ fontname = &#34;Microsoft YaHei&#34;, fontsize = 12, shape = &#34;record&#34; ]; edge [ fontname = &#34;Microsoft YaHei&#34;, fontsize = 12 ]; subgraph cluster_sl{ label=&#34;IDP支持层&#34;; bgcolor=&#34;mintcream&#34;; node [shape=&#34;Mrecord&#34;, color=&#34;skyblue&#34;, style=&#34;filled&#34;]; network_mgr [label=&#34;网络管理器&#34;]; log_mgr [label=&#34;日志管理器&#34;]; module_mgr [label=&#34;模块管理器&#34;]; conf_mgr [label=&#34;配置管理器&#34;]; db_mgr [label=&#34;数据库管理器&#34;]; }; subgraph cluster_md{ label=&#34;可插拔模块集&#34;; bgcolor=&#34;lightcyan&#34;; node [color=&#34;chartreuse2&#34;, style=&#34;filled&#34;]; mod_dev [label=&#34;开发支持模块&#34;]; mod_dm [label=&#34;数据建模模块&#34;]; mod_dp [label=&#34;部署发布模块&#34;]; }; mod_dp -&gt; mod_dev [label=&#34;依赖....</p>
   </section>
-  <footer class="entry-footer">May 12, 2017</footer>
+  <footer class="entry-footer">May 12, 2017&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Graphivz中文显示问题" href="/blog/%E6%8A%80%E6%9C%AF/2017-05-12-graphivz%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/"></a>
 </article>
 
@@ -156,7 +156,7 @@ If they haven’t, we’ve reason to fret. Long ago, there was just Cantonese. (
  复数的定义   在C&#43;&#43;中可以使用两种方式定义一个复数，一个使用C风格 _Complex 和 __complex__ ，一个是使用 complex 类。
 #include &lt;iostream&gt; #include &lt;complex&gt; #include &lt;complex.h&gt; using namespace std; int main(int argc, char *argv[]) { o complex&lt;double&gt; mycomplex(2.000,2); _Complex double mycomplex2 = 2.000 &#43; 3I; __complex__ double mycomplex3 = 2.000 &#43; 4I; cout &lt;&lt; mycomplex &lt;&lt; endl; cout &lt;&lt; &#34;(&#34; &lt;&lt; creal(mycomplex2) &lt;&lt; &#34;,&#34; &lt;&lt; cimag(mycomplex2) &lt;&lt; &#34;)&#34; &lt;&lt; endl; cout &lt;&lt; &#34;(&#34; &lt;&lt; creal(mycomplex3) &lt;&lt; &#34;,&#34; &lt;&lt; cimag(mycomplex3) &lt;&lt; &#34;)&#34; &lt;&lt; endl; return 0; }  复数的基本操作函数   在C&#43;&#43;中既可以使用 C 风格的相关函数处理 C 风格的复数形式。   函数 功能     creal 获取复数的实部   cimag 获取复数的虚部   conj 获取复数的共轭   carg 获取,复平面上穿过原点和复数在复平面表示的点,的直线和实数轴之间的夹角   cproj 返回复数在黎曼球面上的投影       方法 功能     real 获取复数的实部   imag 获取复数的虚部   abs 获取复数的绝对值   arg 获取,复平面上穿过原点和复数在复平面表示的点,的直线和实数轴之间的夹角   norm 获取复数的范数   conj 获取复数的共轭   polar 获取极坐标对应的复数   proj 返回复数在黎曼球面上的投影    using namespace std;...</p>
   </section>
-  <footer class="entry-footer">April 27, 2017</footer>
+  <footer class="entry-footer">April 27, 2017&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;中的复数" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c&#43;&#43;%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/"></a>
 </article>
 
@@ -172,7 +172,7 @@ If they haven’t, we’ve reason to fret. Long ago, there was just Cantonese. (
  定义一个复数   在 complex.h 头文件中定义了两个宏 _Complex_I 和 I 来创建一个复数。
 Macro: const float complex _Complex_I; Macro: const float complex I;  这两个宏表示复数 (0&#43;1i) , 我们可是使用这个单位复数来创建任何复数。...</p>
   </section>
-  <footer class="entry-footer">April 27, 2017</footer>
+  <footer class="entry-footer">April 27, 2017&nbsp;·&nbsp;1 min</footer>
   <a class="entry-link" aria-label="post link to C语言中的复数" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/"></a>
 </article>
 
@@ -188,7 +188,7 @@ target(规则生成的目标文件或者make执行的规则命令名) … : prer
 IDIR=../include CC=gcc CFLAGS=-I$(IDIR) ODIR=obj LDIR=../lib LIBS=-Im _DEPS=hellomake.h DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) _OBJ=hellomake.o hellofunc.o OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ)) $(ODIR)/%.o:%.c $(DEPS) $(CC) -c -o $@ $&lt; $(CFLAGS) hellomake: $(OBJ) $(CC) -o $@ $^ ${CFLAGS} $(LIBS) .PHONY: clean clean: rm -f $(ODIR)/*.o *~core $(INCDIR)/*~ 文件结构
 ├── include │ └ hellomake....</p>
   </section>
-  <footer class="entry-footer">April 23, 2017</footer>
+  <footer class="entry-footer">April 23, 2017&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Makefile快速入门" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"></a>
 </article>
 <footer class="page-footer">

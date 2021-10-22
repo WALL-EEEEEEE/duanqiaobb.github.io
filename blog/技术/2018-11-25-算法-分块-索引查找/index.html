@@ -138,16 +138,35 @@
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="/">Home</a></div>
     <h1 class="post-title">
       算法-分块/索引查找
     </h1>
     <div class="post-description">
       分块/索引查找思路前提： 1.块间有序 2.块内可以无序 3.索引中保存块的起始地址，和块内的最大值或者最小值   首先对索引进行折半查找，然后对块内进行顺序查找。算法复杂度    假设一个n长度的数组分为m块，每块的长度为： n/m, 那么算法的平均复杂度：O(n) = logm&#43;n/m, 算法最坏情况下的复杂度： O(n) = logm &#43; n/m。cpp实现st...
     </div>
-    <div class="post-meta">November 25, 2018
+    <div class="post-meta">November 25, 2018&nbsp;·&nbsp;3 min
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%88%86%e5%9d%97%e7%b4%a2%e5%bc%95%e6%9f%a5%e6%89%be" aria-label="分块/索引查找">分块/索引查找</a><ul>
+                        
+                <li>
+                    <a href="#cpp%e5%ae%9e%e7%8e%b0" aria-label="cpp实现">cpp实现</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h3 id="分块索引查找">分块/索引查找<a hidden class="anchor" aria-hidden="true" href="#分块索引查找">#</a></h3>
 <ul>
 <li>思路</li>
