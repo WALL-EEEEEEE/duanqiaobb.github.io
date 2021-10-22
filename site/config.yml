@@ -26,7 +26,7 @@ params:
         #imageHeight: 120 # custom size
         buttons:
             - name: "博客" 
-              url: "/content/blog"
+              url: "/blog"
             - name: Github
               url: "https://github.com/duanqiaobb"
 
