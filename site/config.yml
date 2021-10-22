@@ -14,11 +14,13 @@ enableEmoji: true
 
 
 params:
+    defaultTheme: auto
+    disableThemeToggle: true
     profileMode:
         enabled: true
         title: "断桥bian" # optional default will be site title
         subtitle: "世界上本没有路，只是走的人多了而已。"
-        imageUrl: "static/image/wali_profile.jpeg" # optional
+        imageUrl: "/image/wali_profile.jpeg" # optional
         imageTitle: "瓦利-仰望" # optional
         imageWidth: 120 # custom size
         imageHeight: 120 # custom size
