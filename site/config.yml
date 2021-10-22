@@ -22,8 +22,8 @@ params:
         subtitle: "世界上本没有路，只是走的人多了而已。"
         imageUrl: "/image/wali_profile.jpeg" # optional
         imageTitle: "瓦利-仰望" # optional
-        imageWidth: 120 # custom size
-        imageHeight: 120 # custom size
+        #imageWidth: 120 # custom size
+        #imageHeight: 120 # custom size
         buttons:
             - name: "博客" 
               url: "/archive"
