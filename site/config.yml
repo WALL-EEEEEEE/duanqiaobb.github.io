@@ -24,10 +24,10 @@ params:
         imageHeight: 120 # custom size
         buttons:
             - name: "博客" 
-            url: "/archive"
+              url: "/archive"
             - name: Github
-            url: "https://github.com/duanqiaobb"
+              url: "https://github.com/duanqiaobb"
 
     socialIcons: # optional
         - name: "Github"
-            url: "<link>"
+          url: "<link>"
