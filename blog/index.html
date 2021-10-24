@@ -46,104 +46,370 @@
 </script>
 </head>
 
-<body class="list" id="top">
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+<body class="list dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>博客列表 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="博客列表 - 断桥bian的博客">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/blog/index.xml">
+<meta property="og:title" content="博客列表" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/blog/" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="博客列表"/>
+<meta name="twitter:description" content=""/>
 
-            .list {
-                background: var(--theme);
-            }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+  ]
+}
+</script><main class="main">
+<v-app><v-navigation-drawer app right color="transparent" width="30%" floating>
+        <v-card class="mt-lg-30 mt-xs-30 mt-xl-30" style="margin-top: 12%">
+            <v-card-title primary-title class="justify-center"> 标签 </v-card-title>
+            <v-card-text>
+                <v-container>
+                    
+                    <v-chip class="ma-2" dark href="/tags/c/">
+                        c
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/c&#43;&#43;/">
+                        c&#43;&#43;
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/linux/">
+                        Linux
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/makefile/">
+                        makefile
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/matlab/">
+                        matlab
+                        <v-avatar right round color="pink">
+                            2
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/oracle/">
+                        oracle
+                        <v-avatar right round color="pink">
+                            3
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/php/">
+                        php
+                        <v-avatar right round color="pink">
+                            2
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/pider/">
+                        pider
+                        <v-avatar right round color="pink">
+                            4
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/scrapy/">
+                        scrapy
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/spark/">
+                        spark
+                        <v-avatar right round color="pink">
+                            2
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/vim/">
+                        vim
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/wordpress/">
+                        wordpress
+                        <v-avatar right round color="pink">
+                            2
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E5%8F%8D%E5%8F%8D%E7%88%AC/">
+                        反反爬
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        大数据
+                        <v-avatar right round color="pink">
+                            2
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E6%8E%92%E5%BA%8F/">
+                        排序
+                        <v-avatar right round color="pink">
+                            5
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
+                        数学建模
+                        <v-avatar right round color="pink">
+                            2
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        数据库
+                        <v-avatar right round color="pink">
+                            3
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E6%9E%84%E5%BB%BA/">
+                        构建
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E6%9F%A5%E6%89%BE/">
+                        查找
+                        <v-avatar right round color="pink">
+                            4
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E6%A1%86%E6%9E%B6/">
+                        框架
+                        <v-avatar right round color="pink">
+                            5
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E7%88%AC%E8%99%AB/">
+                        爬虫
+                        <v-avatar right round color="pink">
+                            6
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E7%AE%97%E6%B3%95/">
+                        算法
+                        <v-avatar right round color="pink">
+                            11
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        编程语言
+                        <v-avatar right round color="pink">
+                            2
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E8%AF%BB%E4%B9%A6/">
+                        读书
+                        <v-avatar right round color="pink">
+                            1
+                        </v-avatar>
+                    </v-chip>
+                    
+                    <v-chip class="ma-2" dark href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+                        软件工程
+                        <v-avatar right round color="pink">
+                            6
+                        </v-avatar>
+                    </v-chip>
+                    
+                </v-container>
+            </v-card-text>
+        </v-card>
+</v-navigation-drawer>
+    <v-main class="pr-0 pr-sm-0 pr-xs-0 pr-md-0 pr-lg-0 pr-xl-0">
+        <v-container fluid>
+        <v-card href="/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-%E4%BC%98%E5%8C%96/" width="100%" rounded class="mb-1"> 
+            <v-card-title class="entry-header">
+                <h2>大数据学习笔记之Spark-优化
+                </h2>
+            </v-card-title>
+                <v-card-subtitle>
+                    <p>Spark优化 函数传递  在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)   解决方 …</p>
+                </v-card-subtitle>
+            <v-card-actions>
+                <v-btn text>
+2019年6月11日&nbsp;·&nbsp;1 min大数据&nbsp;,&nbsp;spark</v-btn>
+            </v-card-actions>
+        </v-card>
+        <v-card href="/blog/%E6%8A%80%E6%9C%AF/2019-10-07-2019%E5%B9%B4%E4%B9%A6%E5%8D%95/" width="100%" rounded class="mb-1"> 
+            <v-card-title class="entry-header">
+                <h2>2019年书单
+                </h2>
+            </v-card-title>
+                <v-card-subtitle>
+                    <p> 2019年了，自己自我总结和反省了很长时间，发现还是需要在基础上面下功夫，所以今年还是在计算机基础方面上多花与一些时间，80%时间花在计算机基础知识的夯实，外语学习，20%时间花在自己感兴趣的其他领 …</p>
+                </v-card-subtitle>
+            <v-card-actions>
+                <v-btn text>
+2019年6月7日&nbsp;·&nbsp;1 min读书</v-btn>
+            </v-card-actions>
+        </v-card>
+        <v-card href="/blog/%E7%94%9F%E6%B4%BB/%E7%94%9F%E6%B4%BB%E6%9D%82%E8%B0%88-%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95/" width="100%" rounded class="mb-1"> 
+            <v-card-title class="entry-header">
+                <h2>生活杂谈-番茄工作法
+                </h2>
+            </v-card-title>
+                <v-card-subtitle>
+                    <p>目录
+ 番茄工作法 如何设置适合你的番茄时间? 我是如何切割我的番茄时间的? 任务分配 我的番茄时间表 调整或更新番茄时间表 相关软件推荐    对于软件开发人员来说，番茄工作法确实益处颇多。它在保证 …</p>
+                </v-card-subtitle>
+            <v-card-actions>
+                <v-btn text>
+2021年6月6日&nbsp;·&nbsp;1 min</v-btn>
+            </v-card-actions>
+        </v-card>
+        <v-card href="/blog/%E9%9D%A2%E8%AF%95/2017-06-29-%E9%9D%A2%E8%AF%951/" width="100%" rounded class="mb-1"> 
+            <v-card-title class="entry-header">
+                <h2>面试一
+                </h2>
+            </v-card-title>
+                <v-card-subtitle>
+                    <p>面试公司 面试中体现出的问题 解决和提升的方法 面试官提出的问题  首先进行自我介绍 关系型数据库和非关系型数据库之间的区别  两者的本质区别: 非关系型数据库的优势： 关系型数据库的优势: 现在的相 …</p>
+                </v-card-subtitle>
+            <v-card-actions>
+                <v-btn text>
+2021年6月6日&nbsp;·&nbsp;1 min</v-btn>
+            </v-card-actions>
+        </v-card>
+        <v-card href="/blog/%E9%9D%A2%E8%AF%95/2017-06-29-%E9%9D%A2%E8%AF%952/" width="100%" rounded class="mb-1"> 
+            <v-card-title class="entry-header">
+                <h2>面试二
+                </h2>
+            </v-card-title>
+                <v-card-subtitle>
+                    <p>面试的公司 面试中体现的问题 解决和提升的方法 面试官问的问题  PHP基础题1： PHP基础题2: PHP基础题3: PHP基础题4：    第二次面试的公司是一家游戏公司，总公司在上海，公司的办公 …</p>
+                </v-card-subtitle>
+            <v-card-actions>
+                <v-btn text>
+2021年6月6日&nbsp;·&nbsp;1 min</v-btn>
+            </v-card-actions>
+        </v-card>  
 
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
+    <script type="application/javascript">
+            var v_i_pagination = Vue.component('v-i-pagination', {
+                props: ['length'],
+                computed: {
+                   ilength: function() {
+                    return parseInt(this.length)
+                   },
+                },
+                data() {
+                    var page = 1
+                    var url = new URL(location.href)
+                    var page_regex = /page\/(?<page>\d+)/i
+                    var page_matcher = url.pathname.match(page_regex)
+                    if (page_matcher && page_matcher.groups ) {
+                        page = parseInt(page_matcher.groups["page"])
+                    }  
+                    return { page: page }
+                },
+                methods: {
+                   async i_input(page) {
+                        this.page = page 
+                        page_param_index =  location.href.search(/\/page|#\/.*/i) == -1 ? location.href.length:location.href.search(/\/page|#\/.*/i)
+                        origin_prefix_url = location.href.substr(0, page_param_index)
+                        origin_prefix_path =  new URL(origin_prefix_url).pathname.replace(/\/+$/g, '')
+                        new_page_path = [origin_prefix_path, 'page', page].join('/')
+                        window.location.replace(new_page_path)
+                    }
+ 
+                },
+                template: `<v-footer padless class="text-xs-center"> 
+                               <v-spacer></v-spacer>
+                               <v-pagination v-bind:value= "page" :length="ilength"  @input="i_input"></v-pagination>
+                               <v-spacer></v-spacer>
+                           </v-footer>`,
+            })
+    </script>
+    <v-i-pagination length="9"></v-i-pagination>
 
-    </style>
-</noscript>
+ 
+        </v-container>
 
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
-            <span class="logo-switches">
-            </span>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a></div>
-  <h1>博客列表</h1>
-</header>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">September 6, 2021&nbsp;·&nbsp;0 min</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E7%94%9F%E6%B4%BB/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">September 6, 2021&nbsp;·&nbsp;0 min</footer>
-  <a class="entry-link" aria-label="post link to " href="/blog/%E9%9D%A2%E8%AF%95/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>技术博客
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p></p>
-  </section>
-  <footer class="entry-footer">October 7, 2019&nbsp;·&nbsp;0 min</footer>
-  <a class="entry-link" aria-label="post link to 技术博客" href="/blog/%E6%8A%80%E6%9C%AF/"></a>
-</article>
-    </main>
-    
+    </v-main>
+</v-app>
+        </main>
+        
 <footer class="footer">
     <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
     <span>
@@ -158,13 +424,14 @@
     </svg>
 </a>
 
-<script>
-    let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
     }
-
+    }
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -185,7 +452,7 @@
     });
 
 </script>
-<script>
+<script type="application/javascript">
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -198,6 +465,7 @@
     };
 
 </script>
+</div>
 </body>
 
 </html>

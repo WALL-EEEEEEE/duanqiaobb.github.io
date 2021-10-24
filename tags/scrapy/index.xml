@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>scrapy on 断桥bian的博客</title>
+    <link>/tags/scrapy/</link>
+    <description>Recent content in scrapy on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Jan 2018 19:44:00 +0000</lastBuildDate><atom:link href="/tags/scrapy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scrapy框架——安装Scrapy</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/</link>
+      <pubDate>Sun, 07 Jan 2018 19:44:00 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2018-01-07-scrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85scrapy/</guid>
+      <description>Scrapy框架—— 安装Scrapy 需求配置安装sqlite依赖库编译python3.6编译Twisted安装Scrapy测试Scrapy是否成功安装Scrapy框架—— 安装Scrapy   Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。本文针在python3.6的环境下来安装scra</description>
+    </item>
+    
+  </channel>
+</rss>

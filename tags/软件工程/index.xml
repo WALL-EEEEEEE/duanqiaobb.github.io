@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>软件工程 on 断桥bian的博客</title>
+    <link>/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
+    <description>Recent content in 软件工程 on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 22 Jun 2016 16:27:19 +0000</lastBuildDate><atom:link href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>软件工程系列- 详细设计</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-22-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Wed, 22 Jun 2016 16:27:19 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-22-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1/</guid>
+      <description>目录概述过程设计工具过程设计中程序复杂度的度量概述详细设计阶段是逻辑上将系统的每个功能都设计出来，并保证设计出的处理过程应该尽可能的简明易懂。  结构化程序设计定义: 如果一个程序的代码块仅仅通过顺序、选择和循环这3种基本控制进行连接，并且只有一个入口和一个出口，则称这个程序是结构化的。结构化程序设计的3种基本结构: 顺序、选择、循环。过程设计工具  程序流程图定义: 程序流程图又</description>
+    </item>
+    
+    <item>
+      <title>软件工程系列 -软件开发形式化说明技术</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Thu, 16 Jun 2016 11:40:30 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/</guid>
+      <description>形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的   矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机  有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]&#43;事件[所选择的项]=&amp;gt;下个状态    有穷状态集的扩充：在上述的5个</description>
+    </item>
+    
+    <item>
+      <title>软件工程系列-软件开发的需求分析</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 15 Jun 2016 22:04:50 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/</guid>
+      <description>软件工程系列- 软件开发的需求分析   软件开发过程中需求分析是获得用户的真实需求的一个重要阶段，这一阶段，软件开发人员通过和用户的沟通，从中获取软件怎样完成它的工作的详细信息，了解目标软件系统的完整、准确、清晰、具体的要求。  软件需求分析中的与客户沟通获取需求的方法访谈向被调查人分发调查表情景分析技术  软件需求分析中的工具层次方框图Warnier图数据流图(功能模型)实体联系图状</description>
+    </item>
+    
+    <item>
+      <title>软件工程系列- 软件开发的可行性研究</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Wed, 15 Jun 2016 12:09:03 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%9A%84%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6/</guid>
+      <description>软件工程系列 - 软件开发的可行性&amp;lt;分析/strong&amp;gt;  软件开发过程中的可行性是指，软件开发过程中，在各种软件开发环境下，用最小的代价在尽可能短的时间内确认问题是否能够解决。  软件可行性一般可以从这几个方面进行分析：技术可行性(现有的技术是否能够实现)经济可行性(经济效益是否能超过它的开发成本)操作可行性(操作方式能否在组织中行得通)社会可行性(法律，社会效益中能否可行)  软件可行性</description>
+    </item>
+    
+    <item>
+      <title>软件工程系列- 软件开发模型</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Wed, 15 Jun 2016 12:08:05 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-15-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/</guid>
+      <description>软件工程系列-  软件开发模型  软件开发模型(Software Development Model)是指软件开发全部过程、活动和任务的结构框架。软件开发包括需求、设计、编码和测试等阶段，有时也包括维护阶段。 软件开发模型能清晰、直观地表达软件开发全过程，明确规定了要完成的主要活动和任务，用来作为软件项目工作的基础。对于不同的软件系统，可以采用不同的开发方法、使用不同的程序设计语言以及各种不同技能</description>
+    </item>
+    
+    <item>
+      <title>软件工程系列-介绍, 软件工程的那些事</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-13-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</link>
+      <pubDate>Mon, 13 Jun 2016 23:38:46 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-13-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E4%BB%8B%E7%BB%8D-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</guid>
+      <description>软件工程系列- 关于软件工程的那些事  软件工程是将现有的工程系统的概念、原理、技术 、和方法应用到软件开发领域，以达到使软件开发过程系统，规范，可度量。简单来说，软件工程就是贯穿软件开发过程中的方法论。软件工程的基本原理软件生命周期分阶段严格管理阶段评审严格的产品控制采用更先进的现代程序设计技术结果应能清楚地审查少而精的开发人员采用新的软件技术进行不断改进软件工程的方法学结构</description>
+    </item>
+    
+  </channel>
+</rss>

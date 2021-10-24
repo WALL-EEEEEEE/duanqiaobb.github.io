@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>makefile on 断桥bian的博客</title>
+    <link>/tags/makefile/</link>
+    <description>Recent content in makefile on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Apr 2017 13:59:34 +0000</lastBuildDate><atom:link href="/tags/makefile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Makefile快速入门</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 23 Apr 2017 13:59:34 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+      <description>Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。 Makefile的基本语法结构   make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则</description>
+    </item>
+    
+  </channel>
+</rss>

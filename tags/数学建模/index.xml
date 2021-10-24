@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>数学建模 on 断桥bian的博客</title>
+    <link>/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</link>
+    <description>Recent content in 数学建模 on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Jun 2016 19:28:16 +0000</lastBuildDate><atom:link href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E8%A7%A3%E5%86%B3matlab%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99could-not-start-excel-server-for-import%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 20 Jun 2016 19:28:16 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E8%A7%A3%E5%86%B3matlab%E8%AF%BB%E5%8F%96excel%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99could-not-start-excel-server-for-import%E9%97%AE%E9%A2%98/</guid>
+      <description>今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版</description>
+    </item>
+    
+    <item>
+      <title>数学建模系列-数学建模那些事</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E9%82%A3%E4%BA%9B%E4%BA%8B/</link>
+      <pubDate>Mon, 20 Jun 2016 16:33:38 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-20-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%B3%BB%E5%88%97-%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E9%82%A3%E4%BA%9B%E4%BA%8B/</guid>
+      <description>数学建模的概念:        所谓的数学建模就是使用数学框架解决实际应用问题,数学建模在解决问题的同时能够培养      1. 数学思维能力，      2. 分析问题本质的能力，      3. 团队合作的能力，      4. 资料检索的能力，      5. 编程能力，      6. 论文写作的能力。数学建模中的典型方法蒙特卡罗算法数据拟合、参数估计、插值等数据处理算法(</description>
+    </item>
+    
+  </channel>
+</rss>

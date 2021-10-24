@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>反反爬 on 断桥bian的博客</title>
+    <link>/tags/%E5%8F%8D%E5%8F%8D%E7%88%AC/</link>
+    <description>Recent content in 反反爬 on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 May 2018 19:31:49 +0000</lastBuildDate><atom:link href="/tags/%E5%8F%8D%E5%8F%8D%E7%88%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mime-一个随机模拟useragent库</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2018-05-16-mime-%E4%B8%80%E4%B8%AA%E9%9A%8F%E6%9C%BA%E6%A8%A1%E6%8B%9Fuseragent%E5%BA%93/</link>
+      <pubDate>Wed, 16 May 2018 19:31:49 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2018-05-16-mime-%E4%B8%80%E4%B8%AA%E9%9A%8F%E6%9C%BA%E6%A8%A1%E6%8B%9Fuseragent%E5%BA%93/</guid>
+      <description>Mime     Mime 是一个随机模拟 useragent 的库。 它可以用来作为反反爬的工具，用来躲过一些 通过 useragent 的反爬手段。需求&amp;amp;amp;amp;gt;= php7.1https://www.useragentstring.com  Mime 的 useragent 数据来源于 https://www.useragentstring.com安装...</description>
+    </item>
+    
+  </channel>
+</rss>

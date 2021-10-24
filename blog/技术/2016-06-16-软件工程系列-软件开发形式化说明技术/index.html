@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>软件工程系列 -软件开发形式化说明技术 | 断桥bian的博客</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="软件工程" />
 <meta name="description" content="形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的   矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机  有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]&#43;事件[所选择的项]=&gt;下个状态    有穷状态集的扩充：在上述的5个">
 <meta name="author" content="">
 <link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/" />
@@ -41,6 +41,12 @@
     {
       "@type": "ListItem",
       "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
       "name": "软件工程系列 -软件开发形式化说明技术",
       "item": "/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/"
     }
@@ -55,9 +61,9 @@
   "name": "软件工程系列 -软件开发形式化说明技术",
   "description": "形式化说明技术 形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的 矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机 有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]+事件[所选择的项]=下个状态 有穷状态集的扩充：在上述的5个",
   "keywords": [
-    
+    "软件工程"
   ],
-  "articleBody": "###形式化说明技术 形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的 矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。\n 有穷状态机\n 有穷状态机包括下述的5个部分:\n  状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为: 当前状态[菜单]+事件[所选择的项]=下个状态  有穷状态集的扩充：\n  在上述的5个部分中加入第6个组件-谓词集P，其中每个谓词都是系统全局状态Y的函 数，转换函数T从一个（J-F)*K*P到J的一个函数。  转换规则:\n  当前状态[菜单] + 事件[所选择的项]+谓词=下个状态\n Petri网\n Petri网包含4种元素:一组位置P、一组转换T、输入函数I以及输出函数O。  Petri网的扩充:\n 添加权标M,Petri网C=(P,T,I,O,M),Petri网中的标记是在Petri网中的权标(token)的,分配。权标在Petri网中的应用，通常当每个输入位置 所拥有的权标数大于等于从该 位置到转换的线数时，就允许转换。  Petri网扩充2:\n 添加禁止线，禁止线是用一个小圆圈而不是用箭头标记的输入线。通常，当每个输入线至少有一个权标，而禁止线上没有权标的时候,相应 的转换才是允许的。  Z语言\nZ语言是运用数学中的集合论、函数、数理逻辑等方面的形式化得规格说明语言。Z语言包含的4个元素: 给定的集合、数据类型及常数 状态定义 初始状态 操作   Z语言的优点：\n   Z语言写的规格说明的错误容易发现\n  能够精确性高，减少了说明的模糊性、不一致性、和遗漏。\n  实践说明Z语言能够缩小开发过程中所需要的总时间\n  形式化方法的优势:\n  形式化方法可以用数学方法验证正确性\n  形式化方法能有效的消除二义性\n  形式化方法的劣势:\n  形式化方法主要集中关注系统的功能和数据,而不是问题的时序、控制和行为等方面的需求。\n  形式化方法学习成本比较高。\n  ",
+  "articleBody": "形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的 矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。\n 有穷状态机\n 有穷状态机包括下述的5个部分:\n  状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为: 当前状态[菜单]+事件[所选择的项]=下个状态  有穷状态集的扩充：\n  在上述的5个部分中加入第6个组件-谓词集P，其中每个谓词都是系统全局状态Y的函 数，转换函数T从一个（J-F)*K*P到J的一个函数。  转换规则:\n  当前状态[菜单] + 事件[所选择的项]+谓词=下个状态\n Petri网\n Petri网包含4种元素:一组位置P、一组转换T、输入函数I以及输出函数O。  Petri网的扩充:\n 添加权标M,Petri网C=(P,T,I,O,M),Petri网中的标记是在Petri网中的权标(token)的,分配。权标在Petri网中的应用，通常当每个输入位置 所拥有的权标数大于等于从该 位置到转换的线数时，就允许转换。  Petri网扩充2:\n 添加禁止线，禁止线是用一个小圆圈而不是用箭头标记的输入线。通常，当每个输入线至少有一个权标，而禁止线上没有权标的时候,相应 的转换才是允许的。  Z语言\nZ语言是运用数学中的集合论、函数、数理逻辑等方面的形式化得规格说明语言。Z语言包含的4个元素: 给定的集合、数据类型及常数 状态定义 初始状态 操作   Z语言的优点：\n   Z语言写的规格说明的错误容易发现\n  能够精确性高，减少了说明的模糊性、不一致性、和遗漏。\n  实践说明Z语言能够缩小开发过程中所需要的总时间\n  形式化方法的优势:\n  形式化方法可以用数学方法验证正确性\n  形式化方法能有效的消除二义性\n  形式化方法的劣势:\n  形式化方法主要集中关注系统的功能和数据,而不是问题的时序、控制和行为等方面的需求。\n  形式化方法学习成本比较高。\n  ",
   "wordCount" : "39",
   "inLanguage": "en",
   "datePublished": "2016-06-16T11:40:30Z",
@@ -78,78 +84,138 @@
 </script>
 </head>
 
-<body class="" id="top">
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+<body class=" dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>软件工程系列 -软件开发形式化说明技术 | 断桥bian的博客</title>
+<meta name="keywords" content="软件工程" />
+<meta name="description" content="形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的   矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机  有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]&#43;事件[所选择的项]=&gt;下个状态    有穷状态集的扩充：在上述的5个">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();" type="application/javascript" ></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="软件工程系列 -软件开发形式化说明技术" />
+<meta property="og:description" content="形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的   矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机  有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]&#43;事件[所选择的项]=&gt;下个状态    有穷状态集的扩充：在上述的5个" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-06-16T11:40:30&#43;00:00" />
+<meta property="article:modified_time" content="2016-06-16T11:40:30&#43;00:00" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="软件工程系列 -软件开发形式化说明技术"/>
+<meta name="twitter:description" content="形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的   矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机  有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]&#43;事件[所选择的项]=&gt;下个状态    有穷状态集的扩充：在上述的5个"/>
 
-            .list {
-                background: var(--theme);
-            }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
-            <span class="logo-switches">
-            </span>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "软件工程系列 -软件开发形式化说明技术",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "软件工程系列 -软件开发形式化说明技术",
+  "name": "软件工程系列 -软件开发形式化说明技术",
+  "description": "形式化说明技术 形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的 矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机 有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]+事件[所选择的项]=下个状态 有穷状态集的扩充：在上述的5个",
+  "keywords": [
+    "软件工程"
+  ],
+  "articleBody": "形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的 矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。\n 有穷状态机\n 有穷状态机包括下述的5个部分:\n  状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为: 当前状态[菜单]+事件[所选择的项]=下个状态  有穷状态集的扩充：\n  在上述的5个部分中加入第6个组件-谓词集P，其中每个谓词都是系统全局状态Y的函 数，转换函数T从一个（J-F)*K*P到J的一个函数。  转换规则:\n  当前状态[菜单] + 事件[所选择的项]+谓词=下个状态\n Petri网\n Petri网包含4种元素:一组位置P、一组转换T、输入函数I以及输出函数O。  Petri网的扩充:\n 添加权标M,Petri网C=(P,T,I,O,M),Petri网中的标记是在Petri网中的权标(token)的,分配。权标在Petri网中的应用，通常当每个输入位置 所拥有的权标数大于等于从该 位置到转换的线数时，就允许转换。  Petri网扩充2:\n 添加禁止线，禁止线是用一个小圆圈而不是用箭头标记的输入线。通常，当每个输入线至少有一个权标，而禁止线上没有权标的时候,相应 的转换才是允许的。  Z语言\nZ语言是运用数学中的集合论、函数、数理逻辑等方面的形式化得规格说明语言。Z语言包含的4个元素: 给定的集合、数据类型及常数 状态定义 初始状态 操作   Z语言的优点：\n   Z语言写的规格说明的错误容易发现\n  能够精确性高，减少了说明的模糊性、不一致性、和遗漏。\n  实践说明Z语言能够缩小开发过程中所需要的总时间\n  形式化方法的优势:\n  形式化方法可以用数学方法验证正确性\n  形式化方法能有效的消除二义性\n  形式化方法的劣势:\n  形式化方法主要集中关注系统的功能和数据,而不是问题的时序、控制和行为等方面的需求。\n  形式化方法学习成本比较高。\n  ",
+  "wordCount" : "39",
+  "inLanguage": "en",
+  "datePublished": "2016-06-16T11:40:30Z",
+  "dateModified": "2016-06-16T11:40:30Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2016-06-16-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%B3%BB%E5%88%97-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%B4%E6%98%8E%E6%8A%80%E6%9C%AF/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script><main class="main">
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a></div>
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       软件工程系列 -软件开发形式化说明技术
     </h1>
     <div class="post-description">
       形式化说明技术  形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的   矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。有穷状态机  有穷状态机包括下述的5个部分: 状态集J、输入集K、由当前状态和当前输入确定下个状态(次态)的转换函数T、初始态S、和终态集F。转换规则为:当前状态[菜单]&#43;事件[所选择的项]=&gt;下个状态    有穷状态集的扩充：在上述的5个
     </div>
-    <div class="post-meta">June 16, 2016&nbsp;·&nbsp;1 min
+    <div class="post-meta">
+2016年6月16日&nbsp;·&nbsp;1 min软件工程
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
-  <div class="post-content"><p>###<!-- raw HTML omitted --><!-- raw HTML omitted -->形式化说明技术<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#centerstrong%e5%bd%a2%e5%bc%8f%e5%8c%96%e8%af%b4%e6%98%8e%e6%8a%80%e6%9c%afstrongcenter" aria-label="形式化说明技术"><!-- raw HTML omitted --><!-- raw HTML omitted -->形式化说明技术<!-- raw HTML omitted --><!-- raw HTML omitted --></a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h3 id="centerstrong形式化说明技术strongcenter"><!-- raw HTML omitted --><!-- raw HTML omitted -->形式化说明技术<!-- raw HTML omitted --><!-- raw HTML omitted --><a hidden class="anchor" aria-hidden="true" href="#centerstrong形式化说明技术strongcenter">#</a></h3>
 <blockquote>
 <p>形式化方法就是基于数学的技术描述系统的性质,消除自然语言书写的系统规格说明书的
 矛盾、二义性、含糊性、不完整性、及抽象层次混乱性。</p>
@@ -232,10 +298,13 @@
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a></li>
+    </ul>
   </footer>
 </article>
-    </main>
-    
+        </main>
+        
 <footer class="footer">
     <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
     <span>
@@ -250,13 +319,14 @@
     </svg>
 </a>
 
-<script>
-    let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
     }
-
+    }
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -277,7 +347,7 @@
     });
 
 </script>
-<script>
+<script type="application/javascript">
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -290,6 +360,7 @@
     };
 
 </script>
+</div>
 </body>
 
 </html>

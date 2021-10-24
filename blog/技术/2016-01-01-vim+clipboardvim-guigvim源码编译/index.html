@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>vim&#43;clipboard＋vim-gui(gvim)源码编译 | 断桥bian的博客</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="vim" />
 <meta name="description" content="昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h">
 <meta name="author" content="">
 <link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim&#43;clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/" />
@@ -41,6 +41,12 @@
     {
       "@type": "ListItem",
       "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
       "name": "vim+clipboard＋vim-gui(gvim)源码编译",
       "item": "/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim+clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"
     }
@@ -55,7 +61,7 @@
   "name": "vim\u002bclipboard＋vim-gui(gvim)源码编译",
   "description": "昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 +gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h",
   "keywords": [
-    
+    "vim"
   ],
   "articleBody": " 昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　首先先贴下环境：Fedora 22 +gcc 5.3.1版本＋vim74源码包\n  首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:https://github.com/vim/vim.git(这是vim在github下托管的链接) 你只需要: cd yourdir/youdir/youdir git clone https://github.com/vim/vim.git 将源码下下来  然后进入你下载的源码目录,如果你没改目录名的话,应该是当前目录下的vim文件夹内(如下图)\n  然后安装编译vim-gui(gvim)需要的gui环境依赖头文件,可以是gtk2,gnome….等等.(我安装的是gtk2)\n Fedora下用yum安装: sudo yum install gtk2-devel.x86_64 (这里看你的系统版本,如果是32位的,就装gtk2-devel.i686 这个包,我的系统是64位的,我这里是安装gtk-gui,如果你是安装其他gui的话,需要安装其他的包而不是这个包) ... 注意:不同的软件源的包名可能不一样,大家可以用**yum search+关键字**搜一下，名称应该类似  接下来还要安装 libXt-devel.x86_64 libX11-devel.x86_64 这两个包都是X11图形界面的源码包`\n sudo yum install libXt-devel.x86_64 \u0026\u0026 sudo yum install libX11-devel.x86_64 ... libXt-devel.x86_64这个包是让我折腾一天的罪魁祸首,哭晕。。。,你也可以直接安装qt3-devel.x86_64这个包,它包含了libXt-devel.x86_64。  好了,现在你可以编译源码了,进入源码包\n cd vim 或者cd vim/src ./configure　--with-features=huge | grep gui(这里我选择带特征最多的巨型版本,--with-features=normal(正常版本),--with-features=tiny(微型版本),默认是正常版本)  如果你显示这个的话，说明你的gui可以用，也就是能编译出vim-gui和clipboard否则不行（按理说clipboard这个特性应该不会依赖gui，但是我gui编译不出,clipboard特性也编译不出）,编译出来的朋友们可以私信我，是怎么回事,我也学习学习。 … 注意：vim编译的时候默认的gui配置选项为- -enable-gui=auto，这样系统会自动搜索是否支持编译成gvim，可以就编译,否则就忽略。当然你也可以指定特定的gui。 …\n -enable-gui=gtk2 … 不过建议使用默认的   sudo make \u0026\u0026 sudo make install (编译链接不多说了) 如果没出问题的话就可以使用了,如果有的出现问题,也就是有些包没装，装下依赖包就可以了。(yum search \u0026 yum install )  现在可以看看我们编译后的成果了。 gvim 或　vim -g 看看gvim怎么样\n  vim –version 看看vim  现在是巨型版本,clipboard特性也有了。success！ ",
   "wordCount" : "82",
@@ -78,74 +84,121 @@
 </script>
 </head>
 
-<body class="" id="top">
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+<body class=" dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>vim&#43;clipboard＋vim-gui(gvim)源码编译 | 断桥bian的博客</title>
+<meta name="keywords" content="vim" />
+<meta name="description" content="昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim&#43;clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();" type="application/javascript" ></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="vim&#43;clipboard＋vim-gui(gvim)源码编译" />
+<meta property="og:description" content="昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim&#43;clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-01-01T18:02:23&#43;00:00" />
+<meta property="article:modified_time" content="2016-01-01T18:02:23&#43;00:00" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="vim&#43;clipboard＋vim-gui(gvim)源码编译"/>
+<meta name="twitter:description" content="昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h"/>
 
-            .list {
-                background: var(--theme);
-            }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
-            <span class="logo-switches">
-            </span>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "vim+clipboard＋vim-gui(gvim)源码编译",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim+clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "vim+clipboard＋vim-gui(gvim)源码编译",
+  "name": "vim\u002bclipboard＋vim-gui(gvim)源码编译",
+  "description": "昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 +gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h",
+  "keywords": [
+    "vim"
+  ],
+  "articleBody": " 昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　首先先贴下环境：Fedora 22 +gcc 5.3.1版本＋vim74源码包\n  首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:https://github.com/vim/vim.git(这是vim在github下托管的链接) 你只需要: cd yourdir/youdir/youdir git clone https://github.com/vim/vim.git 将源码下下来  然后进入你下载的源码目录,如果你没改目录名的话,应该是当前目录下的vim文件夹内(如下图)\n  然后安装编译vim-gui(gvim)需要的gui环境依赖头文件,可以是gtk2,gnome….等等.(我安装的是gtk2)\n Fedora下用yum安装: sudo yum install gtk2-devel.x86_64 (这里看你的系统版本,如果是32位的,就装gtk2-devel.i686 这个包,我的系统是64位的,我这里是安装gtk-gui,如果你是安装其他gui的话,需要安装其他的包而不是这个包) ... 注意:不同的软件源的包名可能不一样,大家可以用**yum search+关键字**搜一下，名称应该类似  接下来还要安装 libXt-devel.x86_64 libX11-devel.x86_64 这两个包都是X11图形界面的源码包`\n sudo yum install libXt-devel.x86_64 \u0026\u0026 sudo yum install libX11-devel.x86_64 ... libXt-devel.x86_64这个包是让我折腾一天的罪魁祸首,哭晕。。。,你也可以直接安装qt3-devel.x86_64这个包,它包含了libXt-devel.x86_64。  好了,现在你可以编译源码了,进入源码包\n cd vim 或者cd vim/src ./configure　--with-features=huge | grep gui(这里我选择带特征最多的巨型版本,--with-features=normal(正常版本),--with-features=tiny(微型版本),默认是正常版本)  如果你显示这个的话，说明你的gui可以用，也就是能编译出vim-gui和clipboard否则不行（按理说clipboard这个特性应该不会依赖gui，但是我gui编译不出,clipboard特性也编译不出）,编译出来的朋友们可以私信我，是怎么回事,我也学习学习。 … 注意：vim编译的时候默认的gui配置选项为- -enable-gui=auto，这样系统会自动搜索是否支持编译成gvim，可以就编译,否则就忽略。当然你也可以指定特定的gui。 …\n -enable-gui=gtk2 … 不过建议使用默认的   sudo make \u0026\u0026 sudo make install (编译链接不多说了) 如果没出问题的话就可以使用了,如果有的出现问题,也就是有些包没装，装下依赖包就可以了。(yum search \u0026 yum install )  现在可以看看我们编译后的成果了。 gvim 或　vim -g 看看gvim怎么样\n  vim –version 看看vim  现在是巨型版本,clipboard特性也有了。success！ ",
+  "wordCount" : "82",
+  "inLanguage": "en",
+  "datePublished": "2016-01-01T18:02:23Z",
+  "dateModified": "2016-01-01T18:02:23Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim+clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script><main class="main">
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a></div>
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       vim&#43;clipboard＋vim-gui(gvim)源码编译
     </h1>
     <div class="post-description">
       昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h
     </div>
-    <div class="post-meta">January 1, 2016&nbsp;·&nbsp;1 min
+    <div class="post-meta">
+2016年6月1日&nbsp;·&nbsp;1 minvim
 </div>
   </header> 
 
@@ -221,10 +274,13 @@ gvim 或　vim -g
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/vim/">vim</a></li>
+    </ul>
   </footer>
 </article>
-    </main>
-    
+        </main>
+        
 <footer class="footer">
     <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
     <span>
@@ -239,13 +295,14 @@ gvim 或　vim -g
     </svg>
 </a>
 
-<script>
-    let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
     }
-
+    }
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -266,7 +323,7 @@ gvim 或　vim -g
     });
 
 </script>
-<script>
+<script type="application/javascript">
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -279,6 +336,7 @@ gvim 或　vim -g
     };
 
 </script>
+</div>
 </body>
 
 </html>

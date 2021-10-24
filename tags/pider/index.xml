@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>pider on 断桥bian的博客</title>
+    <link>/tags/pider/</link>
+    <description>Recent content in pider on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 06 May 2018 13:05:31 +0000</lastBuildDate><atom:link href="/tags/pider/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自制爬虫框架－Pider框架快速开始</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2018-05-06-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</link>
+      <pubDate>Sun, 06 May 2018 13:05:31 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2018-05-06-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</guid>
+      <description>快速使用 项目的基本结构运行爬虫数据处理示例基本用法响应处理多进程快速使用项目的基本结构//项目根目录|-- Config  //配置文件|-- LICENSE|-- README.md|-- composer.json|-- composer.lock|-- examples //示例|-- install.sh //安装脚本|...</description>
+    </item>
+    
+    <item>
+      <title>自制爬虫框架－Pider框架安装</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 04 May 2018 22:43:51 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/</guid>
+      <description>安装 需求安装安装需求PHP &amp;amp;gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]...</description>
+    </item>
+    
+    <item>
+      <title>自制爬虫框架－Pider框架介绍</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 04 May 2018 20:22:48 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/</guid>
+      <description>介绍 动机特性介绍   Pider 框架的目的是用PHP创建一个优雅的，可靠的，有用的爬虫框架。动机     毫无疑问， PHP 是一个很好的web编程语言。社区里面，各种web开发框架 也层出不穷，但是爬虫和数据处理框架却寥寥无几，而好用的几乎没有。我相信不仅仅只是可以在web领域大 放光彩，也可以在可以在数据处理和爬虫方面有所作为，就好像Python。所...</description>
+    </item>
+    
+    <item>
+      <title>自制爬虫框架－Pider框架简介</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Fri, 04 May 2018 11:39:18 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/</guid>
+      <description>简介 Pider是什么？当前版本和状态文档简介Pider是什么？     Pider是一个优雅，强大，模板化的爬虫框架。Pider想要 在数据采集方面给PHP社区提供更加方便，快捷的工具和框架。当前版本和状态1.0 (开发中)文档     详细的使用用法，请参考文档。  如果你对本项目感兴趣, 或者觉得对你有用，可以在...</description>
+    </item>
+    
+  </channel>
+</rss>

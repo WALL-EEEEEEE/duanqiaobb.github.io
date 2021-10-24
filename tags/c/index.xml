@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>c on 断桥bian的博客</title>
+    <link>/tags/c/</link>
+    <description>Recent content in c on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 27 Apr 2017 11:10:59 +0000</lastBuildDate><atom:link href="/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C语言中的复数</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/</link>
+      <pubDate>Thu, 27 Apr 2017 11:10:59 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/</guid>
+      <description>C语言中的复数操作   复数在数学运算中十分重要，在编写数值运算或者算法的时候，我们会用到复数这种概念。 那么，复数在C/C&#43;&#43;语言中是如何表示的呢？我们接下来一一介绍。C语言中复数   在数学中一个复数可以定义为 (z=a &#43; bi) 的形式。 C 语言在 ISO C99 时就引入了复数类型。它是通过 complex.h 中定义的。 我们可以使用 complex , __complex__ ,</description>
+    </item>
+    
+  </channel>
+</rss>

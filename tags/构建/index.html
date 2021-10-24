@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>构建 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="/tags/%E6%9E%84%E5%BB%BA/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/tags/%E6%9E%84%E5%BB%BA/index.xml">
+<meta property="og:title" content="构建" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/%E6%9E%84%E5%BB%BA/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="构建"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>构建 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="/tags/%E6%9E%84%E5%BB%BA/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
+</script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/tags/%E6%9E%84%E5%BB%BA/index.xml">
+<meta property="og:title" content="构建" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/%E6%9E%84%E5%BB%BA/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="构建"/>
+<meta name="twitter:description" content=""/>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
+  <h1>构建</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Makefile快速入门
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Make是一个可扩展性极强的编译构建工具，将它和相关语言的编译器结合起来，我们几乎可以用它来 编译构建任何编程语言程序。
+ make主要是通过默认的 Makefile 或 makefile 的配置文件(下文统一称 makefile )中的规则来构建项目的。 makefile 其实是有无数的规则组成的。 我们可以用这些规则来编译，链接，以及运行相关命令和脚本。这些规则的语法大概是这样的:
+target(规则生成的目标文件或者make执行的规则命令名) … : prerequisitse(规则的输入文件，或源文件) … recipe(make执行的规则命令) … …  recipe（规则命令）必须有一个制表符(TAB)。并且如果一旦任何一个源文件变化了，规则命令都会重新执行，否则不会。 make 检测文件的是否修改是通过文件的上次修改时间来确定的
+IDIR=../include CC=gcc CFLAGS=-I$(IDIR) ODIR=obj LDIR=../lib LIBS=-Im _DEPS=hellomake.h DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) _OBJ=hellomake.o hellofunc.o OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ)) $(ODIR)/%.o:%.c $(DEPS) $(CC) -c -o $@ $&lt; $(CFLAGS) hellomake: $(OBJ) $(CC) -o $@ $^ ${CFLAGS} $(LIBS) .PHONY: clean clean: rm -f $(ODIR)/*.o *~core $(INCDIR)/*~ 文件结构
+├── include │ └ hellomake....</p>
+  </section>
+  <footer class="entry-footer">
+2017年6月23日&nbsp;·&nbsp;2 min构建&nbsp;,&nbsp;makefile</footer>
+  <a class="entry-link" aria-label="post link to Makefile快速入门" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"></a>
+</article>
+        </main>
+        
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script type="application/javascript">
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</div>
+</body>
+
+</html>

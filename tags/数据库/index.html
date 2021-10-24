@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>数据库 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml">
+<meta property="og:title" content="数据库" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>数据库 | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
+</script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml">
+<meta property="og:title" content="数据库" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库"/>
+<meta name="twitter:description" content=""/>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
+  <h1>数据库</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Oracle数据库系列 - Oracle 表空间管理
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>创建表空间
+ CREATE [ TEMPORARY | UNDO ] TALBESPACE tablespace_name [ DATAFILE | TEMPFILE &#39;file_name&#39; SIZE size K | M [ REUSE ] [ AUTOEXTEND OFF | ON [NEXT number K | M MAXSIZE UNLIMITED | number K | M ] ] [, ...] ] [ MININUM EXTENT number K | M] [ BLOCKSIZE number K ] [ ONLINE | OFFLINE ] [ LOGGING | NOLOGGING ] [ FORCE LOGGING ] [ DEFAULT STORAGE storage ] [ COMPRESS | NOCOMPRESS ] [ PERMANENT | TEMPORARY ] [ EXTENT MANAGEMENT DICTIONARY | LOCAL [ AUTOALLOCATE | UNIFORM SIZE number K | M] ] [ SEGMENT SPACE MANAGERMENT AUTO | MUNUAL]  创建一个永久性表空间myspace,数据文件大小为20MB,自动增长,每次增长为5MB,最大可为100MB...</p>
+  </section>
+  <footer class="entry-footer">
+2016年6月17日&nbsp;·&nbsp;2 min数据库&nbsp;,&nbsp;oracle</footer>
+  <a class="entry-link" aria-label="post link to Oracle数据库系列 - Oracle 表空间管理" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle-%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Oracle 数据库系列 - SQL Plus SQL操作命令
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Oracle数据库系列- SQL Plus SQL操作命令  Oracle数据库的连接方式有很多中，你可以采用PL/SQL，Oracle SQL Developer 这样的工具进行数据库连接。 但是如果你更倾向于命令行的话，也可以用sqlplus(Oracle数据库自带的命令行工具)进行数据库SQL操作, sql plus 本身就十分强大，几乎可以完成数据库操作的所有功能。
+  连接数据库
+  执行 “开始” –&gt; “程序” –&gt;&#34; Oracle - OracleDb11_home1&#34; –&gt; “SQL Plus 命令”, 输入用户名和密码进行登录
+  在命令行中执行sqlplus命令进行连接
+   语法: sqlplus [user_name [ /password] [ @connect_identifier ] ] [AS { SYSOPER | SYSDBA | SYSASM } / NOLOG ]; //以scott用户登录orcl数据库 sqlplus scott/tiger @orcl;  CONNECT连接数据库   语法:CONN[ECT] [{user_name [/password] [ @connect_identifier ] } AS　{SYSOPER | SYSDBA | SYSOPERASM } ] ] //以scott用户登录orcl数据库; CONNECT scott/tiger @orcl;     退出数据库...</p>
+  </section>
+  <footer class="entry-footer">
+2016年6月17日&nbsp;·&nbsp;2 min数据库&nbsp;,&nbsp;oracle</footer>
+  <a class="entry-link" aria-label="post link to Oracle 数据库系列 - SQL Plus SQL操作命令" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-sql-plus-sql%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Oracle数据库系列-Oracle数据库开场篇
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。
+   这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果有什么不对的地方，欢迎大家在评论区进行评论指出。
+ Oracle账户的解锁
+ Oracle数据库自带了许多账户，但是默认情况下Oracle数据库只对其中5个账户进行了解锁，这5个账户分别为SYS、SYSTEM、DBSNMP、SYSMAN、MGMT_VIEW，而其他用户都是默认的锁定状态。Oracle数据库的账号管理和其他关系型数据库，例如mysql,sqlserver不一样,像mysql,sqlserver数据库有专门的数据库用户管理命令对数据库用户进行管理，而Oracle数据则是直接通过sql语句通过对数据库表的操作进行对用户管理。
+ 查看用户的账号的状态
+SELECT username, account_status from db_users; 其中OPEN表示账户为解锁状态，EXPIRED表示账户为过期状态(需要设置口令才能解除此状态);LOCKED 表示账户为锁定状态。  为scott账户进行解锁
+SQL&gt; ALTER USER scott ACCOUNT UNLOCK; SQL&gt; ALTER USER scott IDENTIFIED BY tiger; SQL&gt; SELECT username ,account_status FROM dba_users WHERE username = &#39;SCOTT&#39;; 注意: 在使用数据字典dba_users时,需要注意其字段的值是区分大小的，所以指定username的时候需要指定为&#39;SCOTT&#39;,而不是&#39;scott&#39;;  </p>
+  </section>
+  <footer class="entry-footer">
+2016年6月16日&nbsp;·&nbsp;1 min数据库&nbsp;,&nbsp;oracle</footer>
+  <a class="entry-link" aria-label="post link to Oracle数据库系列-Oracle数据库开场篇" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/"></a>
+</article>
+        </main>
+        
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script type="application/javascript">
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</div>
+</body>
+
+</html>

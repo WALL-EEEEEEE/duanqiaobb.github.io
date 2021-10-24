@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>算法-翻转数列 | 断桥bian的博客</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="算法" />
 <meta name="description" content="翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为&#39;-&#39;;。例如n = 8, m = 2, 数列就是: -1, -2, &#43;3, &#43;4, -5, -6, &#43;7, &#43;8.而n = 4, m = 1, 数列就是: -1, &#43;2, -3, &#43; 4.小Q现在希望你能帮他算算前n项和为...">
 <meta name="author" content="">
 <link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BF%BB%E8%BD%AC%E6%95%B0%E5%88%97/" />
@@ -41,6 +41,12 @@
     {
       "@type": "ListItem",
       "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
       "name": "算法-翻转数列",
       "item": "/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BF%BB%E8%BD%AC%E6%95%B0%E5%88%97/"
     }
@@ -55,7 +61,7 @@
   "name": "算法-翻转数列",
   "description": "翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为'-';。例如n = 8, m = 2, 数列就是: -1, -2, +3, +4, -5, -6, +7, +8.而n = 4, m = 1, 数列就是: -1, +2, -3, + 4.小Q现在希望你能帮他算算前n项和为...",
   "keywords": [
-    
+    "算法"
   ],
   "articleBody": "翻转数列 小Q定义了一种数列称为翻转数列: 给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为'-';。 例如n = 8, m = 2, 数列就是: -1, -2, +3, +4, -5, -6, +7, +8. 而n = 4, m = 1, 数列就是: -1, +2, -3, + 4. 小Q现在希望你能帮他算算前n项和为多少。 输入描述: 输入包括两个整数n和m(2  思路  1. n能被2m整除，我们可以得出, n 为2m的整数倍， 2. 根据数列的规律，2m个元素的和为m^2 所以我们可以把n个元素划分为多个2m元素组成的块，x = n/(2*m), 那么前n项的和可以看作这些块的总和：S_n = x*m^2 = n/(2*m)*m^2 = n/2 * m  算法复杂度   算法的平均复杂度: O(n) = 1; 最坏情况下的复杂度为：O(n) = 1。\ncpp实现 #include using namespace std; long sumn_reverse_permutation(int n, int m) { if ( n  2 || n  1000000000 || m  1 || n % (2*m) != 0 ) { return -1; } long num_2m = n / (2*m); long sum_n = num_2m * m * m; return sum_n; } int main(int argc, char** argv) { int n, m; scanf(\"%d %d\",\u0026n, \u0026m); long sum_n = sumn_reverse_permutation(n,m); cout  sum_n  endl; }  Note: 注意c++的int类型表示的数值范围为：0~2^32次方，无法表示最后的存储结果，同时如果计算的时候都是int类型的话，编译器不会自动将类型转换为long类型，需要将计算时的其中一个元素定义为long类型，然后计算结果也存储为long类型。\n ",
   "wordCount" : "158",
@@ -78,74 +84,121 @@
 </script>
 </head>
 
-<body class="" id="top">
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+<body class=" dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>算法-翻转数列 | 断桥bian的博客</title>
+<meta name="keywords" content="算法" />
+<meta name="description" content="翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为&#39;-&#39;;。例如n = 8, m = 2, 数列就是: -1, -2, &#43;3, &#43;4, -5, -6, &#43;7, &#43;8.而n = 4, m = 1, 数列就是: -1, &#43;2, -3, &#43; 4.小Q现在希望你能帮他算算前n项和为...">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BF%BB%E8%BD%AC%E6%95%B0%E5%88%97/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();" type="application/javascript" ></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="算法-翻转数列" />
+<meta property="og:description" content="翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为&#39;-&#39;;。例如n = 8, m = 2, 数列就是: -1, -2, &#43;3, &#43;4, -5, -6, &#43;7, &#43;8.而n = 4, m = 1, 数列就是: -1, &#43;2, -3, &#43; 4.小Q现在希望你能帮他算算前n项和为..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BF%BB%E8%BD%AC%E6%95%B0%E5%88%97/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-11-25T17:41:35&#43;00:00" />
+<meta property="article:modified_time" content="2018-11-25T17:41:35&#43;00:00" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="算法-翻转数列"/>
+<meta name="twitter:description" content="翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为&#39;-&#39;;。例如n = 8, m = 2, 数列就是: -1, -2, &#43;3, &#43;4, -5, -6, &#43;7, &#43;8.而n = 4, m = 1, 数列就是: -1, &#43;2, -3, &#43; 4.小Q现在希望你能帮他算算前n项和为..."/>
 
-            .list {
-                background: var(--theme);
-            }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
-            <span class="logo-switches">
-            </span>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "算法-翻转数列",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BF%BB%E8%BD%AC%E6%95%B0%E5%88%97/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "算法-翻转数列",
+  "name": "算法-翻转数列",
+  "description": "翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为'-';。例如n = 8, m = 2, 数列就是: -1, -2, +3, +4, -5, -6, +7, +8.而n = 4, m = 1, 数列就是: -1, +2, -3, + 4.小Q现在希望你能帮他算算前n项和为...",
+  "keywords": [
+    "算法"
+  ],
+  "articleBody": "翻转数列 小Q定义了一种数列称为翻转数列: 给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为'-';。 例如n = 8, m = 2, 数列就是: -1, -2, +3, +4, -5, -6, +7, +8. 而n = 4, m = 1, 数列就是: -1, +2, -3, + 4. 小Q现在希望你能帮他算算前n项和为多少。 输入描述: 输入包括两个整数n和m(2  思路  1. n能被2m整除，我们可以得出, n 为2m的整数倍， 2. 根据数列的规律，2m个元素的和为m^2 所以我们可以把n个元素划分为多个2m元素组成的块，x = n/(2*m), 那么前n项的和可以看作这些块的总和：S_n = x*m^2 = n/(2*m)*m^2 = n/2 * m  算法复杂度   算法的平均复杂度: O(n) = 1; 最坏情况下的复杂度为：O(n) = 1。\ncpp实现 #include using namespace std; long sumn_reverse_permutation(int n, int m) { if ( n  2 || n  1000000000 || m  1 || n % (2*m) != 0 ) { return -1; } long num_2m = n / (2*m); long sum_n = num_2m * m * m; return sum_n; } int main(int argc, char** argv) { int n, m; scanf(\"%d %d\",\u0026n, \u0026m); long sum_n = sumn_reverse_permutation(n,m); cout  sum_n  endl; }  Note: 注意c++的int类型表示的数值范围为：0~2^32次方，无法表示最后的存储结果，同时如果计算的时候都是int类型的话，编译器不会自动将类型转换为long类型，需要将计算时的其中一个元素定义为long类型，然后计算结果也存储为long类型。\n ",
+  "wordCount" : "158",
+  "inLanguage": "en",
+  "datePublished": "2018-11-25T17:41:35Z",
+  "dateModified": "2018-11-25T17:41:35Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E7%BF%BB%E8%BD%AC%E6%95%B0%E5%88%97/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script><main class="main">
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a></div>
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       算法-翻转数列
     </h1>
     <div class="post-description">
       翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为&#39;-&#39;;。例如n = 8, m = 2, 数列就是: -1, -2, &#43;3, &#43;4, -5, -6, &#43;7, &#43;8.而n = 4, m = 1, 数列就是: -1, &#43;2, -3, &#43; 4.小Q现在希望你能帮他算算前n项和为...
     </div>
-    <div class="post-meta">November 25, 2018&nbsp;·&nbsp;1 min
+    <div class="post-meta">
+2018年6月25日&nbsp;·&nbsp;1 min算法
 </div>
   </header> <div class="toc">
     <details >
@@ -221,10 +274,13 @@
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+    </ul>
   </footer>
 </article>
-    </main>
-    
+        </main>
+        
 <footer class="footer">
     <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
     <span>
@@ -239,13 +295,14 @@
     </svg>
 </a>
 
-<script>
-    let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
     }
-
+    }
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -266,7 +323,7 @@
     });
 
 </script>
-<script>
+<script type="application/javascript">
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -279,6 +336,7 @@
     };
 
 </script>
+</div>
 </body>
 
 </html>

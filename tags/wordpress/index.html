@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>wordpress | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="/tags/wordpress/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/tags/wordpress/index.xml">
+<meta property="og:title" content="wordpress" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/wordpress/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="wordpress"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>wordpress | 断桥bian的博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="/tags/wordpress/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
+</script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="/tags/wordpress/index.xml">
+<meta property="og:title" content="wordpress" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/tags/wordpress/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="wordpress"/>
+<meta name="twitter:description" content=""/>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
+  <h1>wordpress</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>WordPress 系列- WordPress 部署期间遇到的问题和坑
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>####WordPress 系列- WordPress 部署期间遇到的问题和坑 这篇文章记录了我在研究WordPress中的遇到过的小问题，因为问题比较小，解决方法可能也就一句话，我就用一篇文章来记录他们。
+    ######WordPress文章链接形式设置为伪静态形式，造成链接失效
+在WordPress中链接的默认形式为日期&#43;文章标题的形式，比如你的一篇文章标题为:Hello WordPress那么WordPress会自动帮你生成这种形式的链接:http://youhostname/year/month/day/Hello WordPress这种链接形式是采用的伪静态，看网上有博文说，wordpress的伪静态是通过Apache的rewrite来实现的，博主也给出了解决方案，但是我在我的wordpress文件夹里并没有发现有.htaccess文件，可能因为这个文件的缺失，才导致伪静态失效的吧。
+   **解决方法：**在wordpress的管理后台，选择永久链接选项，选择原文链接形式或者数字链接形式皆可以。(原文链接形式-http://youhostname/?p=123,数字链接形式-http://youhostname/archives/123)</p>
+  </section>
+  <footer class="entry-footer">
+2016年6月12日&nbsp;·&nbsp;1 minphp&nbsp;,&nbsp;wordpress</footer>
+  <a class="entry-link" aria-label="post link to WordPress 系列- WordPress 部署期间遇到的问题和坑" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-12-wordpress-%E7%B3%BB%E5%88%97-wordpress-%E9%83%A8%E7%BD%B2%E6%9C%9F%E9%97%B4%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E5%9D%91/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>WordPress系列-开场白
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>WordPress的浅显研究  最近在研究wordpress,于是开了这个系列文章，这些文章记录了我在学习wordpress过程 中的心得，以及踩过的坑。
+ </p>
+  </section>
+  <footer class="entry-footer">
+2016年6月12日&nbsp;·&nbsp;1 minphp&nbsp;,&nbsp;wordpress</footer>
+  <a class="entry-link" aria-label="post link to WordPress系列-开场白" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-12-wordpress%E7%B3%BB%E5%88%97-%E5%BC%80%E5%9C%BA%E7%99%BD/"></a>
+</article>
+        </main>
+        
+<footer class="footer">
+    <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script type="application/javascript">
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>c&#43;&#43; on 断桥bian的博客</title>
+    <link>/tags/c&#43;&#43;/</link>
+    <description>Recent content in c&#43;&#43; on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 27 Apr 2017 19:30:33 +0000</lastBuildDate><atom:link href="/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;中的复数</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c&#43;&#43;%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/</link>
+      <pubDate>Thu, 27 Apr 2017 19:30:33 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2017-04-27-c&#43;&#43;%E4%B8%AD%E7%9A%84%E5%A4%8D%E6%95%B0/</guid>
+      <description>C&#43;&#43;中的复数   C&#43;&#43;中的复数操作在C语言基础上引进了面向对象的特性，在 C&#43;&#43; 头文件在 complex 中定义了一个 complex 类用来表示复数。同时为了兼容 C 的 complex 类型，也提供了一个 complex.h 的头文件。 不同的是，在 complex.h 头文件中， complex 关键字被废弃，只能使用 _Complex 和 __complex__ 来使用 C风格的复数形</description>
+    </item>
+    
+  </channel>
+</rss>

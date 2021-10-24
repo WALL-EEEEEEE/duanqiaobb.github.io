@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>自制爬虫框架－Pider框架安装 | 断桥bian的博客</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="爬虫, pider, 框架" />
 <meta name="description" content="安装 需求安装安装需求PHP &amp;gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]...">
 <meta name="author" content="">
 <link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/" />
@@ -41,6 +41,12 @@
     {
       "@type": "ListItem",
       "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
       "name": "自制爬虫框架－Pider框架安装",
       "item": "/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/"
     }
@@ -55,7 +61,7 @@
   "name": "自制爬虫框架－Pider框架安装",
   "description": "安装 需求安装安装需求PHP \u0026gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]...",
   "keywords": [
-    
+    "爬虫", "pider", "框架"
   ],
   "articleBody": " 安装  需求 安装    安装 需求  PHP = 7.1 pcntl(可选，多进程需要)  安装 git clone https://github.com/duanqiaobb/pider.git git submodule update --init --recursive //安装composer,如果出现问题，请参考 [composer官方文档](https://getcomposer.org/download/) 进行安装 php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\" php -r \"if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;\" php composer-setup.php php -r \"unlink('composer-setup.php');\" //安装 cd pider chmod u+x install.sh ./install.sh ",
   "wordCount" : "58",
@@ -78,74 +84,121 @@
 </script>
 </head>
 
-<body class="" id="top">
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+<body class=" dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>自制爬虫框架－Pider框架安装 | 断桥bian的博客</title>
+<meta name="keywords" content="爬虫, pider, 框架" />
+<meta name="description" content="安装 需求安装安装需求PHP &amp;gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]...">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();" type="application/javascript" ></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="自制爬虫框架－Pider框架安装" />
+<meta property="og:description" content="安装 需求安装安装需求PHP &amp;gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-05-04T22:43:51&#43;00:00" />
+<meta property="article:modified_time" content="2018-05-04T22:43:51&#43;00:00" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="自制爬虫框架－Pider框架安装"/>
+<meta name="twitter:description" content="安装 需求安装安装需求PHP &amp;gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]..."/>
 
-            .list {
-                background: var(--theme);
-            }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
-            <span class="logo-switches">
-            </span>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "自制爬虫框架－Pider框架安装",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "自制爬虫框架－Pider框架安装",
+  "name": "自制爬虫框架－Pider框架安装",
+  "description": "安装 需求安装安装需求PHP \u0026gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]...",
+  "keywords": [
+    "爬虫", "pider", "框架"
+  ],
+  "articleBody": " 安装  需求 安装    安装 需求  PHP = 7.1 pcntl(可选，多进程需要)  安装 git clone https://github.com/duanqiaobb/pider.git git submodule update --init --recursive //安装composer,如果出现问题，请参考 [composer官方文档](https://getcomposer.org/download/) 进行安装 php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\" php -r \"if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;\" php composer-setup.php php -r \"unlink('composer-setup.php');\" //安装 cd pider chmod u+x install.sh ./install.sh ",
+  "wordCount" : "58",
+  "inLanguage": "en",
+  "datePublished": "2018-05-04T22:43:51Z",
+  "dateModified": "2018-05-04T22:43:51Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script><main class="main">
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a></div>
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       自制爬虫框架－Pider框架安装
     </h1>
     <div class="post-description">
       安装 需求安装安装需求PHP &amp;gt;= 7.1pcntl(可选，多进程需要)安装git clone https://github.com/duanqiaobb/pider.gitgit submodule update --init --recursive//安装composer,如果出现问题，请参考 [composer官方文档]...
     </div>
-    <div class="post-meta">May 4, 2018&nbsp;·&nbsp;1 min
+    <div class="post-meta">
+2018年6月4日&nbsp;·&nbsp;1 min爬虫&nbsp;,&nbsp;pider&nbsp;,&nbsp;框架
 </div>
   </header> <div class="toc">
     <details >
@@ -203,10 +256,15 @@ chmod u+x install.sh
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></li>
+      <li><a href="/tags/pider/">pider</a></li>
+      <li><a href="/tags/%E6%A1%86%E6%9E%B6/">框架</a></li>
+    </ul>
   </footer>
 </article>
-    </main>
-    
+        </main>
+        
 <footer class="footer">
     <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
     <span>
@@ -221,13 +279,14 @@ chmod u+x install.sh
     </svg>
 </a>
 
-<script>
-    let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
     }
-
+    }
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -248,7 +307,7 @@ chmod u+x install.sh
     });
 
 </script>
-<script>
+<script type="application/javascript">
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -261,6 +320,7 @@ chmod u+x install.sh
     };
 
 </script>
+</div>
 </body>
 
 </html>

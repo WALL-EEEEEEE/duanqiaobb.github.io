@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>oracle on 断桥bian的博客</title>
+    <link>/tags/oracle/</link>
+    <description>Recent content in oracle on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Jun 2016 20:11:42 +0000</lastBuildDate><atom:link href="/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oracle数据库系列 - Oracle 表空间管理</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle-%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 17 Jun 2016 20:11:42 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle-%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/</guid>
+      <description>创建表空间    CREATE [ TEMPORARY | UNDO ] TALBESPACE tablespace_name    [       DATAFILE | TEMPFILE &amp;#39;file_name&amp;#39; SIZE size K | M [ REUSE ]       [          AUTOEXTEND OFF | ON          [NEXT number K |</description>
+    </item>
+    
+    <item>
+      <title>Oracle 数据库系列 - SQL Plus SQL操作命令</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-sql-plus-sql%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 17 Jun 2016 17:39:28 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-sql-plus-sql%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</guid>
+      <description>Oracle数据库系列- SQL Plus SQL操作命令  Oracle数据库的连接方式有很多中，你可以采用PL/SQL，Oracle SQL Developer 这样的工具进行数据库连接。   但是如果你更倾向于命令行的话，也可以用sqlplus(Oracle数据库自带的命令行工具)进行数据库SQL操作, sql plus    本身就十分强大，几乎可以完成数据库操作的所有功能。连接数据</description>
+    </item>
+    
+    <item>
+      <title>Oracle数据库系列-Oracle数据库开场篇</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/</link>
+      <pubDate>Thu, 16 Jun 2016 16:05:59 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/</guid>
+      <description>Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果</description>
+    </item>
+    
+  </channel>
+</rss>

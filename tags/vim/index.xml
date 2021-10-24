@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>vim on 断桥bian的博客</title>
+    <link>/tags/vim/</link>
+    <description>Recent content in vim on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 01 Jan 2016 18:02:23 +0000</lastBuildDate><atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim&#43;clipboard＋vim-gui(gvim)源码编译</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim&#43;clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Fri, 01 Jan 2016 18:02:23 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2016-01-01-vim&#43;clipboardvim-guigvim%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</guid>
+      <description>昨天因为系统中自带的vim中没有clipboard特性,别的程序到vim中粘贴复制内容比较别扭。于是就（ˇˍˇ）　想～从重新编译一个完整版本的vim。于是就倒弄了一天。。。。。。　　　　　　   首先先贴下环境：Fedora 22 &#43;gcc 5.3.1版本＋vim74源码包首先下载vim74源码包,这个可以到vim.org官网下载,这里我贴出linux需要下载的版本(也是我下载的版本)的链接:h</description>
+    </item>
+    
+  </channel>
+</rss>

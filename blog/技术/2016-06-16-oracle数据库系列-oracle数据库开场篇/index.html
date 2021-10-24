@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Oracle数据库系列-Oracle数据库开场篇 | 断桥bian的博客</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="数据库, oracle" />
 <meta name="description" content="Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果">
 <meta name="author" content="">
 <link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/" />
@@ -41,6 +41,12 @@
     {
       "@type": "ListItem",
       "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
       "name": "Oracle数据库系列-Oracle数据库开场篇",
       "item": "/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/"
     }
@@ -55,7 +61,7 @@
   "name": "Oracle数据库系列-Oracle数据库开场篇",
   "description": "Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果",
   "keywords": [
-    
+    "数据库", "oracle"
   ],
   "articleBody": "Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。\n   这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果有什么不对的地方，欢迎大家在评论区进行评论指出。\n Oracle账户的解锁\n Oracle数据库自带了许多账户，但是默认情况下Oracle数据库只对其中5个账户进行了解锁，这5个账户分别为SYS、SYSTEM、DBSNMP、SYSMAN、MGMT_VIEW，而其他用户都是默认的锁定状态。Oracle数据库的账号管理和其他关系型数据库，例如mysql,sqlserver不一样,像mysql,sqlserver数据库有专门的数据库用户管理命令对数据库用户进行管理，而Oracle数据则是直接通过sql语句通过对数据库表的操作进行对用户管理。\n 查看用户的账号的状态\nSELECT username, account_status from db_users; 其中OPEN表示账户为解锁状态，EXPIRED表示账户为过期状态(需要设置口令才能解除此状态);LOCKED 表示账户为锁定状态。  为scott账户进行解锁\nSQL ALTER USER scott ACCOUNT UNLOCK; SQL ALTER USER scott IDENTIFIED BY tiger; SQL SELECT username ,account_status FROM dba_users WHERE username = 'SCOTT'; 注意: 在使用数据字典dba_users时,需要注意其字段的值是区分大小的，所以指定username的时候需要指定为'SCOTT',而不是'scott';  ",
   "wordCount" : "40",
@@ -78,74 +84,121 @@
 </script>
 </head>
 
-<body class="" id="top">
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
+<body class=" dark" id="top">
+    <div id="app"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Oracle数据库系列-Oracle数据库开场篇 | 断桥bian的博客</title>
+<meta name="keywords" content="数据库, oracle" />
+<meta name="description" content="Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果">
+<meta name="author" content="">
+<link rel="canonical" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js" type="application/javascript"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js" type="application/javascript"></script>
+<script type="application/javascript">
+window.addEventListener('load', function () {
+    let vueRouter = new VueRouter();
+    let vue = new Vue({
+        el: '#app',
+        router: vueRouter,
+        vuetify: new Vuetify(
+            {
+                theme: {dark: true},
+            }
+        ),
+    });
+})
 </script>
-<noscript>
-    <style type="text/css">
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css" integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();" type="application/javascript" ></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<meta property="og:title" content="Oracle数据库系列-Oracle数据库开场篇" />
+<meta property="og:description" content="Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-06-16T16:05:59&#43;00:00" />
+<meta property="article:modified_time" content="2016-06-16T16:05:59&#43;00:00" />
 
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: #1d1e20;
-                --entry: #2e2e33;
-                --primary: rgba(255, 255, 255, 0.84);
-                --secondary: rgba(255, 255, 255, 0.56);
-                --tertiary: rgba(255, 255, 255, 0.16);
-                --content: rgba(255, 255, 255, 0.74);
-                --hljs-bg: #2e2e33;
-                --code-bg: #37383e;
-                --border: #333;
-            }
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Oracle数据库系列-Oracle数据库开场篇"/>
+<meta name="twitter:description" content="Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果"/>
 
-            .list {
-                background: var(--theme);
-            }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="断桥bian的博客 (Alt + H)">断桥bian的博客</a>
-            <span class="logo-switches">
-            </span>
-        </div>
-        <ul id="menu">
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "博客列表",
+      "item": "/blog/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Oracle数据库系列-Oracle数据库开场篇",
+      "item": "/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Oracle数据库系列-Oracle数据库开场篇",
+  "name": "Oracle数据库系列-Oracle数据库开场篇",
+  "description": "Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果",
+  "keywords": [
+    "数据库", "oracle"
+  ],
+  "articleBody": "Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。\n   这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果有什么不对的地方，欢迎大家在评论区进行评论指出。\n Oracle账户的解锁\n Oracle数据库自带了许多账户，但是默认情况下Oracle数据库只对其中5个账户进行了解锁，这5个账户分别为SYS、SYSTEM、DBSNMP、SYSMAN、MGMT_VIEW，而其他用户都是默认的锁定状态。Oracle数据库的账号管理和其他关系型数据库，例如mysql,sqlserver不一样,像mysql,sqlserver数据库有专门的数据库用户管理命令对数据库用户进行管理，而Oracle数据则是直接通过sql语句通过对数据库表的操作进行对用户管理。\n 查看用户的账号的状态\nSELECT username, account_status from db_users; 其中OPEN表示账户为解锁状态，EXPIRED表示账户为过期状态(需要设置口令才能解除此状态);LOCKED 表示账户为锁定状态。  为scott账户进行解锁\nSQL ALTER USER scott ACCOUNT UNLOCK; SQL ALTER USER scott IDENTIFIED BY tiger; SQL SELECT username ,account_status FROM dba_users WHERE username = 'SCOTT'; 注意: 在使用数据字典dba_users时,需要注意其字段的值是区分大小的，所以指定username的时候需要指定为'SCOTT',而不是'scott';  ",
+  "wordCount" : "40",
+  "inLanguage": "en",
+  "datePublished": "2016-06-16T16:05:59Z",
+  "dateModified": "2016-06-16T16:05:59Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "断桥bian的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script><main class="main">
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a></div>
+    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       Oracle数据库系列-Oracle数据库开场篇
     </h1>
     <div class="post-description">
       Oracle数据库系列- 开场篇  Oracle数据库是数据库系统中的佼佼者，其完整性、安全性、和一致性等优点深受广大企业的青睐。Oracle数据库继承了无数多的功能，为开发者提供和不少的便利的特性。但是由于Oracle数据库庞大而繁杂的功能，导致学习Oracle数据库的难度上升不少，也同时让许多的开发者望而止步。  这一系列博客记录我在学习Oracle数据库过程中的一些心得，与大家一起分享。如果
     </div>
-    <div class="post-meta">June 16, 2016&nbsp;·&nbsp;1 min
+    <div class="post-meta">
+2016年6月16日&nbsp;·&nbsp;1 min数据库&nbsp;,&nbsp;oracle
 </div>
   </header> <div class="toc">
     <details >
@@ -195,10 +248,14 @@
   </div>
 
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li>
+      <li><a href="/tags/oracle/">oracle</a></li>
+    </ul>
   </footer>
 </article>
-    </main>
-    
+        </main>
+        
 <footer class="footer">
     <span>&copy; 2021 <a href="/">断桥bian的博客</a></span>
     <span>
@@ -213,13 +270,14 @@
     </svg>
 </a>
 
-<script>
-    let menu = document.getElementById('menu')
-    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-    menu.onscroll = function () {
-        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+<script type="application/javascript" >
+    var menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
     }
-
+    }
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
@@ -240,7 +298,7 @@
     });
 
 </script>
-<script>
+<script type="application/javascript">
     var mybutton = document.getElementById("top-link");
     window.onscroll = function () {
         if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
@@ -253,6 +311,7 @@
     };
 
 </script>
+</div>
 </body>
 
 </html>

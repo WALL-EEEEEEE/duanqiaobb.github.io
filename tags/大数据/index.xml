@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>大数据 on 断桥bian的博客</title>
+    <link>/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
+    <description>Recent content in 大数据 on 断桥bian的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 11 Feb 2019 15:54:38 +0000</lastBuildDate><atom:link href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大数据学习笔记之Spark-优化</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Mon, 11 Feb 2019 15:54:38 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-%E4%BC%98%E5%8C%96/</guid>
+      <description>Spark优化函数传递在spark中，很多操作都需要依赖用户传递的函数，在我们传递函数的时候，如果函数中包含其他对象的饮用，Spark也会把其他对象传递。(尤其是在python中)解决方法：将函数中的必要字段转换成局部变量，然后进行传递。引用《Spark快速大数据分析》...</description>
+    </item>
+    
+    <item>
+      <title>大数据学习笔记之Spark-RDD编程</title>
+      <link>/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-rdd%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Mon, 11 Feb 2019 15:47:54 +0000</pubDate>
+      
+      <guid>/blog/%E6%8A%80%E6%9C%AF/2019-02-11-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8Bspark-rdd%E7%BC%96%E7%A8%8B/</guid>
+      <description>RDD编程Spark中的核心数据操作：创建RDD转换已有的RDD调用RDD操作进行求值Note:RDD是Spark数据操作的核心，它的主要特点是操作链，惰性求值。RDD创建创建RDD主要有两种方法：读取外部数据集JavaRDD&amp;amp;amp;amp;lt;String&amp;amp;amp;amp;gt; lines = sc.textFile(&amp;amp;amp;quot;your file path&amp;amp;amp;quot;)在驱动</description>
+    </item>
+    
+  </channel>
+</rss>
