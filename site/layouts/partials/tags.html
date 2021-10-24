@@ -1,0 +1,17 @@
+<v-navigation-drawer app right color="transparent" width="30%" floating>
+        <v-card class="mt-lg-30 mt-xs-30 mt-xl-30" style="margin-top: 12%">
+            <v-card-title primary-title class="justify-center"> 标签 </v-card-title>
+            <v-card-text>
+                <v-container>
+                    {{ range .Site.Taxonomies.tags }}
+                    <v-chip class="ma-2" dark href="{{ .Page.Permalink }}">
+                        {{ .Page.Title }}
+                        <v-avatar right round color="pink">
+                            {{.Count}}
+                        </v-avatar>
+                    </v-chip>
+                    {{ end }}
+                </v-container>
+            </v-card-text>
+        </v-card>
+</v-navigation-drawer>

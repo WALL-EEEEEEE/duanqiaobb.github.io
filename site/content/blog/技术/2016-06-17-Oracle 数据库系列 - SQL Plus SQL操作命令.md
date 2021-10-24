@@ -3,8 +3,9 @@
 title: "Oracle 数据库系列 - SQL Plus SQL操作命令"
 date: 2016-06-17 17:39:28 +0000 UTC
 description: "Oracle数据库系列- SQL Plus SQL操作命令  Oracle数据库的连接方式有很多中，你可以采用PL/SQL，Oracle SQL Developer 这样的工具进行数据库连接。   但是如果你更倾向于命令行的话，也可以用sqlplus(Oracle数据库自带的命令行工具)进行数据库SQL操作, sql plus    本身就十分强大，几乎可以完成数据库操作的所有功能。连接数据"
+tags: ["数据库", "oracle"]
 ---
-###<center><strong>Oracle数据库系列- SQL Plus SQL操作命令</strong></center>
+### <center><strong>Oracle数据库系列- SQL Plus SQL操作命令</strong></center>
 
 
 

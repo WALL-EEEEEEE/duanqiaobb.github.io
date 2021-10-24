@@ -1,0 +1,25 @@
+{{- $paginator := .context.Paginate .articles }} 
+{{- $term := .context.Data.Term }} 
+{{- range $index, $page := $paginator.Pages.ByDate }}
+        <v-card href="{{ .Permalink }}" width="100%" rounded class="mb-1">
+            {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList) }} {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+            <v-card-title class="entry-header">
+                <h2>
+                    {{- .Title }} {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+                </h2>
+            </v-card-title>
+            {{- if (ne (.Param "hideSummary") true) }}
+                <v-card-subtitle>
+                    <p>{{ .Summary | plainify | htmlUnescape | truncate 100 }}</p>
+                </v-card-subtitle>
+            {{- end }}
+            {{- if not (.Param "hideMeta") }}
+            <v-card-actions>
+                <v-btn text>
+                    {{- partial "post_meta.html" . -}}
+                </v-btn>
+            </v-card-actions>
+            {{- end }}
+        </v-card>
+{{- end }}
+{{- partial "pagination.html" (dict "paginator" $paginator )}}

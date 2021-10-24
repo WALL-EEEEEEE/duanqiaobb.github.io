@@ -3,6 +3,7 @@
 title: "Scrapy框架——安装Scrapy"
 date: 2018-01-07 19:44:00 +0000 UTC
 description: "Scrapy框架—— 安装Scrapy 需求配置安装sqlite依赖库编译python3.6编译Twisted安装Scrapy测试Scrapy是否成功安装Scrapy框架—— 安装Scrapy   Scrapy 可以说是爬虫界鼎鼎有名的框架。 它是一个重型的爬虫框架，结合数据抓取，导出，以及部分的数据清洗的功能。本文针在python3.6的环境下来安装scra"
+tags: ["爬虫", "scrapy", "框架"]
 ---
 - [Scrapy框架—— 安装Scrapy](#org88ed2e6)
   - [需求配置](#orge4da8aa)

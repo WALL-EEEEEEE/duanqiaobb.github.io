@@ -3,6 +3,7 @@
 title: "WordPress 系列- WordPress 部署期间遇到的问题和坑"
 date: 2016-06-12 17:22:12 +0000 UTC
 description: "WordPress 系列- WordPress 部署期间遇到的问题和坑  这篇文章记录了我在研究WordPress中的遇到过的小问题，因为问题比较小，解决方法可能也就一句话，我就用一篇文章来记录他们。WordPress文章链接形式设置为伪静态形式，造成链接失效在WordPress中链接的默认形式为日期+文章标题的形式，比如你的一篇文章标题为:Hello WordPress 那么WordPress"
+tags: ["php", "wordpress"]
 ---
 ####<center><strong>WordPress 系列- WordPress 部署期间遇到的问题和坑</strong></center>
 

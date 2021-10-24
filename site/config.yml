@@ -20,7 +20,7 @@ taxonomies:
 
 
 params:
-    defaultTheme: auto
+    defaultTheme: dark
     disableThemeToggle: true
     ShowReadingTime: true
     ShowBreadCrumbs: true
@@ -29,18 +29,14 @@ params:
         enabled: true
         title: "断桥bian" # optional default will be site title
         subtitle: "世界上本没有路，只是走的人多了而已。"
-        imageUrl: "/image/wali_profile.jpeg" # optional
+        imageUrl: "/image/wali_sky.jpeg" # optional
         imageTitle: "瓦利-仰望" # optional
-        #imageWidth: 120 # custom size
-        #imageHeight: 120 # custom size
+        imageWidth: 200 # custom size
+        imageHeight: 200 # custom size
         buttons:
+            - name: "Github"
+              url: "https://github.com/duanqiaobb"
             - name: "博客" 
               url: "/blog"
             - name: "关于" 
               url: "/resume"
-            - name: Github
-              url: "https://github.com/duanqiaobb"
-
-    socialIcons: # optional
-        - name: "Github"
-          url: "<link>"

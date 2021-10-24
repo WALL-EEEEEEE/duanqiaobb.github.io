@@ -1,0 +1,40 @@
+{{- if gt .paginator.TotalPages 1 }}  
+
+    <script type="application/javascript">
+            var v_i_pagination = Vue.component('v-i-pagination', {
+                props: ['length'],
+                computed: {
+                   ilength: function() {
+                    return parseInt(this.length)
+                   },
+                },
+                data() {
+                    var page = 1
+                    var url = new URL(location.href)
+                    var page_regex = /page\/(?<page>\d+)/i
+                    var page_matcher = url.pathname.match(page_regex)
+                    if (page_matcher && page_matcher.groups ) {
+                        page = parseInt(page_matcher.groups["page"])
+                    }  
+                    return { page: page }
+                },
+                methods: {
+                   async i_input(page) {
+                        this.page = page 
+                        page_param_index =  location.href.search(/\/page|#\/.*/i) == -1 ? location.href.length:location.href.search(/\/page|#\/.*/i)
+                        origin_prefix_url = location.href.substr(0, page_param_index)
+                        origin_prefix_path =  new URL(origin_prefix_url).pathname.replace(/\/+$/g, '')
+                        new_page_path = [origin_prefix_path, 'page', page].join('/')
+                        window.location.replace(new_page_path)
+                    }
+ 
+                },
+                template: `<v-footer padless class="text-xs-center"> 
+                               <v-spacer></v-spacer>
+                               <v-pagination v-bind:value= "page" :length="ilength"  @input="i_input"></v-pagination>
+                               <v-spacer></v-spacer>
+                           </v-footer>`,
+            })
+    </script>
+    <v-i-pagination length="{{.paginator.TotalPages}}"></v-i-pagination>
+{{- end }}
