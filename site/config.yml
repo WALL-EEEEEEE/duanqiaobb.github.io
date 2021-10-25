@@ -1,5 +1,5 @@
 baseURL: "/"
-languageCode: "zh-cn"
+defaultContentLanguage: zh
 title: "断桥bian的博客"
 theme: "PaperMod"
 

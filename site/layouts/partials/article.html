@@ -14,12 +14,10 @@
                 </v-card-subtitle>
             {{- end }}
             {{- if not (.Param "hideMeta") }}
-            <v-card-actions>
-                <v-btn text>
-                    {{- partial "post_meta.html" . -}}
-                </v-btn>
+            <v-card-actions style="font-size: 13px;">
+                {{ partial "post_meta.html" . }}
             </v-card-actions>
             {{- end }}
         </v-card>
 {{- end }}
-{{- partial "pagination.html" (dict "paginator" $paginator )}}
+{{ partial "pagination.html" (dict "paginator" $paginator )}}

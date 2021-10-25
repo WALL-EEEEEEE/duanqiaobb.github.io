@@ -9,14 +9,12 @@
 {{- end }}
 
 {{- if .Params.tags }}
+{{- $scratch.Set "tags" (slice)}}
 {{- range .Params.tags }}
-{{ $tag_link := .Permalink }}
-{{ $tag_title := .LinkTitle }}
-{{- $tag_item  := printf "<v-card-actions href='%s' > %s </v-card-actiond>" $tag_link $tag_title }}
-{{- $scratch.Add "tags" $tag_item }}
+{{- $tag_item  := (printf "<v-btn href='/tags/%s' rounded > %s </v-btn>" . .)  }}
+{{- $scratch.Add "tags" ($tag_item | safeHTML )}}
 {{- end }}
 {{- end }}
-{{/*- $scratch.Add "meta" .Tags */}}
 
 {{- with (partial "author.html" .) }}
 {{- $scratch.Add "meta" (slice .) }}
@@ -27,5 +25,5 @@
 {{- end -}}
 
 {{- with ($scratch.Get "tags") }}
-{{- delimit . "&nbsp;,&nbsp;" -}}
+{{- delimit . "" -}}
 {{- end -}}
