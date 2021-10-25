@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +65,7 @@
   ],
   "articleBody": "查找数组中的前M大的数  思路  根据快速排序的Partition的思想，假定数组长度为n, 选定一个pivot,总能将数组分为 [0,k-1]和[k,n], 其中[0,k-1]pivot。如果 k = m, 那么算法结束。如果k  m, 对[k+1,n]继续进行切分, 每次切分k都会减少一部分, 直到k = m, 如果k  算法复杂度   平均算法复杂度为：O(n) = n，最坏情况的复杂度为：O(n) = n。\ncpp实现 int Partition(int arr[], int start, int end) { int pivot = arr[start]; int highvac = end; int lowvac = start; int direct = true; //true for right,false for left. start from left  while(lowvac  highvac) { if(direct == true) { if(arr[highvac] pivot) { arr[lowvac] = arr[highvac]; lowvac++; direct = false; } else { highvac--; } } else { if(arr[lowvac]  pivot) { arr[highvac] = arr[lowvac]; highvac--; direct = true; } else { lowvac++; } } } arr[highvac] = pivot; return highvac; } int* findXMaxValue(int arr[], int xmax, int start, int end) { int p = 0; static int* maxs = new int[xmax]; int cmax = end - start +1; int len = end; if (xmax = len+1) { return arr; } while(cmax != xmax) { p = Partition(arr,start,end); cmax = len-p+1; if(cmax  xmax) { start = p+1; } else if ( cmax  xmax) { end = p-1; start = 0; } } for(int j = 0; j  xmax; j++) { maxs[j] = arr[p+j]; } return maxs; } ",
   "wordCount" : "204",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-11-25T17:38:57Z",
   "dateModified": "2018-11-25T17:38:57Z",
   "mainEntityOfPage": {
@@ -170,7 +170,7 @@ window.addEventListener('load', function () {
   ],
   "articleBody": "查找数组中的前M大的数  思路  根据快速排序的Partition的思想，假定数组长度为n, 选定一个pivot,总能将数组分为 [0,k-1]和[k,n], 其中[0,k-1]pivot。如果 k = m, 那么算法结束。如果k  m, 对[k+1,n]继续进行切分, 每次切分k都会减少一部分, 直到k = m, 如果k  算法复杂度   平均算法复杂度为：O(n) = n，最坏情况的复杂度为：O(n) = n。\ncpp实现 int Partition(int arr[], int start, int end) { int pivot = arr[start]; int highvac = end; int lowvac = start; int direct = true; //true for right,false for left. start from left  while(lowvac  highvac) { if(direct == true) { if(arr[highvac] pivot) { arr[lowvac] = arr[highvac]; lowvac++; direct = false; } else { highvac--; } } else { if(arr[lowvac]  pivot) { arr[highvac] = arr[lowvac]; highvac--; direct = true; } else { lowvac++; } } } arr[highvac] = pivot; return highvac; } int* findXMaxValue(int arr[], int xmax, int start, int end) { int p = 0; static int* maxs = new int[xmax]; int cmax = end - start +1; int len = end; if (xmax = len+1) { return arr; } while(cmax != xmax) { p = Partition(arr,start,end); cmax = len-p+1; if(cmax  xmax) { start = p+1; } else if ( cmax  xmax) { end = p-1; start = 0; } } for(int j = 0; j  xmax; j++) { maxs[j] = arr[p+j]; } return maxs; } ",
   "wordCount" : "204",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-11-25T17:38:57Z",
   "dateModified": "2018-11-25T17:38:57Z",
   "mainEntityOfPage": {
@@ -190,20 +190,19 @@ window.addEventListener('load', function () {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
+    <div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       算法-查找数组中的前M大的数
     </h1>
     <div class="post-description">
       查找数组中的前M大的数思路根据快速排序的Partition的思想，假定数组长度为n, 选定一个pivot,总能将数组分为 [0,k-1]和[k,n], 其中[0,k-1]&amp;lt;pivot,[k&#43;1,n] &amp;gt; pivot。如果 k = m, 那么算法结束。如果k &amp;gt; m, 对[k&#43;1,n]继续进行切分,每次切分k都会减少一部分, 直到k = m, 如果k &amp;lt; m, 对...
     </div>
-    <div class="post-meta">
-2018年6月25日&nbsp;·&nbsp;1 min算法&nbsp;,&nbsp;查找
+    <div class="post-meta">2018年6月25日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/算法' rounded > 算法 </v-btn><v-btn href='/tags/查找' rounded > 查找 </v-btn>
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
+            <span class="details">目录</span>
         </summary>
 
         <div class="inner"><ul>

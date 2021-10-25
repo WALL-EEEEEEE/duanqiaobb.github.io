@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +65,7 @@
   ],
   "articleBody": "归并排序  思路  归并排序采用的是分治的思想，将一个 n 长度的数组不断的分成无数个小数组，然后对小数组进行排序， 最后将所以的有序小数组合并，最终数组有序。  算法复杂度   归并排序的平均复杂度： O(n) = nlogn, 最坏时间复杂度为：O(n) = nlogn\n 算法空间复杂度   归并排序的空间复杂度： O(n) = n\npython实现 # 递归实现 import random def merge(arr,first,mid,last): fore_part = arr[first:mid+1] last_part = arr[mid+1:last+1] index = first k = 0; m = 0; while( k  len(fore_part)): while(m  len(last_part)): if fore_part[k]  last_part[m]: arr[index] = last_part[m] index+=1 m+=1 elif fore_part[k]  last_part[m]: arr[index] = fore_part[k] index+=1 k+=1 break; else: arr[index] = last_part[m] arr[index+1] = fore_part[k] index+=2 m+=1 k+=1 if ( m = len(last_part)): arr[index] = fore_part[k] index+=1 k+=1; if m  len(last_part): for j in range(m,len(last_part)): arr[index] = last_part[j] index+=1 def merge_sort(arr,first,last): mid = int((first+last)/2) if first  last: merge_sort(arr,first,mid) merge_sort(arr,mid+1,last) merge(arr,first,mid,last) return arr us = [1,2,0,-1] us1 = [6,8,0,2,1] us2 = [9,8,7,6,5,4,3,2,1,0] print(merge_sort(us,0,len(us)-1)) print(merge_sort(us1,0,len(us1)-1)) print(merge_sort(us2,0,len(us2)-1)) ",
   "wordCount" : "125",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-12-10T21:31:34Z",
   "dateModified": "2018-12-10T21:31:34Z",
   "mainEntityOfPage": {
@@ -170,7 +170,7 @@ window.addEventListener('load', function () {
   ],
   "articleBody": "归并排序  思路  归并排序采用的是分治的思想，将一个 n 长度的数组不断的分成无数个小数组，然后对小数组进行排序， 最后将所以的有序小数组合并，最终数组有序。  算法复杂度   归并排序的平均复杂度： O(n) = nlogn, 最坏时间复杂度为：O(n) = nlogn\n 算法空间复杂度   归并排序的空间复杂度： O(n) = n\npython实现 # 递归实现 import random def merge(arr,first,mid,last): fore_part = arr[first:mid+1] last_part = arr[mid+1:last+1] index = first k = 0; m = 0; while( k  len(fore_part)): while(m  len(last_part)): if fore_part[k]  last_part[m]: arr[index] = last_part[m] index+=1 m+=1 elif fore_part[k]  last_part[m]: arr[index] = fore_part[k] index+=1 k+=1 break; else: arr[index] = last_part[m] arr[index+1] = fore_part[k] index+=2 m+=1 k+=1 if ( m = len(last_part)): arr[index] = fore_part[k] index+=1 k+=1; if m  len(last_part): for j in range(m,len(last_part)): arr[index] = last_part[j] index+=1 def merge_sort(arr,first,last): mid = int((first+last)/2) if first  last: merge_sort(arr,first,mid) merge_sort(arr,mid+1,last) merge(arr,first,mid,last) return arr us = [1,2,0,-1] us1 = [6,8,0,2,1] us2 = [9,8,7,6,5,4,3,2,1,0] print(merge_sort(us,0,len(us)-1)) print(merge_sort(us1,0,len(us1)-1)) print(merge_sort(us2,0,len(us2)-1)) ",
   "wordCount" : "125",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-12-10T21:31:34Z",
   "dateModified": "2018-12-10T21:31:34Z",
   "mainEntityOfPage": {
@@ -190,20 +190,19 @@ window.addEventListener('load', function () {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
+    <div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       算法-归并排序
     </h1>
     <div class="post-description">
       归并排序思路归并排序采用的是分治的思想，将一个 n 长度的数组不断的分成无数个小数组，然后对小数组进行排序，最后将所以的有序小数组合并，最终数组有序。算法复杂度    归并排序的平均复杂度： O(n) = nlogn, 最坏时间复杂度为：O(n) = nlogn算法空间复杂度    归并排序的空间复杂度： O(n) = npython实现# 递归实现import ...
     </div>
-    <div class="post-meta">
-2018年6月10日&nbsp;·&nbsp;1 min算法&nbsp;,&nbsp;排序
+    <div class="post-meta">2018年6月10日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/算法' rounded > 算法 </v-btn><v-btn href='/tags/排序' rounded > 排序 </v-btn>
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
+            <span class="details">目录</span>
         </summary>
 
         <div class="inner"><ul>

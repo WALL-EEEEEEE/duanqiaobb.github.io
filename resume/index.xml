@@ -4,7 +4,6 @@
     <title>断桥bian的博客</title>
     <link>/resume/</link>
     <description>Recent content on 断桥bian的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="/resume/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/resume/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

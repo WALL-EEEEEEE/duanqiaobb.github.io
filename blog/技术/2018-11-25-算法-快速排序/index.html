@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +65,7 @@
   ],
   "articleBody": "快速排序  思路  选定一个pivot, 移动元素使得pivot左右两边的元素，一边大于pivot, 一边小于pivot, 然后 分别对左右两边递归进行同样的操作，最后得到一个有序排列。  复杂度   快速排序的最坏时间复杂度为: O(n) = n^2，但平均复杂度为： O(n) = nlogn\ncpp实现    template class Type void Swap(Type *a, Type *b) { Type tmp = *a; *a = *b; *b = tmp; } template class Type int Partition(Type arr[], int p , int r) { int i = p, j = r; Type x = arr[p]; while(true) { while(arr[j] x \u0026\u0026 i  j) { j--; } while(arr[i] x \u0026\u0026 i  j ) { i++; } if (i == j) break; Swap(\u0026arr[i],\u0026arr[j]); } Swap(\u0026arr[p], \u0026arr[j]); return j; } templateclass Type void QuickSort(Type arr[], int p, int r) { if (p  r) { int q = Partition(arr,p,r); QuickSort(arr,p,q-1); QuickSort(arr,q+1,r); } }   void quicksort(int a[],int left, int right) { int i,j,t,temp; if (left  right) return; temp = a[left]; i = left; j = right; while(i != j) { while(a[j] = temp \u0026\u0026 i  j) { j--; } while(a[i]  temp \u0026\u0026 i  j) { i++; } if (i  j) { t = a[i]; a[i] = a[j]; a[j] = t; } } a[left] = a[i]; a[i] = temp; quicksort(a,left,i-1); quicksort(a,i+1,right); }   template class Type int Partition(Type arr[], int p , int r) { int pivot = arr[p]; int highvac = r; int lowvac = p; bool direct = true; //true for right, false for left  while(highvac  lowvac) { if (direct == true) { if(arr[highvac]  pivot) { arr[lowvac] = arr[highvac]; lowvac++; direct = false; } else { highvac--; } } else { if(arr[lowvac] pivot ) { arr[highvac] = arr[lowvac]; highvac--; direct = true; }else { lowvac++; } } } arr[highvac] = pivot; return highvac; } templateclass Type void QuickSort(Type arr[], int p, int r) { if (p  r) { int q = Partition(arr,p,r); QuickSort(arr,p,q-1); QuickSort(arr,q+1,r); } } ",
   "wordCount" : "295",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-11-25T16:19:00Z",
   "dateModified": "2018-11-25T16:19:00Z",
   "mainEntityOfPage": {
@@ -170,7 +170,7 @@ window.addEventListener('load', function () {
   ],
   "articleBody": "快速排序  思路  选定一个pivot, 移动元素使得pivot左右两边的元素，一边大于pivot, 一边小于pivot, 然后 分别对左右两边递归进行同样的操作，最后得到一个有序排列。  复杂度   快速排序的最坏时间复杂度为: O(n) = n^2，但平均复杂度为： O(n) = nlogn\ncpp实现    template class Type void Swap(Type *a, Type *b) { Type tmp = *a; *a = *b; *b = tmp; } template class Type int Partition(Type arr[], int p , int r) { int i = p, j = r; Type x = arr[p]; while(true) { while(arr[j] x \u0026\u0026 i  j) { j--; } while(arr[i] x \u0026\u0026 i  j ) { i++; } if (i == j) break; Swap(\u0026arr[i],\u0026arr[j]); } Swap(\u0026arr[p], \u0026arr[j]); return j; } templateclass Type void QuickSort(Type arr[], int p, int r) { if (p  r) { int q = Partition(arr,p,r); QuickSort(arr,p,q-1); QuickSort(arr,q+1,r); } }   void quicksort(int a[],int left, int right) { int i,j,t,temp; if (left  right) return; temp = a[left]; i = left; j = right; while(i != j) { while(a[j] = temp \u0026\u0026 i  j) { j--; } while(a[i]  temp \u0026\u0026 i  j) { i++; } if (i  j) { t = a[i]; a[i] = a[j]; a[j] = t; } } a[left] = a[i]; a[i] = temp; quicksort(a,left,i-1); quicksort(a,i+1,right); }   template class Type int Partition(Type arr[], int p , int r) { int pivot = arr[p]; int highvac = r; int lowvac = p; bool direct = true; //true for right, false for left  while(highvac  lowvac) { if (direct == true) { if(arr[highvac]  pivot) { arr[lowvac] = arr[highvac]; lowvac++; direct = false; } else { highvac--; } } else { if(arr[lowvac] pivot ) { arr[highvac] = arr[lowvac]; highvac--; direct = true; }else { lowvac++; } } } arr[highvac] = pivot; return highvac; } templateclass Type void QuickSort(Type arr[], int p, int r) { if (p  r) { int q = Partition(arr,p,r); QuickSort(arr,p,q-1); QuickSort(arr,q+1,r); } } ",
   "wordCount" : "295",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-11-25T16:19:00Z",
   "dateModified": "2018-11-25T16:19:00Z",
   "mainEntityOfPage": {
@@ -190,20 +190,19 @@ window.addEventListener('load', function () {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
+    <div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       算法-  快速排序
     </h1>
     <div class="post-description">
       快速排序思路选定一个pivot, 移动元素使得pivot左右两边的元素，一边大于pivot, 一边小于pivot, 然后分别对左右两边递归进行同样的操作，最后得到一个有序排列。复杂度    快速排序的最坏时间复杂度为: O(n) = n^2，但平均复杂度为： O(n) = nlogncpp实现template &amp;lt;class Type&amp;gt;void Swap(...
     </div>
-    <div class="post-meta">
-2018年6月25日&nbsp;·&nbsp;2 min算法&nbsp;,&nbsp;排序
+    <div class="post-meta">2018年6月25日&nbsp;·&nbsp;2 分钟<v-btn href='/tags/算法' rounded > 算法 </v-btn><v-btn href='/tags/排序' rounded > 排序 </v-btn>
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
+            <span class="details">目录</span>
         </summary>
 
         <div class="inner"><ul>

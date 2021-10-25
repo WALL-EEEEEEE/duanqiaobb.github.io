@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@ window.addEventListener('load', function () {
 <meta name="twitter:title" content="算法"/>
 <meta name="twitter:description" content=""/>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
   <h1>算法</h1>
 </header>
 
@@ -94,13 +94,12 @@ window.addEventListener('load', function () {
     <p>快速排序  思路  选定一个pivot, 移动元素使得pivot左右两边的元素，一边大于pivot, 一边小于pivot, 然后 分别对左右两边递归进行同样的操作，最后得到一个有序排列。  复杂度   快速排序的最坏时间复杂度为: O(n) = n^2，但平均复杂度为： O(n) = nlogn
 cpp实现    template &lt;class Type&gt; void Swap(Type *a, Type *b) { Type tmp = *a; *a = *b; *b = tmp; } template &lt;class Type&gt; int Partition(Type arr[], int p , int r) { int i = p, j = r; Type x = arr[p]; while(true) { while(arr[j]&gt; x &amp;&amp; i &lt; j) { j--; } while(arr[i]&lt;= x &amp;&amp; i &lt; j ) { i&#43;&#43;; } if (i == j) break; Swap(&amp;arr[i],&amp;arr[j]); } Swap(&amp;arr[p], &amp;arr[j]); return j; } template&lt;class Type&gt; void QuickSort(Type arr[], int p, int r) { if (p &lt; r) { int q = Partition(arr,p,r); QuickSort(arr,p,q-1); QuickSort(arr,q&#43;1,r); } }   void quicksort(int a[],int left, int right) { int i,j,t,temp; if (left &gt; right) return; temp = a[left]; i = left; j = right; while(i !...</p>
   </section>
-  <footer class="entry-footer">
-2018年6月25日&nbsp;·&nbsp;2 min算法&nbsp;,&nbsp;排序</footer>
+  <footer class="entry-footer">2018年6月25日&nbsp;·&nbsp;2 分钟<v-btn href='/tags/算法' rounded > 算法 </v-btn><v-btn href='/tags/排序' rounded > 排序 </v-btn></footer>
   <a class="entry-link" aria-label="post link to 算法-  快速排序" href="/blog/%E6%8A%80%E6%9C%AF/2018-11-25-%E7%AE%97%E6%B3%95-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="/tags/%E7%AE%97%E6%B3%95/page/2/">« Prev Page</a>
+    <a class="prev" href="/tags/%E7%AE%97%E6%B3%95/page/2/">« 上一页</a>
   </nav>
 </footer>
         </main>

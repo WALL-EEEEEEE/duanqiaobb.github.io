@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@ window.addEventListener('load', function () {
 <meta name="twitter:title" content="pider"/>
 <meta name="twitter:description" content=""/>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
   <h1>pider</h1>
 </header>
 
@@ -94,8 +94,7 @@ window.addEventListener('load', function () {
     <p>快速使用  项目的基本结构 运行  爬虫 数据处理 示例   基本用法 响应处理 多进程    快速使用 项目的基本结构 //项目根目录 |-- Config //配置文件 |-- LICENSE |-- README.md |-- composer.json |-- composer.lock |-- examples //示例 |-- install.sh //安装脚本 |-- pider -&gt; src/bin/pider //爬虫管理命令工具 |-- piderd -&gt; src/bin/piderd //爬虫分布式管理工具 |-- src //源码 运行 ######爬虫
 ./pider spidername.php(你创建的爬虫实例) 数据处理 ./pider --digest digestname.php(你创建的数据处理实例) 示例  创建实例  mkdir spiders //创建爬虫文件夹，里面放置你写的爬虫实例 mkdir digests //创建数据处理文件夹，里面放置你写的数据处理实例 touch spiders/TestSpider.php touch digests/TestDigest....</p>
   </section>
-  <footer class="entry-footer">
-2018年6月6日&nbsp;·&nbsp;2 min爬虫&nbsp;,&nbsp;pider&nbsp;,&nbsp;框架</footer>
+  <footer class="entry-footer">2018年6月6日&nbsp;·&nbsp;2 分钟<v-btn href='/tags/爬虫' rounded > 爬虫 </v-btn><v-btn href='/tags/pider' rounded > pider </v-btn><v-btn href='/tags/框架' rounded > 框架 </v-btn></footer>
   <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架快速开始" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-06-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/"></a>
 </article>
 
@@ -107,8 +106,7 @@ window.addEventListener('load', function () {
   <section class="entry-content">
     <p> 安装  需求 安装    安装 需求  PHP &gt;= 7.1 pcntl(可选，多进程需要)  安装 git clone https://github.com/duanqiaobb/pider.git git submodule update --init --recursive //安装composer,如果出现问题，请参考 [composer官方文档](https://getcomposer.org/download/) 进行安装 php -r &#34;copy(&#39;https://getcomposer.org/installer&#39;, &#39;composer-setup.php&#39;);&#34; php -r &#34;if (hash_file(&#39;SHA384&#39;, &#39;composer-setup.php&#39;) === &#39;544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061&#39;) { echo &#39;Installer verified&#39;; } else { echo &#39;Installer corrupt&#39;; unlink(&#39;composer-setup.php&#39;); } echo PHP_EOL;&#34; php composer-setup.php php -r &#34;unlink(&#39;composer-setup.php&#39;);&#34; //安装 cd pider chmod u&#43;x install.sh ./install.sh </p>
   </section>
-  <footer class="entry-footer">
-2018年6月4日&nbsp;·&nbsp;1 min爬虫&nbsp;,&nbsp;pider&nbsp;,&nbsp;框架</footer>
+  <footer class="entry-footer">2018年6月4日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/爬虫' rounded > 爬虫 </v-btn><v-btn href='/tags/pider' rounded > pider </v-btn><v-btn href='/tags/框架' rounded > 框架 </v-btn></footer>
   <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架安装" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85/"></a>
 </article>
 
@@ -126,8 +124,7 @@ window.addEventListener('load', function () {
  多进程 (已实现)   Pider 有时候，需要爬虫需要进行大数量内容爬取，这个时候，单进程太慢而无法 而无法满足需求，多进程能够充分运用多核 CPU , 大大提高爬取效率和降低爬取时间。 Pider 将支持多进程抓取， 允许 多个进程并行对页面抓取和数据处理。
  分组 (未实现)   有时候, 我们需要抓取多个页面, 然后对抓取的页面进行解析, 然后对进行解析的数据处理, 当然, 两个操作可以放在一起处理, 但是当两种操作其中一个很繁琐的时候， 这个很容易造成代码冗长，代码复用率低， Pider 的 Group 特性允许组合多个爬虫，爬虫和数据处理，以及多个数据处理操作。让爬虫和数据管理程序更加容易管理。...</p>
   </section>
-  <footer class="entry-footer">
-2018年6月4日&nbsp;·&nbsp;1 min爬虫&nbsp;,&nbsp;pider&nbsp;,&nbsp;框架</footer>
+  <footer class="entry-footer">2018年6月4日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/爬虫' rounded > 爬虫 </v-btn><v-btn href='/tags/pider' rounded > pider </v-btn><v-btn href='/tags/框架' rounded > 框架 </v-btn></footer>
   <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架介绍" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/"></a>
 </article>
 
@@ -142,8 +139,7 @@ window.addEventListener('load', function () {
  如果你对本项目感兴趣, 或者觉得对你有用，可以在给项目一个star或者watch,　项目地址：https://github.com/duanqiaobb/pider
  </p>
   </section>
-  <footer class="entry-footer">
-2018年6月4日&nbsp;·&nbsp;1 min爬虫&nbsp;,&nbsp;pider&nbsp;,&nbsp;框架</footer>
+  <footer class="entry-footer">2018年6月4日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/爬虫' rounded > 爬虫 </v-btn><v-btn href='/tags/pider' rounded > pider </v-btn><v-btn href='/tags/框架' rounded > 框架 </v-btn></footer>
   <a class="entry-link" aria-label="post link to 自制爬虫框架－Pider框架简介" href="/blog/%E6%8A%80%E6%9C%AF/2018-05-04-%E8%87%AA%E5%88%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6pider%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/"></a>
 </article>
         </main>

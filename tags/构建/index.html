@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@ window.addEventListener('load', function () {
 <meta name="twitter:title" content="构建"/>
 <meta name="twitter:description" content=""/>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
   <h1>构建</h1>
 </header>
 
@@ -97,8 +97,7 @@ target(规则生成的目标文件或者make执行的规则命令名) … : prer
 IDIR=../include CC=gcc CFLAGS=-I$(IDIR) ODIR=obj LDIR=../lib LIBS=-Im _DEPS=hellomake.h DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS)) _OBJ=hellomake.o hellofunc.o OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ)) $(ODIR)/%.o:%.c $(DEPS) $(CC) -c -o $@ $&lt; $(CFLAGS) hellomake: $(OBJ) $(CC) -o $@ $^ ${CFLAGS} $(LIBS) .PHONY: clean clean: rm -f $(ODIR)/*.o *~core $(INCDIR)/*~ 文件结构
 ├── include │ └ hellomake....</p>
   </section>
-  <footer class="entry-footer">
-2017年6月23日&nbsp;·&nbsp;2 min构建&nbsp;,&nbsp;makefile</footer>
+  <footer class="entry-footer">2017年6月23日&nbsp;·&nbsp;2 分钟<v-btn href='/tags/构建' rounded > 构建 </v-btn><v-btn href='/tags/makefile' rounded > makefile </v-btn></footer>
   <a class="entry-link" aria-label="post link to Makefile快速入门" href="/blog/%E6%8A%80%E6%9C%AF/2017-04-23-makefile%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"></a>
 </article>
         </main>

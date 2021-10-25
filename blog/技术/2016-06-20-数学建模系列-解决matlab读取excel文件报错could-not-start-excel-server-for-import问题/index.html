@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +65,7 @@
   ],
   "articleBody": " 今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。\n 情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版本,而Excel则是2016版本，两者不兼容。解决办法很粗暴: 就是讲Excel-2016版本卸载，然后重新装office-2007版本，然后程序就运行畅通无阻了。情况二： Excel软件设置问题MathLab是通过调用Windows下的Dom Server来进行Excel文件读取的，所以确定Excel软件的是允许和其他软件进行数据交换的。解决方法: 打开excel-excel选项-高级-最下面的常规- “忽略使用动态数据交换（DDE）的其他应用程序”。 查看是否勾选这个选项，如果勾选这个选项，就把他取消勾选。情况二： Excel软件权限问题有时候可能是因为执行Excel需要特殊的权限才导致出错。解决方法:\n找到Excel软件的快捷方式，右键点击属性-选择兼容性-取消勾选\"以管理员的身份运行该软件\"\n",
   "wordCount" : "18",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2016-06-20T19:28:16Z",
   "dateModified": "2016-06-20T19:28:16Z",
   "mainEntityOfPage": {
@@ -170,7 +170,7 @@ window.addEventListener('load', function () {
   ],
   "articleBody": " 今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。\n 情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版本,而Excel则是2016版本，两者不兼容。解决办法很粗暴: 就是讲Excel-2016版本卸载，然后重新装office-2007版本，然后程序就运行畅通无阻了。情况二： Excel软件设置问题MathLab是通过调用Windows下的Dom Server来进行Excel文件读取的，所以确定Excel软件的是允许和其他软件进行数据交换的。解决方法: 打开excel-excel选项-高级-最下面的常规- “忽略使用动态数据交换（DDE）的其他应用程序”。 查看是否勾选这个选项，如果勾选这个选项，就把他取消勾选。情况二： Excel软件权限问题有时候可能是因为执行Excel需要特殊的权限才导致出错。解决方法:\n找到Excel软件的快捷方式，右键点击属性-选择兼容性-取消勾选\"以管理员的身份运行该软件\"\n",
   "wordCount" : "18",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2016-06-20T19:28:16Z",
   "dateModified": "2016-06-20T19:28:16Z",
   "mainEntityOfPage": {
@@ -190,15 +190,14 @@ window.addEventListener('load', function () {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
+    <div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       数学建模系列- 解决Matlab读取Excel文件报错:Could not start Excel server for import问题
     </h1>
     <div class="post-description">
       今天在进行Matlab编程的时，用之前写的代码在自己机子上运行失败，报错为Could not start Excel server for import, 十分郁闷。于是在网上找了些资料，总算解决了问题，现在将几种解决方法写下来，希望能够帮助遇到同样问题的朋友。情况一： 软件版本兼容问题首先考虑是Matlab和Excel的兼容问题，我遇到的就是两个软件的兼容性问题，我Matlab装的是2010a版
     </div>
-    <div class="post-meta">
-2016年6月20日&nbsp;·&nbsp;1 min数学建模&nbsp;,&nbsp;matlab
+    <div class="post-meta">2016年6月20日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/数学建模' rounded > 数学建模 </v-btn><v-btn href='/tags/matlab' rounded > matlab </v-btn>
 </div>
   </header> 
 

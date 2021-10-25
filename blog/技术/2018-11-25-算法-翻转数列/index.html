@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,7 +65,7 @@
   ],
   "articleBody": "翻转数列 小Q定义了一种数列称为翻转数列: 给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为'-';。 例如n = 8, m = 2, 数列就是: -1, -2, +3, +4, -5, -6, +7, +8. 而n = 4, m = 1, 数列就是: -1, +2, -3, + 4. 小Q现在希望你能帮他算算前n项和为多少。 输入描述: 输入包括两个整数n和m(2  思路  1. n能被2m整除，我们可以得出, n 为2m的整数倍， 2. 根据数列的规律，2m个元素的和为m^2 所以我们可以把n个元素划分为多个2m元素组成的块，x = n/(2*m), 那么前n项的和可以看作这些块的总和：S_n = x*m^2 = n/(2*m)*m^2 = n/2 * m  算法复杂度   算法的平均复杂度: O(n) = 1; 最坏情况下的复杂度为：O(n) = 1。\ncpp实现 #include using namespace std; long sumn_reverse_permutation(int n, int m) { if ( n  2 || n  1000000000 || m  1 || n % (2*m) != 0 ) { return -1; } long num_2m = n / (2*m); long sum_n = num_2m * m * m; return sum_n; } int main(int argc, char** argv) { int n, m; scanf(\"%d %d\",\u0026n, \u0026m); long sum_n = sumn_reverse_permutation(n,m); cout  sum_n  endl; }  Note: 注意c++的int类型表示的数值范围为：0~2^32次方，无法表示最后的存储结果，同时如果计算的时候都是int类型的话，编译器不会自动将类型转换为long类型，需要将计算时的其中一个元素定义为long类型，然后计算结果也存储为long类型。\n ",
   "wordCount" : "158",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-11-25T17:41:35Z",
   "dateModified": "2018-11-25T17:41:35Z",
   "mainEntityOfPage": {
@@ -170,7 +170,7 @@ window.addEventListener('load', function () {
   ],
   "articleBody": "翻转数列 小Q定义了一种数列称为翻转数列: 给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为'-';。 例如n = 8, m = 2, 数列就是: -1, -2, +3, +4, -5, -6, +7, +8. 而n = 4, m = 1, 数列就是: -1, +2, -3, + 4. 小Q现在希望你能帮他算算前n项和为多少。 输入描述: 输入包括两个整数n和m(2  思路  1. n能被2m整除，我们可以得出, n 为2m的整数倍， 2. 根据数列的规律，2m个元素的和为m^2 所以我们可以把n个元素划分为多个2m元素组成的块，x = n/(2*m), 那么前n项的和可以看作这些块的总和：S_n = x*m^2 = n/(2*m)*m^2 = n/2 * m  算法复杂度   算法的平均复杂度: O(n) = 1; 最坏情况下的复杂度为：O(n) = 1。\ncpp实现 #include using namespace std; long sumn_reverse_permutation(int n, int m) { if ( n  2 || n  1000000000 || m  1 || n % (2*m) != 0 ) { return -1; } long num_2m = n / (2*m); long sum_n = num_2m * m * m; return sum_n; } int main(int argc, char** argv) { int n, m; scanf(\"%d %d\",\u0026n, \u0026m); long sum_n = sumn_reverse_permutation(n,m); cout  sum_n  endl; }  Note: 注意c++的int类型表示的数值范围为：0~2^32次方，无法表示最后的存储结果，同时如果计算的时候都是int类型的话，编译器不会自动将类型转换为long类型，需要将计算时的其中一个元素定义为long类型，然后计算结果也存储为long类型。\n ",
   "wordCount" : "158",
-  "inLanguage": "en",
+  "inLanguage": "zh",
   "datePublished": "2018-11-25T17:41:35Z",
   "dateModified": "2018-11-25T17:41:35Z",
   "mainEntityOfPage": {
@@ -190,20 +190,19 @@ window.addEventListener('load', function () {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
+    <div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/blog/">博客列表</a></div>
     <h1 class="post-title">
       算法-翻转数列
     </h1>
     <div class="post-description">
       翻转数列小Q定义了一种数列称为翻转数列:给定整数n和m, 满足n能被2m整除。对于一串连续递增整数数列1, 2, 3, 4..., 每隔m个符号翻转一次, 最初符号为&#39;-&#39;;。例如n = 8, m = 2, 数列就是: -1, -2, &#43;3, &#43;4, -5, -6, &#43;7, &#43;8.而n = 4, m = 1, 数列就是: -1, &#43;2, -3, &#43; 4.小Q现在希望你能帮他算算前n项和为...
     </div>
-    <div class="post-meta">
-2018年6月25日&nbsp;·&nbsp;1 min算法
+    <div class="post-meta">2018年6月25日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/算法' rounded > 算法 </v-btn>
 </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
+            <span class="details">目录</span>
         </summary>
 
         <div class="inner"><ul>

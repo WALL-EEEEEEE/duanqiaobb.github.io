@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="zh" dir="auto">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@ window.addEventListener('load', function () {
 <meta name="twitter:title" content="数据库"/>
 <meta name="twitter:description" content=""/>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="/">Home</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
+<header class="page-header"><div class="breadcrumbs"><a href="/">主页</a>&nbsp;»&nbsp;<a href="/tags/">Tags</a></div>
   <h1>数据库</h1>
 </header>
 
@@ -94,8 +94,7 @@ window.addEventListener('load', function () {
     <p>创建表空间
  CREATE [ TEMPORARY | UNDO ] TALBESPACE tablespace_name [ DATAFILE | TEMPFILE &#39;file_name&#39; SIZE size K | M [ REUSE ] [ AUTOEXTEND OFF | ON [NEXT number K | M MAXSIZE UNLIMITED | number K | M ] ] [, ...] ] [ MININUM EXTENT number K | M] [ BLOCKSIZE number K ] [ ONLINE | OFFLINE ] [ LOGGING | NOLOGGING ] [ FORCE LOGGING ] [ DEFAULT STORAGE storage ] [ COMPRESS | NOCOMPRESS ] [ PERMANENT | TEMPORARY ] [ EXTENT MANAGEMENT DICTIONARY | LOCAL [ AUTOALLOCATE | UNIFORM SIZE number K | M] ] [ SEGMENT SPACE MANAGERMENT AUTO | MUNUAL]  创建一个永久性表空间myspace,数据文件大小为20MB,自动增长,每次增长为5MB,最大可为100MB...</p>
   </section>
-  <footer class="entry-footer">
-2016年6月17日&nbsp;·&nbsp;2 min数据库&nbsp;,&nbsp;oracle</footer>
+  <footer class="entry-footer">2016年6月17日&nbsp;·&nbsp;2 分钟<v-btn href='/tags/数据库' rounded > 数据库 </v-btn><v-btn href='/tags/oracle' rounded > oracle </v-btn></footer>
   <a class="entry-link" aria-label="post link to Oracle数据库系列 - Oracle 表空间管理" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle-%E8%A1%A8%E7%A9%BA%E9%97%B4%E7%AE%A1%E7%90%86/"></a>
 </article>
 
@@ -111,8 +110,7 @@ window.addEventListener('load', function () {
   在命令行中执行sqlplus命令进行连接
    语法: sqlplus [user_name [ /password] [ @connect_identifier ] ] [AS { SYSOPER | SYSDBA | SYSASM } / NOLOG ]; //以scott用户登录orcl数据库 sqlplus scott/tiger @orcl;  CONNECT连接数据库   语法:CONN[ECT] [{user_name [/password] [ @connect_identifier ] } AS　{SYSOPER | SYSDBA | SYSOPERASM } ] ] //以scott用户登录orcl数据库; CONNECT scott/tiger @orcl;     退出数据库...</p>
   </section>
-  <footer class="entry-footer">
-2016年6月17日&nbsp;·&nbsp;2 min数据库&nbsp;,&nbsp;oracle</footer>
+  <footer class="entry-footer">2016年6月17日&nbsp;·&nbsp;2 分钟<v-btn href='/tags/数据库' rounded > 数据库 </v-btn><v-btn href='/tags/oracle' rounded > oracle </v-btn></footer>
   <a class="entry-link" aria-label="post link to Oracle 数据库系列 - SQL Plus SQL操作命令" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-17-oracle-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-sql-plus-sql%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"></a>
 </article>
 
@@ -130,8 +128,7 @@ window.addEventListener('load', function () {
 SELECT username, account_status from db_users; 其中OPEN表示账户为解锁状态，EXPIRED表示账户为过期状态(需要设置口令才能解除此状态);LOCKED 表示账户为锁定状态。  为scott账户进行解锁
 SQL&gt; ALTER USER scott ACCOUNT UNLOCK; SQL&gt; ALTER USER scott IDENTIFIED BY tiger; SQL&gt; SELECT username ,account_status FROM dba_users WHERE username = &#39;SCOTT&#39;; 注意: 在使用数据字典dba_users时,需要注意其字段的值是区分大小的，所以指定username的时候需要指定为&#39;SCOTT&#39;,而不是&#39;scott&#39;;  </p>
   </section>
-  <footer class="entry-footer">
-2016年6月16日&nbsp;·&nbsp;1 min数据库&nbsp;,&nbsp;oracle</footer>
+  <footer class="entry-footer">2016年6月16日&nbsp;·&nbsp;1 分钟<v-btn href='/tags/数据库' rounded > 数据库 </v-btn><v-btn href='/tags/oracle' rounded > oracle </v-btn></footer>
   <a class="entry-link" aria-label="post link to Oracle数据库系列-Oracle数据库开场篇" href="/blog/%E6%8A%80%E6%9C%AF/2016-06-16-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E5%88%97-oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%80%E5%9C%BA%E7%AF%87/"></a>
 </article>
         </main>
