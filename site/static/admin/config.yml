@@ -7,14 +7,20 @@ media_folder: static/img
 public_folder: /img
 collections:
   - name: 'blog'
-    label: 'Blog'
+    label: '博客'
     folder: 'site/content/blog'
     create: true
+    nested:
+      depth: 100
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
-      preview: false
+      preview: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: '标题', name: 'title', widget: 'string' }
+      - { label: '发布日期', name: 'date', widget: 'datetime' }
+      - { label: '描述', name: 'description', widget: 'string' }
+      - label: '标签'
+        name: 'tags'
+        widget: 'list'
+        field: {label: "标签名", name: "tag", widget: 'string' }
+      - { label: '内容', name: 'body', widget: 'markdown' }
