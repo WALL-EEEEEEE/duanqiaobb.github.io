@@ -9,7 +9,12 @@
 {{- end }}
 
 {{- if .Params.tags }}
-{{- $scratch.Add "tags" .Params.tags }}
+{{- range .Params.tags }}
+{{ $tag_link := .Permalink }}
+{{ $tag_title := .LinkTitle }}
+{{- $tag_item  := printf "<v-card-actions href='%s' > %s </v-card-actiond>" $tag_link $tag_title }}
+{{- $scratch.Add "tags" $tag_item }}
+{{- end }}
 {{- end }}
 {{/*- $scratch.Add "meta" .Tags */}}
 
