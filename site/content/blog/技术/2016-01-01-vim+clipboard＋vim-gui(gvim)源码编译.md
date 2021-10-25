@@ -1,4 +1,3 @@
-
 ---
 title: "vim+clipboard＋vim-gui(gvim)源码编译"
 date: 2016-01-01 18:02:23 +0000 UTC
